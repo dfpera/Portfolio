@@ -1,0 +1,89 @@
+!!! 5
+%html{:lang => 'en'}
+  %head
+    %meta{:charset => "utf-8" }
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
+    %title Style Guide - Daniele Perazzolo
+    %link{:rel => "stylesheet", :href => "css/main.css"}
+    %link{:rel => "stylesheet", :href => "js/styles/atom-one-light.css"}
+  %body
+    / START HEADER
+
+    / END HEADER
+    / START CONTENT
+    %p Daniele is a Computing Science Undergraduate at SFU who has an interest in User Experience (UX). He strives to make the smoothest and easiest experience for users in any environment through the understanding of both technology and design. It is not about tailoring the user to the product, but tailoring the product to its user.
+    %article
+      %h1 Portfolio Style Guide
+      %section
+        %h2 Swatches
+        %h3 Rendered Element
+
+        %h3 Sample Code
+
+      %section
+        %h2 Grids
+        %h3 Rendered Element
+
+        %h3 Sample Code
+
+      %section
+        %h2 Main Navigation
+        %h3 Rendered Element
+
+        %h3 Sample Code
+
+      %section
+        %h2 Blog Posts
+        %h3 Rendered Element
+
+        %h3 Sample Code
+
+      %section
+        %h2 Individual Blog
+        %h3 Rendered Element
+
+        %h3 Sample Code
+
+      %section
+        %h2 Code Blocks
+        %h3 Rendered Element
+        %pre
+          %code
+            :preserve
+              # The Greeter class
+              class Greeter
+                def initialize(name)
+                  @name = name.capitalize
+                end
+
+                def salute
+                  puts "Hello #{@name}!"
+                end
+              end
+
+              g = Greeter.new("world")
+              g.salute
+        %h3 Sample Code
+        %pre
+          %code
+            :preserve
+              %pre
+                %code
+                  :preserve
+                    / Place your code in here
+      %section
+        %h2 Footer
+        %h3 Rendered Element
+
+        %h3 Sample Code
+
+    / END CONTENT
+    / START FOOTER
+
+    / END FOOTER
+    / START SCRIPTS
+    /[if lt IE 9]
+      %script{:src => "js/html5shiv.min.js"}
+    %script{:src => "js/highlight.pack.js"}
+    %script{:src => "js/main.js"}
+    / END SCRIPTS
