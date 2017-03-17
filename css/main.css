@@ -1,4 +1,6 @@
-/*! Add all variables into this style sheet */
+/*! ===== FONTS ===== */
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+/*! ===== END FONTS ===== */
 /*! Add all SASS mixins into this style sheet */
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 /**
@@ -409,9 +411,27 @@ template {
 /*! ===== END GRIDS ===== */
 /*! ===== BASE ELEMENTS ===== */
 /*! Add all base element styles into this style sheet */
+body {
+  font-family: "Roboto", sans-serif; }
+
+article {
+  padding: 0 0 1.0rem; }
+
+pre {
+  border-top: solid 1px #E4E4E4;
+  border-bottom: solid 1px #E4E4E4; }
+
+pre > code.hljs {
+  background: #FFFFFF;
+  padding: 0.5rem 10%;
+  width: 80%; }
+
 /*! Add all helper classes into this style sheet */
 /*! For example: .clearfix { clear: both; } */
 /*! ===== END BASE ELEMENTS ===== */
 /*! ===== NAVIGATION ===== */
 /*! Add all main navigation styles into this style sheet */
 /*! ===== END NAVIGATION ===== */
+/*! ===== CODE BLOCKS ===== */
+/*! Add code to style coding blocks here */
+/*! ===== END CODE BLOCKS ===== */

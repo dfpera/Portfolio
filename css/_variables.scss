@@ -1,1 +1,12 @@
-/*! Add all variables into this style sheet */
+// Add all variables into this style sheet
+
+// Fonts
+$body-font: "Roboto", sans-serif;
+$heading-font: sans-serif;
+
+// Colors
+$light-grey: #E4E4E4;
+$white: #FFFFFF;
+
+// Borders
+$code-border: solid 1px $light-grey;

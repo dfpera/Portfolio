@@ -1,1 +1,19 @@
 /*! Add all base element styles into this style sheet */
+body {
+  font-family: $body-font;
+}
+
+article {
+  padding: 0 0 1.0rem;
+}
+
+pre {
+  border-top: $code-border;
+  border-bottom: $code-border;
+}
+
+pre > code.hljs {
+  background: $white;
+  padding: 0.5rem 10%;
+  width: 80%;
+}
