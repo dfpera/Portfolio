@@ -1,6 +1,8 @@
 /*! Add all base element styles into this style sheet */
 body {
   font-family: $body-font;
+  color: map-get($dark-blue, $hex);
+  color: map-get($dark-blue, $hsla);
 }
 
 article {

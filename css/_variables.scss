@@ -42,7 +42,7 @@ $grey:
   hsla: hsla(19, 11%, 65%, 1),
   rgba: rgba(176, 163, 157, 1));
 $turquois:
-  (hex: #d9d1ce,
+  (hex: #419a9e,
   hsla: hsla(183, 42%, 44%, 1),
   rgba: rgba(65, 154, 158, 1));
 $dark-blue:
@@ -55,9 +55,8 @@ $red:
   rgba: rgba(193, 27, 5, 1));
 $orange:
   (hex: #f68948,
-  hsla: hsla(246, 137, 72, 1),
-  rgba: rgba(22, 91%, 62%, 1));
-
+  hsla: hsla(22, 91%, 62%, 1),
+  rgba: rgba(246, 137, 72, 1));
 
 // Borders
 $code-border: solid 1px map-get($grey, $hsla);

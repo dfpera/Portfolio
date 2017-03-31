@@ -18,7 +18,9 @@
 /*! ===== END BASE ELEMENTS ===== */
 
 /*! ===== NAVIGATION ===== */
+@import "modules/headers";
 @import "modules/main_navigation";
+@import "modules/breadcrumbs";
 /*! ===== END NAVIGATION ===== */
 
 /*! ===== CODE BLOCKS ===== */
