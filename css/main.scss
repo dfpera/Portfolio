@@ -1,7 +1,7 @@
 // Main SASS file which will import all other .scss files
 
 /*! ===== FONTS ===== */
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+@import url('https://fonts.googleapis.com/css?family=Overpass+Mono:400,600,700|Roboto:400,400i,700');
 /*! ===== END FONTS ===== */
 
 @import "variables";
@@ -24,3 +24,7 @@
 /*! ===== CODE BLOCKS ===== */
 @import "modules/code_blocks";
 /*! ===== END CODE BLOCKS ===== */
+
+/*! ===== SWATCHES ===== */
+@import "modules/swatches";
+/*! ===== END SWATCHES ===== */
