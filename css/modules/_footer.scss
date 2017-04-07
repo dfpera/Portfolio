@@ -1,0 +1,28 @@
+/*! Add footer styles here */
+footer {
+  height: 5.0rem;
+  display: block;
+  clear: both;
+
+  div.links,
+  p.copyright {
+    margin-left: 1.0rem;
+  }
+  div.links a {
+    color: map-get($orange, $hsla);
+    text-decoration: none;
+  }
+  div.links a:hover,
+  div.links a:focus {
+    color: map-get($dark-blue, $hsla);
+  }
+
+  @media #{$medium-break} {
+    div.links,
+    p.copyright {
+      position: relative;
+      left: 33.33%;
+      margin-left: 1.0rem;
+    }
+  }
+}

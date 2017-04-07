@@ -1,0 +1,110 @@
+/*! Add all header styles here */
+header {
+  width: 100%;
+  z-index: 100;
+
+  > .banner {
+    position: relative;
+    background-image: url(../img/background.jpg);
+    background-position: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+
+    > .intro {
+      &:before {
+        content: "\003E_";
+        letter-spacing: 1px;
+        padding: 0.25rem 0.75rem;
+        margin: -0.5rem 0 0 -1.0rem;
+        border-top-right-radius: 0.25rem;
+        border-top-left-radius: 0.25rem;
+        font-size: 1.0rem;
+        font-family: $body-font;
+        display: block;
+        width: 100%;
+        background-color: map-get($light-grey, $hsla);
+        color: map-get($dark-blue, $hsla);
+      }
+
+      margin: 0;
+      border-radius: 0.3rem;
+      background-color: map-get($dark-orange, $hsla);
+      display: inline-block;
+      color: transparentize(map-get($grey, $hsla), 0.55);
+      font-family: $heading-font;
+      padding: 0.5rem 0.5rem 0.5rem 1.0rem;
+      margin-top: 4.0rem;
+      font-size: 1.2rem;
+
+      > h1,
+      > p {
+        padding: 0;
+        margin: 0;
+      }
+
+      > p > span,
+      > h1 {
+        font-weight: bold;
+        color: map-get($white, $hsla);
+      }
+
+      > p > span {
+      }
+
+      > h1 {
+        font-size: 2.4rem;
+      }
+
+      > p:first-child {
+        margin-top: 0.5rem;
+      }
+
+      p {
+        line-height: 1.4rem;
+      }
+
+      > p.cursor {
+        position: relative;
+      }
+
+      > p.cursor:after {
+        content: "\25AE";
+        color: map-get($white, $hsla);
+        position: absolute;
+        bottom: 0.1rem;
+        display: inline-block;
+        font-size: 2.5rem;
+        line-height: 1.0rem;
+      }
+    }
+  }
+}
+
+@media #{$small-break} {
+  header {
+    > .banner {
+      > .intro {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media #{$medium-break} {
+  header {
+    > .banner {
+      min-height: 20.0rem;
+
+      &.parallax-window {
+        background: transparent !important;
+      }
+
+      > .intro {
+        position: relative;
+        left: 33.33%;
+        max-width: 63%;
+        margin: 5rem 0.5rem auto 1.0rem;
+      }
+    }
+  }
+}

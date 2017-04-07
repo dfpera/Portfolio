@@ -1,0 +1,101 @@
+!!! 5
+%html{:lang => 'en'}
+  %head
+    %meta{:charset => "utf-8" }
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
+    %title UI-Design Project - Daniele Perazzolo
+    %link{:rel => "stylesheet", :href => "css/main.css"}
+    %link{:rel => "stylesheet", :href => "js/styles/atom-one-light.css"}
+  %body
+    / START HEADER
+    %header
+      %div.fixed-nav.col-sm-12.col-md-12
+        -# %div.logo.col-sm-12.col-md-4
+        -#   %a{:href => "index.html"}
+        -#     %img{:src => "img/logo.png", :alt => "Daniele Perazzolo Logo"}
+        %nav.main.col-sm-12.col-offset-md-4.col-md-8
+          %a{:href => "index.html"} Home
+          %a{:href => "index.html#about"} About
+          %a{:href => "index.html#skills"} Skills
+          %a{:href => "index.html#projects"} Projects
+          %a{:href => "index.html#contact"} Contact
+      %div.banner{:data => {:parallax => "scroll", :img_src => "img/background.jpg"}}
+        %div.intro
+          %p portfolio:~ daniele$ cd /home/UI-Design
+          %p portfolio:UI-Design daniele$ basename /home/UI-Design
+          %h1 UI-Design
+          %p portfolio:UI-Design daniele$ ls
+          %p <span>Overview &nbsp;&nbsp;&nbsp;&nbsp; Initial Design<br> Research &nbsp;&nbsp;&nbsp;&nbsp; Testing/Struggles<br> Proposal &nbsp;&nbsp;&nbsp;&nbsp; Final Design
+          %p.cursor portfolio:UI-Design daniele$
+    / END HEADER
+    / START CONTENT
+    %aside.breadcrumbs.col-md-4.col-lg-3
+      %ul
+        %li
+          %a{:href => "#overview"} overview
+        %li
+          %a{:href => "#research"} research
+        %li
+          %a{:href => "#proposal"} proposal
+        %li
+          %a{:href => "#initial"}  initial design
+        %li
+          %a{:href => "#testing"}  testing / struggles
+        %li
+          %a{:href => "#final"}  final design
+    %article.col-md-8.col-offset-lg-1.col-lg-8{:data => {:side => "true"}}
+      %h2 Makers Assist
+      %p.heading-sub app interface design
+      %section.anchor.col-md-7.col-lg-8#overview
+        %h3 overview
+        %iframe.video.col-md-12{:src => "https://player.vimeo.com/video/211353188",  :frameborder => "0", :webkitallowfullscreen => true, :mozallowfullscreen => true, :allowfullscreen => true}
+        %p For the Makers Assist App, we partnered with the Neil Squire Society to help them design a UI/UX for their newly created LipSync device. The LipSync device helps quadriplegics navigate their mobile devices with the control of their mouth only.
+        %p What the LipSync could not do was press hardware buttons and perform complex finger gestures (ie. swiping). Together with the Neil Squire Society, we determined that the best solution is a UI overlay that would convert these issues into simple click buttons.
+        %p.last The goal was to create an effective user experience that could make mobile devices easy to use for quadriplegics as they are for any able-bodied person. Through the process of user research, idea proposal and user testing, we created the final UI overlay design that is most intuitive for quadriplegics.
+      %section.col-offset-md-1.col-md-4.col-lg-3.specifications
+        %h4 timeline
+        %p 2017 feb - apr
+        %h4 team size
+        %p five people
+        %h4 role
+        %p team&nbsp;lead, project&nbsp;manager, ux&nbsp;designer, programmer
+        %h4 skills
+        %p presenting, interviewing, user&nbsp;testing, wireframing
+        %h4 tools
+        %p axure, indesign, flinto, android&nbsp;studio
+      %section.col-md-7.col-lg-8.clearfix#research
+        %img.img-responsive{:src => "img/UI-Design/research.jpg", :alt => "SFU Students Interviewing Users"}
+        %h3 research
+        %p.last The first step after meeting with Neil Squire Society was to conduct user research. This meant looking at solutions made by competing companies and meeting with users to learn about their habits and routines. Only after understanding our users could we move onto ideating possible solutions.
+      %section.col-md-7.col-lg-8#proposal
+        %h3 proposal
+        %p.last Our research showed that users wanted to modify the environment to their own needs. After a process of ideation, we decided on a 2-level menu system with user customization.
+      %section.col-md-7.col-lg-8#initial
+        %h3 initial design
+        %p.last During the initial design of the UI overlay, we created a fully interactive axure mockup to simulate the mobile devices we were using. This mockup was embedded into an android application so that users could test the LipSync with the mockup.
+      %section.col-md-7.col-lg-8#testing
+        %h3 testing / struggles
+        %p.last Using our initial design, quadriplegics tested our mockup with their own LipSync device. It was here where we discovered the inherent problems with the LipSync, and the challenges in designing for a device that is still in development. While we didn't receive the feedback we expected, we did find that users struggled to understand how the LipSync worked. This gave us an opportunity to embed this information into the UI, and hopefully have users understand the LipSync before they incorporate it to their mobile device.
+      %section.col-md-7.col-lg-8#final
+        %h3 final design
+        %p.last Ultimately, our concentration was not on building features into the application. Rather, we worked to streamline the onboarding and customization of the UI and the LipSync device. With the focus on user experience, we were able to learn a lot about understanding the users while working with clients. This made the implementation of the system easy for the developer at NSS, so that he could concentrate on the code rather than the process of the project.
+    / END CONTENT
+    / START FOOTER
+    %footer
+      %div.links
+        %a{:href => "style-guide.html"} Style Guide
+        %span
+          :escaped
+            |
+        %a{:href => "citations.html"} Citations
+      %p.copyright Daniele Perazzolo &copy; 2017
+    / END FOOTER
+    / START SCRIPTS
+    /[if lt IE 9]
+      %script{:src => "js/html5shiv.min.js"}
+    %script{:src => "js/jquery-3.2.0.min.js"}
+    %script{:src => "js/isotope.min.js"}
+    %script{:src => "js/highlight.pack.js"}
+    %script{:src => "js/parallax.min.js"}
+    %script{:src => "js/main.js"}
+    / END SCRIPTS

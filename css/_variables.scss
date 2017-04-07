@@ -57,11 +57,15 @@ $orange:
   (hex: #f68948,
   hsla: hsla(22, 91%, 62%, 1),
   rgba: rgba(246, 137, 72, 1));
+$dark-orange:
+  (hex: #0f0600,
+  hsla: hsla(24, 100%, 3%, 1),
+  rgba: rgba(15, 6, 0, 1));
 
 // Borders
 $code-border: solid 1px map-get($grey, $hsla);
 
 // Breakpoints
-$small-break: "only screen and (max-width: 46em)"; // Less than
-$medium-break: "only screen and (min-width: 46em)"; // Greater than
-$large-break: "only screen and (min-width: 60em)"; // Greater than
+$small-break: "only screen and (max-width: 49em)"; // Less than
+$medium-break: "only screen and (min-width: 49em)"; // Greater than
+$large-break: "only screen and (min-width: 68em)"; // Greater than

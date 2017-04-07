@@ -1,1 +1,48 @@
 /*! Add all main navigation styles into this style sheet */
+// To take into account the sizing of the navigation when using anchor linking
+.anchor {
+  margin-top: -4.0rem;
+  padding-top: 4.0rem;
+}
+
+header > .fixed-nav {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background: map-get($white, $hsla);
+  box-shadow: 0 2px 2px transparentize(map-get($dark-blue, $hsla), 0.8);
+
+  nav.main > a {
+    float: left;
+    text-decoration: none;
+    padding: 1.2rem 1.25rem 1.25rem 0;
+    font-size: 1.2rem;
+    font-family: $heading-font;
+    color: map-get($orange, $hsla);
+    transition: color 0.5s ease-out;
+  }
+  nav.main > a:hover,
+  nav.main > a:focus {
+    color: map-get($dark-blue, $hsla);
+  }
+}
+
+header > .fixed-nav-sample {
+  height: 4.0rem;
+  background: map-get($white, $hsla);
+  box-shadow: 0 2px 2px transparentize(map-get($dark-blue, $hsla), 0.8);
+
+  nav.main > a {
+    float: left;
+    text-decoration: none;
+    padding: 1.2rem 1.25rem 0.5rem 0;
+    font-size: 1.4rem;
+    font-family: $heading-font;
+    color: map-get($orange, $hsla);
+    transition: color 0.5s ease-out;
+  }
+  nav.main > a:hover,
+  nav.main > a:focus {
+    color: map-get($dark-blue, $hsla);
+  }
+}

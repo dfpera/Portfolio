@@ -2,65 +2,82 @@
 aside.breadcrumbs {
   margin-top: 1.0rem;
   font-family: $heading-font;
-}
 
-aside.breadcrumbs ul {
-  position: fixed;
-  top: 0.5rem;
-  width: 31%;
-  height: 100%;
-  border-right: $code-border;
-}
 
-aside.breadcrumbs ul > li {
-  color: map-get($orange, $hsla);
-  padding-left: 1.0rem;
-  position:relative;
-  margin-bottom: 0;
-  padding-bottom: 1.5em;
-}
+  ul {
+    margin-top: -1rem;
+    padding-top: 3rem;
+    z-index: -200;
 
-aside.breadcrumbs ul > li > a {
-  font-size: 1.7rem;
-  font-weight: 600;
-  color: map-get($orange, $hsla);
-  text-decoration: none;
-}
+    > li {
+      color: map-get($orange, $hsla);
+      padding-left: 1.0rem;
+      position:relative;
+      margin-bottom: 0;
+      padding-bottom: 1.5em;
+      list-style-type: none;
 
-aside.breadcrumbs ul > li:hover > a {
-  color: map-get($turquois, $hsla);
-  background-color: map-get($light-grey, $hsla);
-}
+      &:after {
+        /* Adding the bullet */
+        content: "\25CF";
+        font-size: 40px;
+        position: absolute;
+        left: -27px;
+        top: -12px;
+        transition: color 0.5s ease-out;
+      }
 
-aside.breadcrumbs ul > li:hover:after {
-  color: map-get($turquois, $hsla);
-}
+      &:before {
+        /* Adding the line */
+        content: "";
+        position: absolute;
+        left: -17px; /* adjust manually */
+        border-left: 4px solid map-get($orange, $hsla);
+        height: 100%;
+        width: 1px;
+        /* Moving down the top line */
+        top: 6px;
+        transition: border-left 0.5s ease-out;
+      }
 
-aside.breadcrumbs ul > li:after {
-  /* Adding the bullet */
-  content: "\25CF";
-  font-size: 50px;
-  position: absolute;
-  left: -30px;
-  top: -15px;
-}
+      &:last-child:before {
+        /* Shortening the bottom line */
+        height: 6px;
+      }
 
-aside.breadcrumbs ul > li:before {
-  /* Adding the line */
-  content:"";
-  position: absolute;
-  left: -19px; /* adjust manually */
-  border-left: 8px solid map-get($orange, $hsla);
-  height: 100%;
-  width: 1px;
-}
+      &:hover > a,
+      &:focus > a {
+        color: map-get($dark-blue, $hsla);
+      }
 
-aside.breadcrumbs ul > li:first-child:before {
-  /* Moving down the top line */
-  top: 6px;
-}
+      &:hover:after,
+      &:focus:after {
+        color: map-get($dark-blue, $hsla);
+        text-shadow: 0 -2px 2px transparentize(map-get($dark-blue, $hsla), 0.8);
+      }
 
-aside.breadcrumbs ul > li:last-child:before {
-  /* Shortening the bottom line */
-  height: 6px;
+      &:hover:before,
+      &:focus:before {
+        border-left-color: map-get($dark-blue, $hsla);
+      }
+
+      > a {
+        font-size: 1.1rem;
+        color: map-get($orange, $hsla);
+        text-decoration: none;
+        transition: color 0.5s ease-out;
+      }
+    }
+  }
+  @media #{$medium-break} {
+    &.fix-breadcrumb {
+      position: fixed;
+      top: 3.0rem;
+      display: block;
+    }
+    ul {
+      float: right;
+      padding-top: 6rem;
+    }
+  }
 }

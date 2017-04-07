@@ -1,7 +1,7 @@
 // Main SASS file which will import all other .scss files
 
 /*! ===== FONTS ===== */
-@import url('https://fonts.googleapis.com/css?family=Overpass+Mono:400,600,700|Roboto:400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Overpass+Mono:400,600,700|Roboto:300,400,400i,700');
 /*! ===== END FONTS ===== */
 
 @import "variables";
@@ -18,14 +18,20 @@
 /*! ===== END BASE ELEMENTS ===== */
 
 /*! ===== NAVIGATION ===== */
-@import "modules/headers";
+@import "modules/header";
 @import "modules/main_navigation";
 @import "modules/breadcrumbs";
+@import "modules/footer";
 /*! ===== END NAVIGATION ===== */
 
 /*! ===== CODE BLOCKS ===== */
 @import "modules/code_blocks";
 /*! ===== END CODE BLOCKS ===== */
+
+/*! ===== CONTENT ===== */
+@import "modules/projects";
+@import "modules/isotopejs";
+/*! ===== END CONTENT ===== */
 
 /*! ===== SWATCHES ===== */
 @import "modules/swatches";

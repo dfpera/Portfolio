@@ -6,7 +6,8 @@
 [class*='col-'] {
   float: left;
   width: 100%;
-  padding: 0 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .row::after {
@@ -29,6 +30,18 @@
   .col-sm-10 { width: 83.33%; }
   .col-sm-11 { width: 91.66%; }
   .col-sm-12 { width: 100%; }
+  .col-offset-sm-1 { margin-left: 8.33%; }
+  .col-offset-sm-2 { margin-left: 16.66%; }
+  .col-offset-sm-3 { margin-left: 25%; }
+  .col-offset-sm-4 { margin-left: 33.33%; }
+  .col-offset-sm-5 { margin-left: 41.66%; }
+  .col-offset-sm-6 { margin-left: 50%; }
+  .col-offset-sm-7 { margin-left: 58.33%; }
+  .col-offset-sm-8 { margin-left: 66.66%; }
+  .col-offset-sm-9 { margin-left: 75%; }
+  .col-offset-sm-10 { margin-left: 83.33%; }
+  .col-offset-sm-11 { margin-left: 91.66%; }
+  .col-offset-sm-12 { margin-left: 100%; }
   .hide-sm { display: none; }
 }
 
@@ -46,6 +59,18 @@
   .col-md-10 { width: 83.33%; }
   .col-md-11 { width: 91.66%; }
   .col-md-12 { width: 100%; }
+  .col-offset-md-1 { margin-left: 8.33%; }
+  .col-offset-md-2 { margin-left: 16.66%; }
+  .col-offset-md-3 { margin-left: 25%; }
+  .col-offset-md-4 { margin-left: 33.33%; }
+  .col-offset-md-5 { margin-left: 41.66%; }
+  .col-offset-md-6 { margin-left: 50%; }
+  .col-offset-md-7 { margin-left: 58.33%; }
+  .col-offset-md-8 { margin-left: 66.66%; }
+  .col-offset-md-9 { margin-left: 75%; }
+  .col-offset-md-10 { margin-left: 83.33%; }
+  .col-offset-md-11 { margin-left: 91.66%; }
+  .col-offset-md-12 { margin-left: 100%; }
   .hide-md { display: none; }
 }
 
@@ -63,5 +88,17 @@
   .col-lg-10 { width: 83.33%; }
   .col-lg-11 { width: 91.66%; }
   .col-lg-12 { width: 100%; }
+  .col-offset-lg-1 { margin-left: 8.33%; }
+  .col-offset-lg-2 { margin-left: 16.66%; }
+  .col-offset-lg-3 { margin-left: 25%; }
+  .col-offset-lg-4 { margin-left: 33.33%; }
+  .col-offset-lg-5 { margin-left: 41.66%; }
+  .col-offset-lg-6 { margin-left: 50%; }
+  .col-offset-lg-7 { margin-left: 58.33%; }
+  .col-offset-lg-8 { margin-left: 66.66%; }
+  .col-offset-lg-9 { margin-left: 75%; }
+  .col-offset-lg-10 { margin-left: 83.33%; }
+  .col-offset-lg-11 { margin-left: 91.66%; }
+  .col-offset-lg-12 { margin-left: 100%; }
   .hide-lg { display: none; }
 }

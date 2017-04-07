@@ -1,0 +1,69 @@
+/*! Add project specific stles in here */
+.vertical-line {
+  border-left: $code-border;
+}
+.specifications {
+  p {
+    margin-bottom: 1.5rem;
+  }
+
+  p:last-child {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.video {
+  min-height: 20rem;
+  padding-bottom: 1.0rem;
+  padding-left: 0 !important;
+}
+
+.button-group {
+  margin-bottom: 1.0rem;
+}
+
+.projects {
+  width: 100%;
+
+  a {
+    width: 100%;
+    float: left;
+    padding-bottom: 1.5rem;
+    text-decoration: none;
+    color: map-get($dark-blue, $hsla);
+    padding-right: 1.0rem;
+
+    > img {
+      width: 100%;
+      padding-bottom: 0.5rem;
+    }
+    &:hover > img,
+    &:focus > img {
+      opacity: 0.8;
+    }
+
+    > p.title {
+      padding: 0;
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: bold;
+      font-family: $heading-font;
+    }
+    &:hover > p.title,
+    &:focus > p.title {
+      color: map-get($orange, $hsla);
+    }
+
+    > p.sub {
+      padding: 0;
+      margin: 0;
+      font-style: italic;
+    }
+  }
+
+  @media #{$large-break} {
+    a {
+      width: 50%;
+    }
+  }
+}

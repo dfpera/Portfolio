@@ -3,7 +3,7 @@
   %head
     %meta{:charset => "utf-8" }
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
-    %title Style Guide - Daniele Perazzolo
+    %title Groundschool Anywhere Project - Daniele Perazzolo
     %link{:rel => "stylesheet", :href => "css/main.css"}
     %link{:rel => "stylesheet", :href => "js/styles/atom-one-light.css"}
   %body
@@ -21,12 +21,12 @@
           %a{:href => "index.html#contact"} Contact
       %div.banner{:data => {:parallax => "scroll", :img_src => "img/background.jpg"}}
         %div.intro
-          %p portfolio:~ daniele$ cd /home/Style-Guide
-          %p portfolio:Style-Guide daniele$ basename /home/Style-Guide
-          %h1 Style-Guide
-          %p portfolio:Style-Guide daniele$ ls
-          %p <span>Colors &nbsp;&nbsp;&nbsp; Text<br> Grids &nbsp;&nbsp;&nbsp;&nbsp; Navigation
-          %p.cursor portfolio:Style-Guide daniele$
+          %p portfolio:~ daniele$ cd /home/Groundschool-Anywhere
+          %p portfolio:Groundschool-Anywhere daniele$ basename /home/Groundschool-Anywhere
+          %h1 Groundschool-Anywhere
+          %p portfolio:Groundschool-Anywhere daniele$ ls
+          %p <span>Description &nbsp; Initial Design<br> Research &nbsp;&nbsp;&nbsp;&nbsp; Testing/Struggles<br> Proposal &nbsp;&nbsp;&nbsp;&nbsp; Final Design
+          %p.cursor portfolio:Groundschool-Anywhere daniele$
     / END HEADER
     / START CONTENT
     %aside.breadcrumbs.col-md-4
@@ -40,10 +40,10 @@
         %li
           %a{:href => "#navigation"}  Navigation
     %article.col-md-8
-      %h2 Portfolio Style Guide
-      %section.anchor#colors
-        %h3 Swatches
-        %h4 Color Palette
+      %h1 Portfolio Style Guide
+      %section#colors
+        %h2 Swatches
+        %h3 Color Palette
         %div.col-sm-6.col-md-6.col-lg-4.swatch.light-grey
           %div
             %p #d9d1ce
@@ -86,23 +86,23 @@
             %p rgba(246, 137, 72, 1)
           %div
             %p $orange
-        %h4 UI Colors
+        %h3 UI Colors
 
-      %section.anchor#grids
-        %h3 Grids
-        %h4 Rendered Element
+      %section#grids
+        %h2 Grids
+        %h3 Rendered Element
 
-        %h4 Sample Code
+        %h3 Sample Code
 
-      %section.anchor#text
-        %h3 Text
+      %section#text
+        %h2 Text
         %header
           %div.banner{:data => {:parallax => "scroll", :img_src => "img/background.jpg"}}
             %div.intro
               %p portfolio:~ daniele$ cd /home/projects/projectName
               %p portfolio:projectName daniele$ basename /home/projects/projectName
               %h1 Heading 1
-              %p portfolio:projectName daniele$ ls
+              %p portfolio:projectName daniele $ ls
               %p <span>Description &nbsp; Initial Design<br> Research &nbsp;&nbsp;&nbsp;&nbsp; Testing/Struggles<br> Proposal &nbsp;&nbsp;&nbsp;&nbsp; Final Design
               %p.cursor portfolio:projectName daniele$
         %h2 Heading 2
@@ -111,9 +111,9 @@
         %h5 Heading 5
         %p No monospace? Sans Serif if not using monospace. Roboto for the text for sure, it's clear, easy to read and common familiar font; don't need anything special for body text.
 
-      %section.anchor#navigation
-        %h3 Header
-        %h4 Rendered element
+      %section#navigation
+        %h2 Header
+        %h3 Rendered element
         %header
           %div.fixed-nav-sample.col-sm-12.col-md-12
             %div.logo.col-sm-12.col-md-4
@@ -135,12 +135,12 @@
               %p &nbsp;&nbsp;+-o <span>Android-iOS_Development</span> &lt;class&gt;
               %p &nbsp;&nbsp;+-o <span>UX_Design</span> &lt;class&gt;
               %p.cursor portfolio:~ daniele$
-        %h4 Sample Code
+        %h3 Sample Code
         %pre
           %code
             :preserve
               %header
-                %div.fixed-nav.col-sm-12.col-md-12
+                %div.fixed-nav1.col-sm-12.col-md-12
                   %div.logo.col-sm-12.col-md-4
                     %a{:href => "index.html"}
                       %img{:src => "img/logo.png", :alt => "Daniele Perazzolo Logo"}
@@ -161,10 +161,10 @@
                     %p &nbsp;&nbsp;+-o <span>UX_Design</span> &lt;class&gt;
                     %p.cursor portfolio:~ daniele$
       %section
-        %h3 Main Navigation
-        %h4 Rendered Element
+        %h2 Main Navigation
+        %h3 Rendered Element
         %p Look at the top of the screen. It's being rendered there.
-        %h4 Sample Code
+        %h3 Sample Code
         %pre
           %code
             :preserve
@@ -180,20 +180,20 @@
                     %a{:href => "index.html#projects"} Projects
                     %a{:href => "index.html#contact"} Contact
       %section
-        %h3 Blog Posts
-        %h4 Rendered Element
+        %h2 Blog Posts
+        %h3 Rendered Element
 
-        %h4 Sample Code
-
-      %section
-        %h3 Individual Blog
-        %h4 Rendered Element
-
-        %h4 Sample Code
+        %h3 Sample Code
 
       %section
-        %h3 Code Blocks
-        %h4 Rendered Element
+        %h2 Individual Blog
+        %h3 Rendered Element
+
+        %h3 Sample Code
+
+      %section
+        %h2 Code Blocks
+        %h3 Rendered Element
         %pre
           %code
             :preserve
@@ -210,7 +210,7 @@
 
               g = Greeter.new("world")
               g.salute
-        %h4 Sample Code
+        %h3 Sample Code
         %pre
           %code
             :preserve
@@ -219,8 +219,8 @@
                   :preserve
                     / Place your code in here
       %section
-        %h3 Footer
-        %h4 Rendered Element
+        %h2 Footer
+        %h3 Rendered Element
         %footer
           %div.links
             %a{:href => "style-guide.html"} Style Guide
@@ -229,7 +229,7 @@
                 |
             %a{:href => "citations.html"} Citations
           %p.copyright Daniele Perazzolo &copy; 2017
-        %h4 Sample Code
+        %h3 Sample Code
         %pre
           %code
             :preserve

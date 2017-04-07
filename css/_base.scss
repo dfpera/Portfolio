@@ -1,4 +1,7 @@
 /*! Add all base element styles into this style sheet */
+html, body {
+  height: 100%;
+}
 body {
   font-family: $body-font;
   color: map-get($dark-blue, $hex);
@@ -6,13 +9,65 @@ body {
 }
 
 article {
-  padding: 0 0 1.0rem;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
 }
 
 @for $i from 1 through 6 {
   h#{$i} {
+    padding-top: 0;
+    margin-top: 0;
     font-family: $heading-font;
   }
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 2.4rem;
+  padding-left: 0.5rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+p.heading-sub {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-left: 0.5rem;
+  margin-bottom: 3.0rem;
+  letter-spacing: 1px;
+}
+
+h3 {
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1.0rem;
+  padding-bottom: 0;
+  background-color: transparentize(map-get($orange, $hsla), 0.7);
+  display: inline-block;
+}
+
+h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0;
+  padding-bottom: 0.3rem;
+}
+
+p {
+  margin-top: 0;
+  padding-top: 0;
+  line-height: 1.7rem;
+  font-size: 0.9rem;
+}
+
+p.last {
+  margin-bottom: 2.0rem;
+}
+
+img.img-responsive {
+  width: 100%;
+  padding-bottom: 1.0rem;
 }
 
 pre {
@@ -24,5 +79,12 @@ pre > code.hljs {
   background-color: map-get($white, $hex);
   background-color: map-get($white, $hsla);
   padding: 0.5rem 10%;
-  width: 80%;
+  width: 100%;
+}
+
+@media #{$medium-break} {
+  article {
+    padding-top: 5.8rem;
+    padding-bottom: 4rem;
+  }
 }

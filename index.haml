@@ -8,17 +8,77 @@
     %link{:rel => "stylesheet", :href => "js/styles/atom-one-light.css"}
   %body
     / START HEADER
-
+    %header
+      %div.fixed-nav.col-sm-12.col-md-12
+        -# %div.logo.col-sm-12.col-md-4
+        -#   %a{:href => "#"}
+        -#     %img{:src => "img/logo.png", :alt => "Daniele Perazzolo Logo"}
+        %nav.main.col-sm-12.col-offset-md-4.col-md-8
+          %a{:href => "#"} Home
+          %a{:href => "#about"} About
+          %a{:href => "#skills"} Skills
+          %a{:href => "#projects"} Projects
+          %a{:href => "#contact"} Contact
+      %div.banner{:data => {:parallax => "scroll", :img_src => "img/background.jpg"}}
+        %div.intro
+          %p portfolio:~ daniele$ hostname -s
+          %h1 Daniele-Perazzolo
+          %p portfolio:~ daniele$ ioreg -b -d 3
+          %p +-o Root &lt;class IOregistry&gt;
+          %p &nbsp;&nbsp;+-o <span>Web_Development</span> &lt;class&gt;
+          %p &nbsp;&nbsp;+-o <span>Android-iOS_Development</span> &lt;class&gt;
+          %p &nbsp;&nbsp;+-o <span>UX_Design</span> &lt;class&gt;
+          %p.cursor portfolio:~ daniele$
     / END HEADER
     / START CONTENT
-
+    %article.col-offset-md-4.col-md-8.col-lg-8
+      %section.anchor.col-md-7.col-lg-8#about
+        %h3 about
+        %p.last Daniele is a User Experience (UX) developer and designer. He strives to make the smoothest and easiest experience for users in any environment through the understanding of both technology and design. It is not about tailoring the user to the product, but tailoring the product to its user. Currently he is finishing his Computing Science Undergraduate at Simon Fraser University (SFU), with a Minor in Graphic Design.
+      %section.anchor.col-md-7.col-lg-8#skills
+        %h3 skills
+        %p.last Rails, Android, iOS, HTML5/CSS3 (haml/sass), js (jQuery, Bootstrap), SQL/NoSQL
+      %section.anchor.col-md-7.col-lg-8
+        %h3 other
+        %p.last Team Player, Problem Solver, Attentive, Leader
+      %section.anchor.col-md-7.col-lg-8#projects
+        %h3 projects
+        %div.button-group.filter-button-group
+          %button.active{:data => {:filter => "*"}} Show all
+          %button{:data => {:filter => ".ux"}} UX Design
+          -# %button{:data => {:filter => ".rails"}} Web Development
+          -# %button{:data => {:filter => ".android"}} Android
+          %button{:data => {:filter => ".swift"}} iOS
+        %div.projects
+          %a.ux{:href => "ui-design.html"}
+            %img{:src => "img/UI-Design/preview.png", :alt => "UI Design Preview"}
+            %p.title makers assist
+            %p.sub app interface design
+          %a.ux.swift{:href => "groundschool-anywhere.html"}
+            %img{:src => "img/UI-Design/preview.png", :alt => "UI Design Preview"}
+            %p.title groundschool anywhere
+            %p.sub app design and development
+      %section.anchor.col-md-7.col-lg-8#contact
+        %h3 Contact
+        %p Email: dperazzo@sfu.ca
+        %p Phone: +1 (604) 781-1001
     / END CONTENT
     / START FOOTER
-
+    %footer
+      %div.links
+        %a{:href => "style-guide.html"} Style Guide
+        %span
+          :escaped
+            |
+        %a{:href => "citations.html"} Citations
+      %p.copyright Daniele Perazzolo &copy; 2017
     / END FOOTER
     / START SCRIPTS
     /[if lt IE 9]
       %script{:src => "js/html5shiv.min.js"}
+    %script{:src => "js/jquery-3.2.0.min.js"}
+    %script{:src => "js/isotope.min.js"}
     %script{:src => "js/highlight.pack.js"}
+    %script{:src => "js/parallax.min.js"}
     %script{:src => "js/main.js"}
     / END SCRIPTS

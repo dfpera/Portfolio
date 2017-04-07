@@ -1,0 +1,22 @@
+/*! Add isotopejs styles here */
+.button-group {
+  button {
+    background: none;
+    border: 2px solid map-get($orange, $hsla);
+    color: map-get($dark-blue, $hsla);
+    border-radius: 0.25rem;
+    padding: 0.5rem 1.0rem;
+    letter-spacing: 1px;
+    font-family: $heading-font;
+    font-weight: 600;
+    transition: background 0.5s ease-out;
+  }
+
+  button.active,
+  button:hover,
+  button:focus {
+    outline: 0;
+    background: map-get($orange, $hsla);
+    color: map-get($white, $hsla);
+  }
+}

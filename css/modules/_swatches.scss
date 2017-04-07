@@ -51,3 +51,7 @@
   color: map-get($white, $hex);
   background-color: map-get($orange, $hex);
 }
+.swatch.dark-orange > div:first-child {
+  color: map-get($white, $hex);
+  background-color: map-get($dark-orange, $hex);
+}
