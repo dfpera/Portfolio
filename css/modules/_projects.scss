@@ -18,12 +18,10 @@
   padding-left: 0 !important;
 }
 
-.button-group {
-  margin-bottom: 1.0rem;
-}
 
 .projects {
   width: 100%;
+  margin-bottom: 2.0rem;
 
   a {
     width: 100%;
@@ -35,7 +33,8 @@
 
     > img {
       width: 100%;
-      padding-bottom: 0.5rem;
+      margin-bottom: 0.5rem;
+      box-shadow: 0 0 3px transparentize(map-get($dark-blue, $hsla), 0.8);
     }
     &:hover > img,
     &:focus > img {

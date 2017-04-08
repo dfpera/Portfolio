@@ -11,6 +11,7 @@ header > .fixed-nav {
   z-index: 1000;
   background: map-get($white, $hsla);
   box-shadow: 0 2px 2px transparentize(map-get($dark-blue, $hsla), 0.8);
+  width: 100vw;
 
   nav.main > a {
     float: left;

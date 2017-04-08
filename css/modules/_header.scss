@@ -30,6 +30,7 @@ header {
       border-radius: 0.3rem;
       background-color: map-get($dark-orange, $hsla);
       display: inline-block;
+      min-width: 40%;
       color: transparentize(map-get($grey, $hsla), 0.55);
       font-family: $heading-font;
       padding: 0.5rem 0.5rem 0.5rem 1.0rem;

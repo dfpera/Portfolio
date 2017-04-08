@@ -1,6 +1,10 @@
 /*! Add all base element styles into this style sheet */
+html {
+  overflow-x: hidden;
+}
 html, body {
   height: 100%;
+  width: 100vw;
 }
 body {
   font-family: $body-font;
