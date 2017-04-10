@@ -10,13 +10,11 @@
     / START HEADER
     %header
       %div.fixed-nav
-        -# %div.logo.col-sm-12.col-md-4
-        -#   %a{:href => "#"}
+        %div.hide-sm.logo.col-sm-12.col-md-4
+          %a{:href => "#"} DPerazzolo
         -#     %img{:src => "img/logo.png", :alt => "Daniele Perazzolo Logo"}
-        %nav.main.col-sm-12.col-offset-md-4.col-md-8
-          %a{:href => "#"} Home
-          %a{:href => "#about"} About
-          %a{:href => "#skills"} Skills
+        %nav.main.col-sm-12.col-md-8
+          %a{:href => "#"} About
           %a{:href => "#projects"} Projects
           %a{:href => "#contact"} Contact
       %div.banner{:data => {:parallax => "scroll", :img_src => "img/background.jpg"}}
@@ -55,11 +53,11 @@
             %img{:src => "img/Makers-Assist/preview.png", :alt => "Makers Assist Preview"}
             %p.title makers assist
             %p.sub app interface design
-          %a.ux.mobile{:href => "groundschool-anywhere.html"}
-            %img{:src => "img/Groundschool-Anywhere/preview.png", :alt => "Groundschool Anywhere Preview"}
-            %p.title groundschool anywhere
-            %p.sub app interface design, ios app development
-          %a.stack.back{:href => "noted.html"}
+          -# %a.ux.mobile{:href => "groundschool-anywhere.html"}
+          -#   %img{:src => "img/Groundschool-Anywhere/preview.png", :alt => "Groundschool Anywhere Preview"}
+          -#   %p.title groundschool anywhere
+          -#   %p.sub app interface design, ios app development
+          %a.stack.back{:href => "etextbook.html"}
             %img{:src => "img/Noted/preview.png", :alt => "Noted, Preview"}
             %p.title noted,
             %p.sub full-stack web development, database, security, restful operations
@@ -67,26 +65,25 @@
             %img{:src => "img/eTextbook/preview.png", :alt => "eBooks Preview"}
             %p.title etextbook
             %p.sub android app development
-          %a.ux.front{:href => "bubble-tea.html"}
+          %a.ux.front{:href => "etextbook.html"}
             %img{:src => "img/Bubble-Tea/preview.png", :alt => "Bubble Tea Website Preview"}
             %p.title bubble tea website
             %p.sub interface design, front-end web
-          %a.stack.back{:href => "restful.html"}
+          %a.stack.back{:href => "etextbook.html"}
             %img{:src => "img/RESTful-Operations/preview.png", :alt => "RESTful Messages Preview"}
             %p.title RESTful messages
             %p.sub back-end web, restful operations
-          %a.front.ux{:href => "websites.html"}
+          %a.front.ux{:href => "etextbook.html"}
             %img{:src => "img/Websites/preview.png", :alt => "Miscellaneous Websites Preview"}
             %p.title miscellaneous websites
             %p.sub front-end web, seo, server maintenance
-          %a.front{:href => "data-visualization.html"}
+          %a.front{:href => "etextbook.html"}
             %img{:src => "img/Data-Visualization/preview.png", :alt => "Data Visualization Preview"}
             %p.title data visualization
             %p.sub front-end web, wireframe translation
       %section.anchor.col-md-9.col-lg-8#contact
         %h3 Contact
-        %p Email: dperazzo@sfu.ca
-        %p Phone: +1 (604) 781-1001
+        %p Email: <a href="mailto:dperazzo@sfu.ca"> dperazzo@sfu.ca</a>
     / END CONTENT
     / START FOOTER
     %footer
@@ -96,14 +93,19 @@
           :escaped
             |
         %a{:href => "citations.html"} Citations
+        %span
+          :escaped
+            |
+        %a{:href => "https://github.com/dfpera/Portfolio"} Repo
       %p.copyright Daniele Perazzolo &copy; 2017
     / END FOOTER
     / START SCRIPTS
     /[if lt IE 9]
       %script{:src => "js/html5shiv.min.js"}
     %script{:src => "js/jquery-3.2.0.min.js"}
+    %script{:src => "js/imagesloaded.min.js"}
     %script{:src => "js/isotope.min.js"}
     %script{:src => "js/highlight.pack.js"}
     %script{:src => "js/parallax.min.js"}
-    %script{:src => "js/main.js"}
+    %script{:src => "js/main.min.js"}
     / END SCRIPTS

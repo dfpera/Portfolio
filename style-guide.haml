@@ -6,17 +6,17 @@
     %title Style Guide - Daniele Perazzolo
     %link{:rel => "stylesheet", :href => "css/main.css"}
     %link{:rel => "stylesheet", :href => "js/styles/atom-one-light.css"}
+    %style
+      h3 { margin-top: 3.0rem; }
   %body
     / START HEADER
     %header
       %div.fixed-nav
-        -# %div.logo.col-sm-12.col-md-4
-        -#   %a{:href => "index.html"}
+        %div.hide-sm.logo.col-sm-12.col-md-4
+          %a{:href => "#"} DPerazzolo
         -#     %img{:src => "img/logo.png", :alt => "Daniele Perazzolo Logo"}
-        %nav.main.col-sm-12.col-offset-md-4.col-md-8
-          %a{:href => "index.html"} Home
-          %a{:href => "index.html#about"} About
-          %a{:href => "index.html#skills"} Skills
+        %nav.main.col-sm-12.col-md-8
+          %a{:href => "index.html"} About
           %a{:href => "index.html#projects"} Projects
           %a{:href => "index.html#contact"} Contact
       %div.banner{:data => {:parallax => "scroll", :img_src => "img/background.jpg"}}
@@ -25,11 +25,11 @@
           %p portfolio:Style-Guide daniele$ basename /home/Style-Guide
           %h1 Style-Guide
           %p portfolio:Style-Guide daniele$ ls
-          %p <span>Colors &nbsp;&nbsp;&nbsp; Text<br> Grids &nbsp;&nbsp;&nbsp;&nbsp; Navigation
+          %p <span>Colors &nbsp;&nbsp;&nbsp; Text<br> Grids &nbsp;&nbsp;&nbsp;&nbsp; Navigation</span>
           %p.cursor portfolio:Style-Guide daniele$
     / END HEADER
     / START CONTENT
-    %aside.breadcrumbs.col-md-4
+    %aside.breadcrumbs.col-md-4.col-lg-3
       %ul
         %li
           %a{:href => "#colors"} Colors
@@ -39,7 +39,9 @@
           %a{:href => "#text"} Text
         %li
           %a{:href => "#navigation"}  Navigation
-    %article.col-md-8
+        %li
+          %a{:href => "#other"} Other
+    %article.col-md-8.col-offset-lg-1.col-lg-8{:data => {:side => "true"}}
       %h2 Portfolio Style Guide
       %section.anchor#colors
         %h3 Swatches
@@ -86,14 +88,6 @@
             %p rgba(246, 137, 72, 1)
           %div
             %p $orange
-        %h4 UI Colors
-
-      %section.anchor#grids
-        %h3 Grids
-        %h4 Rendered Element
-
-        %h4 Sample Code
-
       %section.anchor#text
         %h3 Text
         %header
@@ -103,26 +97,23 @@
               %p portfolio:projectName daniele$ basename /home/projects/projectName
               %h1 Heading 1
               %p portfolio:projectName daniele$ ls
-              %p <span>Description &nbsp; Initial Design<br> Research &nbsp;&nbsp;&nbsp;&nbsp; Testing/Struggles<br> Proposal &nbsp;&nbsp;&nbsp;&nbsp; Final Design
+              %p <span>Description &nbsp; Initial Design<br> Research &nbsp;&nbsp;&nbsp;&nbsp; Testing/Struggles<br> Proposal &nbsp;&nbsp;&nbsp;&nbsp; Final Design</span>
               %p.cursor portfolio:projectName daniele$
         %h2 Heading 2
-        %h3 Heading 3
+        %h3{:style => "margin-top: 0;"} Heading 3
         %h4 Heading 4
         %h5 Heading 5
         %p No monospace? Sans Serif if not using monospace. Roboto for the text for sure, it's clear, easy to read and common familiar font; don't need anything special for body text.
-
       %section.anchor#navigation
         %h3 Header
         %h4 Rendered element
         %header
-          %div.fixed-nav-sample.col-sm-12.col-md-12
-            %div.logo.col-sm-12.col-md-4
-              %a{:href => "index.html"}
-                %img{:src => "img/logo.png", :alt => "Daniele Perazzolo Logo"}
+          %div.fixed-nav-sample
+            %div.hide-sm.logo.col-sm-12.col-md-4
+              %a{:href => "#"} DPerazzolo
+            -#     %img{:src => "img/logo.png", :alt => "Daniele Perazzolo Logo"}
             %nav.main.col-sm-12.col-md-8
-              %a{:href => "index.html"} Home
-              %a{:href => "index.html#about"} About
-              %a{:href => "index.html#skills"} Skills
+              %a{:href => "index.html"} About
               %a{:href => "index.html#projects"} Projects
               %a{:href => "index.html#contact"} Contact
           %div.banner{:data => {:parallax => "scroll", :img_src => "img/background.jpg"}}
@@ -140,14 +131,12 @@
           %code
             :preserve
               %header
-                %div.fixed-nav.col-sm-12.col-md-12
-                  %div.logo.col-sm-12.col-md-4
-                    %a{:href => "index.html"}
-                      %img{:src => "img/logo.png", :alt => "Daniele Perazzolo Logo"}
+                %div.fixed-nav
+                  %div.hide-sm.logo.col-sm-12.col-md-4
+                    %a{:href => "#"} DPerazzolo
+                  -#     %img{:src => "img/logo.png", :alt => "Daniele Perazzolo Logo"}
                   %nav.main.col-sm-12.col-md-8
-                    %a{:href => "index.html"} Home
-                    %a{:href => "index.html#about"} About
-                    %a{:href => "index.html#skills"} Skills
+                    %a{:href => "index.html"} About
                     %a{:href => "index.html#projects"} Projects
                     %a{:href => "index.html#contact"} Contact
                 %div.banner{:data => {:parallax => "scroll", :img_src => "img/background.jpg"}}
@@ -169,28 +158,68 @@
           %code
             :preserve
               %header
-                %div.fixed-nav.col-sm-12.col-md-12
-                  %div.logo.col-sm-12.col-md-4
-                    %a{:href => "index.html"}
-                      %img{:src => "img/logo.png", :alt => "Daniele Perazzolo Logo"}
+                %div.fixed-nav
+                  %div.hide-sm.logo.col-sm-12.col-md-4
+                    %a{:href => "#"} DPerazzolo
+                  -#     %img{:src => "img/logo.png", :alt => "Daniele Perazzolo Logo"}
                   %nav.main.col-sm-12.col-md-8
-                    %a{:href => "index.html"} Home
-                    %a{:href => "index.html#about"} About
-                    %a{:href => "index.html#skills"} Skills
+                    %a{:href => "index.html"} About
                     %a{:href => "index.html#projects"} Projects
                     %a{:href => "index.html#contact"} Contact
       %section
-        %h3 Blog Posts
+        %h3 Breadcrumbs
         %h4 Rendered Element
-
-        %h4 Sample Code
-
-      %section
-        %h3 Individual Blog
+        %aside.breadcrumbs-sample.col-md-4.col-lg-3
+          %ul
+            %li
+              %a{:href => "#"} Section 1
+            %li
+              %a{:href => "#"} Section 2
+            %li
+              %a{:href => "#"} Section 3
+        %h4.clearfix Sample Code
+        %pre
+          %code
+            :preserve
+              %aside.breadcrumbs.col-md-4.col-lg-3
+                %ul
+                  %li
+                    %a{:href => "#"} Section 1
+                  %li
+                    %a{:href => "#"} Section 2
+      %section.anchor#other
+        %h3 Projects
         %h4 Rendered Element
-
+        %div.button-group.filter-button-group
+          %button.active{:data => {:filter => "*"}} show all
+          %button{:data => {:filter => ".ux"}} ux design
+          %button{:data => {:filter => ".mobile"}} android/ios
+        %div.projects
+          %a.ux{:href => "ui-design.html"}
+            %img{:src => "img/Makers-Assist/preview.png", :alt => "Makers Assist Preview"}
+            %p.title makers assist
+            %p.sub app interface design
+          %a.mobile{:href => "etextbook.html"}
+            %img{:src => "img/eTextbook/preview.png", :alt => "eBooks Preview"}
+            %p.title etextbook
+            %p.sub android app development
         %h4 Sample Code
-
+        %pre
+          %code
+            :preserve
+              %div.button-group.filter-button-group
+                %button.active{:data => {:filter => "*"}} show all
+                %button{:data => {:filter => ".ux"}} ux design
+                %button{:data => {:filter => ".mobile"}} android/ios
+              %div.projects
+                %a.ux{:href => "ui-design.html"}
+                  %img{:src => "img/Makers-Assist/preview.png", :alt => "Makers Assist Preview"}
+                  %p.title makers assist
+                  %p.sub app interface design
+                %a.mobile{:href => "etextbook.html"}
+                  %img{:src => "img/eTextbook/preview.png", :alt => "eBooks Preview"}
+                  %p.title etextbook
+                  %p.sub android app development
       %section
         %h3 Code Blocks
         %h4 Rendered Element
@@ -250,14 +279,19 @@
           :escaped
             |
         %a{:href => "citations.html"} Citations
+        %span
+          :escaped
+            |
+        %a{:href => "https://github.com/dfpera/Portfolio"} Repo
       %p.copyright Daniele Perazzolo &copy; 2017
     / END FOOTER
     / START SCRIPTS
     /[if lt IE 9]
       %script{:src => "js/html5shiv.min.js"}
     %script{:src => "js/jquery-3.2.0.min.js"}
+    %script{:src => "js/imagesloaded.min.js"}
     %script{:src => "js/isotope.min.js"}
     %script{:src => "js/highlight.pack.js"}
     %script{:src => "js/parallax.min.js"}
-    %script{:src => "js/main.js"}
+    %script{:src => "js/main.min.js"}
     / END SCRIPTS

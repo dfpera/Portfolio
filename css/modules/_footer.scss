@@ -9,14 +9,6 @@ footer {
   p.copyright {
     margin-left: 1.0rem;
   }
-  div.links a {
-    color: map-get($orange, $hsla);
-    text-decoration: none;
-  }
-  div.links a:hover,
-  div.links a:focus {
-    color: map-get($dark-blue, $hsla);
-  }
 
   @media #{$medium-break} {
     div.links,

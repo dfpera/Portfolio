@@ -6,6 +6,9 @@ var $grid = $('.projects').isotope({
   itemSelector: 'a',
   layoutMode: 'fitRows'
 });
+$grid.imagesLoaded().progress( function() {
+  $grid.isotope('layout');
+});
 $('.filter-button-group').on( 'click', 'button', function() {
   var filterValue = $(this).attr('data-filter');
   $grid.isotope({ filter: filterValue });

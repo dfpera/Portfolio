@@ -3,6 +3,7 @@
   border-left: $code-border;
 }
 .specifications {
+  padding-right: 2.5rem;
   p {
     margin-bottom: 1.5rem;
   }
@@ -35,10 +36,12 @@
       width: 100%;
       margin-bottom: 0.5rem;
       box-shadow: 0 0 3px transparentize(map-get($dark-blue, $hsla), 0.8);
+      opacity: 0.7;
+      transition: opacity 0.5s ease-out;
     }
     &:hover > img,
     &:focus > img {
-      opacity: 0.8;
+      opacity: 1.0;
     }
 
     > p.title {
@@ -47,6 +50,7 @@
       font-size: 1.1rem;
       font-weight: bold;
       font-family: $heading-font;
+      transition: color 0.5s ease-out;
     }
     &:hover > p.title,
     &:focus > p.title {
@@ -54,9 +58,21 @@
     }
 
     > p.sub {
+      font-family: $body-font;
       padding: 0;
       margin: 0;
       font-style: italic;
+    }
+  }
+
+  @media #{$xsmall-break} {
+    a {
+      width: 100% !important;
+    }
+  }
+  @media #{$small-break} {
+    a {
+      width: 50%;
     }
   }
 

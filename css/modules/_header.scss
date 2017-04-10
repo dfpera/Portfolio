@@ -3,10 +3,18 @@ header {
   width: 100%;
   z-index: 100;
 
+  .logo {
+    a {
+      display: block;
+      margin: 1rem 1.25rem 1.25rem 1.0rem;
+      font-size: 1.4rem;
+      letter-spacing: 3px;
+    }
+  }
+
   > .banner {
     position: relative;
     background-image: url(../img/background.jpg);
-    background-position: cover;
     background-repeat: no-repeat;
     width: 100%;
 

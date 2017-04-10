@@ -15,16 +15,8 @@ header > .fixed-nav {
 
   nav.main > a {
     float: left;
-    text-decoration: none;
     padding: 1.2rem 1.25rem 1.25rem 0;
     font-size: 1.2rem;
-    font-family: $heading-font;
-    color: map-get($orange, $hsla);
-    transition: color 0.5s ease-out;
-  }
-  nav.main > a:hover,
-  nav.main > a:focus {
-    color: map-get($dark-blue, $hsla);
   }
 }
 
