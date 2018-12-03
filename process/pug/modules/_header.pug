@@ -35,15 +35,15 @@ mixin header_project(project_name, ...project_headings)
         a(href='index.html#about') About
         a(href='index.html#projects') Projects
         a(href='index.html#contact') Contact
-      .banner(data-parallax='scroll', data-img-src='img/Background.jpg')
-        .intro
-          p portfolio:~ daniele$ cd /home/#{project_name}
-          p portfolio:#{project_name} daniele$ basename /home/#{project_name}
-          h1= project_name
-          p portfolio:#{project_name} daniele$ ls
-          p
-            span
-              each heading in project_headings
-                | #{heading[0]} &nbsp;&nbsp;&nbsp;&nbsp; #{heading[1]}
-                br
-          p.cursor portfolio:#{project_name} daniele$
+    .banner(data-parallax='scroll', data-img-src='img/Background.jpg')
+      .intro
+        p portfolio:~ daniele$ cd /home/#{project_name}
+        p portfolio:#{project_name} daniele$ basename /home/#{project_name}
+        h1= project_name
+        p portfolio:#{project_name} daniele$ ls
+        p
+          span
+            each heading in project_headings
+              | #{heading[0]} &nbsp;&nbsp;&nbsp;&nbsp; #{heading[1]}
+              br
+        p.cursor portfolio:#{project_name} daniele$

@@ -1,7 +1,8 @@
-//- index.pug
+//- ui-design.pug
 include modules/_head
 include modules/_header
 include modules/_breadcrumbs
+include modules/_projects
 
 doctype html
 html
@@ -35,19 +36,15 @@ html
         p For the Makers Assist App, we partnered with the Neil Squire Society to help them design a UI/UX for their newly created LipSync device. The LipSync device helps quadriplegics navigate their mobile devices with the control of their mouth only.
         p What the LipSync could not do was press hardware buttons and perform complex finger gestures (ie. swiping). Together with the Neil Squire Society, we determined that the best solution is a UI overlay that would convert these issues into simple click buttons.
         p.last The goal was to create an effective user experience that could make mobile devices easy to use for quadriplegics as they are for any able-bodied person. Through the process of user research, idea proposal and user testing, we created the final UI overlay design that is most intuitive for quadriplegics.
-      section.col-offset-md-1.col-md-4.col-lg-3.specifications
-        h4 timeline
-        p 2017 feb - apr
-        h4 team size
-        p five people
-        h4 role
-        p team&nbsp;lead, project&nbsp;manager, ux&nbsp;designer, programmer
-        h4 skills
-        p presenting, interviewing, user&nbsp;testing, wireframing
-        h4 tools
-        p.last axure, indesign, flinto, android&nbsp;studio
+      +specifications(
+        '2017 feb - apr',
+        'five people',
+        'team\u00A0lead, project\u00A0manager, ux\u00A0designer, programmer',
+        'presenting, interviewing, user\u00A0testing, wireframing',
+        'axure, indesign, flinto, android\u00A0studio'
+      )
       section#research.col-md-7.col-lg-8.clearfix
-        img(src='img/Makers-Assist/research.jpg', alt='SFU Students Interviewing Users').img-responsive
+        img(src='img/Makers-Assist-Research.jpg', alt='SFU Students Interviewing Users').img-responsive
         h3 research
         p.last The first step after meeting with Neil Squire Society was to conduct user research. This meant looking at solutions made by competing companies and meeting with users to learn about their habits and routines. Only after understanding our users could we move onto ideating possible solutions.
       section#proposal.col-md-7.col-lg-8
@@ -60,7 +57,7 @@ html
         h3 testing / struggles
         p.last Using our initial design, quadriplegics tested our mockup with their own LipSync device. It was here where we discovered the inherent problems with the LipSync, and the challenges in designing for a device that is still in development. While we didn't receive the feedback we expected, we did find that users struggled to understand how the LipSync worked. This gave us an opportunity to embed this information into the UI, and hopefully have users understand the LipSync before they incorporate it to their mobile device.
       section#final.col-md-7.col-lg-8
-        img(src='img/Makers-Assist/preview.png', alt='Makers Assist Preview').img-responsive
+        img(src='img/Makers-Assist-Preview.png', alt='Makers Assist Preview').img-responsive
         h3 final design
         p.last Ultimately, our concentration was not on building features into the application. Rather, we worked to streamline the onboarding and customization of the UI and the LipSync device. With the focus on user experience, we were able to learn a lot about understanding the users while working with clients. This made the implementation of the system easy for the developer at NSS, so that he could concentrate on the code rather than the process of the project.
     include modules/_footer.pug
