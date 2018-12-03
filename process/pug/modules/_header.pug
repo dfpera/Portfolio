@@ -22,5 +22,28 @@ mixin header_home()
           | &lt;class&gt;
         p portfolio:~ daniele$
 
-mixin header_project()
-  p TODO: Implement
+//- Parameters:
+//-    -project_name: h1 of the page
+//-    -project_headings: 2 item array with project subheadings that will be placed side by side in the header
+mixin header_project(project_name, ...project_headings)
+  header
+    .fixed-nav
+      .hide-sm.logo.col-sm-12.col-md-4
+        a(href='index.html') DPerazzolo
+        //- img(src='img/logo.png', alt='Daniele Perazzolo Logo')
+      nav.main.col-sm-12.col-md-8
+        a(href='index.html#about') About
+        a(href='index.html#projects') Projects
+        a(href='index.html#contact') Contact
+      .banner(data-parallax='scroll', data-img-src='img/Background.jpg')
+        .intro
+          p portfolio:~ daniele$ cd /home/#{project_name}
+          p portfolio:#{project_name} daniele$ basename /home/#{project_name}
+          h1= project_name
+          p portfolio:#{project_name} daniele$ ls
+          p
+            span
+              each heading in project_headings
+                | #{heading[0]} &nbsp;&nbsp;&nbsp;&nbsp; #{heading[1]}
+                br
+          p.cursor portfolio:#{project_name} daniele$
