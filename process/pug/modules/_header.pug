@@ -1,0 +1,26 @@
+mixin header_home()
+  header
+    .fixed-nav
+      .hide-sm.logo.col-sm-12.col-md-4
+        a(href='#') DPerazzolo
+        // img(src='img/logo.png', alt='Daniele Perazzolo Logo')
+      nav.main.col-sm-12.col-md-8
+        a(href='#') About
+        a(href='#projects') Projects
+        a(href='#contact') Contact
+    .banner(data-parallax='scroll', data-img-src='img/Background.jpg')
+      .intro
+        p portfolio:~ daniele$ hostname -s
+        h1 Daniele-Perazzolo
+        p portfolio:~ daniele$ ioreg -b -d 3
+        p +-o Root &lt;class IOregistry&gt;
+        p &nbsp;&nbsp;+-o
+          span  Android-iOS_Development 
+          | &lt;class&gt;
+        p &nbsp;&nbsp;+-o
+          span  UX_Design 
+          | &lt;class&gt;
+        p portfolio:~ daniele$
+
+mixin header_project()
+  p TODO: Implement

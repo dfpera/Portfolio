@@ -1,0 +1,63 @@
+//- index.pug
+include modules/_head
+include modules/_header
+
+doctype html
+html
+  +head('Daniele Perazzolo')
+  body
+    +header_home()
+    article.col-offset-md-4.col-md-8.col-lg-8
+      section#about.anchor.col-md-9.col-lg-8
+        h3 about
+        p.last Daniele is a User Experience (UX) developer and designer. He strives to make the smoothest and easiest experience for users in any environment through the understanding of both technology and design. It is not about tailoring the user to the product, but tailoring the product to its user. Currently he is finishing his Computing Science Undergraduate at Simon Fraser University (SFU), with a Minor in Graphic Design.
+      section#skills.anchor.col-md-9.col-lg-8
+        h3 skills
+        p.last Rails, Android, iOS, HTML5/CSS3 (haml/sass), js (jQuery, Bootstrap), SQL/NoSQL
+      section.anchor.col-md-9.col-lg-8
+        h3 other
+        p.last Team Player, Problem Solver, Attentive, Leader
+      section#projects.anchor.col-md-9.col-lg-8
+        h3 projects
+        .button-group.filter-button-group
+          button.active(data-filter='*') show all
+          button(data-filter='.stack') full-stack web
+          button(data-filter='.ux') ux design
+          button(data-filter='.front') front-end web
+          button(data-filter='.back') back-end web
+          button(data-filter='.mobile') android/ios
+        .projects
+          a.ux(href='ui-design.html')
+            img(src='img/Makers-Assist-Preview.png', alt='Makers Assist Preview')
+            p.title makers assist
+            p.sub app interface design
+            // a.ux.mobile(href='groundschool-anywhere.html')
+            //   img(src='img/Groundschool-Anywhere-Preview.png', alt='Groundschool Anywhere Preview')
+            //   p.title groundschool anywhere
+            //   p.sub app interface design, ios app development
+            a.stack.back(href='etextbook.html')
+              img(src='img/Noted-Preview.png', alt='Noted, Preview')
+              p.title noted,
+              p.sub full-stack web development, database, security, restful operations
+            a.mobile(href='etextbook.html')
+              img(src='img/eTextbook-Preview.png', alt='eBooks Preview')
+              p.title etextbook
+              p.sub android app development
+            a.ux.front(href='etextbook.html')
+              img(src='img/Bubble-Tea-Preview.png', alt='Bubble Tea Website Preview')
+              p.title bubble tea website
+              p.sub interface design, front-end web
+            a.stack.back(href='etextbook.html')
+              img(src='img/RESTful-Preview.png', alt='RESTful Messages Preview')
+              p.title RESTful messages
+              p.sub back-end web, restful operations
+            a.front.ux(href='etextbook.html')
+              img(src='img/Websites-Preview.png', alt='Miscellaneous Websites Preview')
+              p.title miscellaneous websites
+              p.sub front-end web, seo, server maintenance
+            a.front(href='etextbook.html')
+              img(src='img/Data-Visualization-Preview.png', alt='Data Visualization Preview')
+              p.title data visualization
+              p.sub front-end web, wireframe translation
+    include modules/_footer.pug
+    include modules/_scripts.pug

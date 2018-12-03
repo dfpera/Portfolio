@@ -1,0 +1,52 @@
+{
+  "name": "portfolio",
+  "version": "2.0.0",
+  "description": "## Description Individually, you will be developing a portfolio website. Unlike the prior projects which allowed for sites to link to false pages, **this website must be fully functional** (all links and content are real). The following content is required in the project:",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://dfpera@github.com/dfpera/Portfolio.git"
+  },
+  "author": "Daniele Perazzolo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dfpera/Portfolio/issues"
+  },
+  "homepage": "https://github.com/dfpera/Portfolio#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "haml-watch": "git+https://github.com/mikeyhew/node-haml-watch.git",
+    "html-minifier": "^3.5.21",
+    "imagemin": "^6.0.0",
+    "imagemin-cli": "^4.0.0",
+    "imagemin-jpeg-recompress": "^5.1.0",
+    "imagemin-optipng": "^6.0.0",
+    "imagemin-svgo": "^7.0.0",
+    "live-server": "^1.2.1",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^4.10.0",
+    "npm-run-all": "^4.1.5",
+    "pug-cli": "git+https://github.com/pugjs/pug-cli.git#0eb8d37",
+    "uglify-js": "^3.4.9"
+  },
+  "scripts": {
+    "test": "npm-run-all --parallel dev:*",
+    "dev:prepare": "mkdirp builds/development/js",
+    "dev:sass": "node-sass --watch process/sass --output-style expanded --source-map true process/sass/main.scss --output builds/development/css",
+    "dev:js": "babel process/js/**/*.js --watch --out-file builds/development/js/main.js --source-maps --presets=env",
+    "dev:img": "imagemin process/img/*.* --out-dir=builds/development/img --plugin=jpeg-recompress --plugin=svgo --plugin=optipng",
+    "dev:render": "pug --watch --pretty process/pug --out builds/development",
+    "dev:other": "echo NEED TO IMPLEMENT",
+    "dev:serve": "live-server builds/development",
+    "start": "npm-run-all prod:*",
+    "prod:prepare": "mkdirp builds/production",
+    "prod:sass": "node-sass process/sass --output-style compressed process/sass/main.scss --output builds/production/css",
+    "prod:js": "uglify builds/development/js/main.js --compress --mangle --output builds/production/js/main.js",
+    "prod:img": "imagemin process/img/*.* --out-dir=builds/development/img --plugin=jpeg-recompress --plugin=svgo --plugin=optipng",
+    "prod:html": "html-minifier --collapse-whitespace --file-ext html --input-dir builds/development/ --output-dir builds/production/",
+    "prod:help": "html-minifier --help",
+    "prod:other": "mkdirp builds/production/img && cp -rv builds/development/img/*.* builds/production/img",
+    "prod:serve": "live-server builds/production"
+  }
+}
