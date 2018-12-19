@@ -1,84 +1,84 @@
-/*! Add all breadcrumbs styles here */
-aside.breadcrumbs,
-aside.breadcrumbs-sample {
-  margin-top: 1.0rem;
-  font-family: $heading-font;
+// /*! Add all breadcrumbs styles here */
+// aside.breadcrumbs,
+// aside.breadcrumbs-sample {
+//   margin-top: 1.0rem;
+//   font-family: $heading-font;
 
 
-  ul {
-    margin-top: -1rem;
-    padding-top: 3rem;
-    z-index: -200;
+//   ul {
+//     margin-top: -1rem;
+//     padding-top: 3rem;
+//     z-index: -200;
 
-    > li {
-      color: map-get($orange, $hsla);
-      padding-left: 1.0rem;
-      position:relative;
-      margin-bottom: 0;
-      padding-bottom: 1.5em;
-      list-style-type: none;
+//     > li {
+//       color: map-get($orange, $hsla);
+//       padding-left: 1.0rem;
+//       position:relative;
+//       margin-bottom: 0;
+//       padding-bottom: 1.5em;
+//       list-style-type: none;
 
-      &:after {
-        /* Adding the bullet */
-        content: "\25CF";
-        font-size: 40px;
-        position: absolute;
-        left: -27px;
-        top: -12px;
-        transition: color 0.5s ease-out;
-      }
+//       &:after {
+//         /* Adding the bullet */
+//         content: "\25CF";
+//         font-size: 40px;
+//         position: absolute;
+//         left: -27px;
+//         top: -12px;
+//         transition: color 0.5s ease-out;
+//       }
 
-      &:before {
-        /* Adding the line */
-        content: "";
-        position: absolute;
-        left: -17px; /* adjust manually */
-        border-left: 4px solid map-get($orange, $hsla);
-        height: 100%;
-        width: 1px;
-        /* Moving down the top line */
-        top: 6px;
-        transition: border-left 0.5s ease-out;
-      }
+//       &:before {
+//         /* Adding the line */
+//         content: "";
+//         position: absolute;
+//         left: -17px; /* adjust manually */
+//         border-left: 4px solid map-get($orange, $hsla);
+//         height: 100%;
+//         width: 1px;
+//         /* Moving down the top line */
+//         top: 6px;
+//         transition: border-left 0.5s ease-out;
+//       }
 
-      &:last-child:before {
-        /* Shortening the bottom line */
-        height: 6px;
-      }
+//       &:last-child:before {
+//         /* Shortening the bottom line */
+//         height: 6px;
+//       }
 
-      &:hover > a,
-      &:focus > a {
-        color: map-get($dark-blue, $hsla);
-      }
+//       &:hover > a,
+//       &:focus > a {
+//         color: map-get($dark-blue, $hsla);
+//       }
 
-      &:hover:after,
-      &:focus:after {
-        color: map-get($dark-blue, $hsla);
-        text-shadow: 0 -2px 2px transparentize(map-get($dark-blue, $hsla), 0.8);
-      }
+//       &:hover:after,
+//       &:focus:after {
+//         color: map-get($dark-blue, $hsla);
+//         text-shadow: 0 -2px 2px transparentize(map-get($dark-blue, $hsla), 0.8);
+//       }
 
-      &:hover:before,
-      &:focus:before {
-        border-left-color: map-get($dark-blue, $hsla);
-      }
+//       &:hover:before,
+//       &:focus:before {
+//         border-left-color: map-get($dark-blue, $hsla);
+//       }
 
-      > a {
-        font-size: 1.1rem;
-        color: map-get($orange, $hsla);
-        text-decoration: none;
-        transition: color 0.5s ease-out;
-      }
-    }
-  }
-  @media #{$medium-break} {
-    &.fix-breadcrumb {
-      position: fixed;
-      top: 3.0rem;
-      display: block;
-    }
-    ul {
-      float: right;
-      padding-top: 6rem;
-    }
-  }
-}
+//       > a {
+//         font-size: 1.1rem;
+//         color: map-get($orange, $hsla);
+//         text-decoration: none;
+//         transition: color 0.5s ease-out;
+//       }
+//     }
+//   }
+//   @include breakpoint(md) {
+//     &.fix-breadcrumb {
+//       position: fixed;
+//       top: 3.0rem;
+//       display: block;
+//     }
+//     ul {
+//       float: right;
+//       padding-top: 6rem;
+//     }
+//   }
+// }

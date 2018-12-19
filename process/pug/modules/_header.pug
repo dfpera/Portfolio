@@ -15,6 +15,9 @@ mixin header_home()
         p portfolio:~ daniele$ ioreg -b -d 3
         p +-o Root &lt;class IOregistry&gt;
         p &nbsp;&nbsp;+-o
+          span  Web_Development
+          | &lt;class&gt;
+        p &nbsp;&nbsp;+-o
           span  Android-iOS_Development 
           | &lt;class&gt;
         p &nbsp;&nbsp;+-o
@@ -27,15 +30,15 @@ mixin header_home()
 //-    -project_headings: 2 item array with project subheadings that will be placed side by side in the header
 mixin header_project(project_name, ...project_headings)
   header
-    .fixed-nav
-      .hide-sm.logo.col-sm-12.col-md-4
+    .fixed-nav.parent
+      .logo
         a(href='index.html') DPerazzolo
         //- img(src='img/logo.png', alt='Daniele Perazzolo Logo')
-      nav.main.col-sm-12.col-md-8
+      nav.main
         a(href='index.html#about') About
         a(href='index.html#projects') Projects
         a(href='index.html#contact') Contact
-    .banner(data-parallax='scroll', data-img-src='img/Background.jpg')
+    .banner.parent(data-parallax='scroll', data-img-src='/img/Background.jpg')
       .intro
         p portfolio:~ daniele$ cd /home/#{project_name}
         p portfolio:#{project_name} daniele$ basename /home/#{project_name}

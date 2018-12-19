@@ -20,7 +20,7 @@ $('.button-group > button').on('click', function() {
 
 // Parallax Scrolling
 $('.banner').addClass('parallax-window');
-$('.parallax-window').parallax({imageSrc: 'img/background.jpg'});
+$('.parallax-window').parallax({imageSrc: 'img/Background.jpg'});
 
 // Terminal Blinking
 var cursor = $('.intro > p.cursor');

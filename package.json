@@ -13,6 +13,7 @@
     "url": "https://github.com/dfpera/Portfolio/issues"
   },
   "homepage": "https://github.com/dfpera/Portfolio#readme",
+  "browserslist": "last 2 versions, > 5%, ie 9-11",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
@@ -28,17 +29,22 @@
     "node-sass": "^4.10.0",
     "npm-run-all": "^4.1.5",
     "pug-cli": "git+https://github.com/pugjs/pug-cli.git#0eb8d37",
-    "uglify-js": "^3.4.9"
+    "uglify-js": "^3.4.9",
+    "autoprefixer": "^8.2.0",
+    "browser-sync": "^2.23.6",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sass": "^3.2.1",
+    "postcss-calc": "^7.0.1",
+    "postcss-css-variables": "git+https://github.com/CodyHouse/postcss-css-variables"
   },
   "scripts": {
     "test": "npm-run-all --parallel dev:*",
     "dev:prepare": "mkdirp builds/development/js",
-    "dev:sass": "node-sass --watch process/sass --output-style expanded --source-map true process/sass/main.scss --output builds/development/css",
     "dev:js": "babel process/js/**/*.js --watch --out-file builds/development/js/main.js --source-maps --presets=env",
     "dev:img": "imagemin process/img/*.* --out-dir=builds/development/img --plugin=jpeg-recompress --plugin=svgo --plugin=optipng",
     "dev:render": "pug --watch --pretty process/pug --out builds/development",
-    "dev:other": "echo NEED TO IMPLEMENT",
-    "dev:serve": "live-server builds/development",
+    "dev:serve": "gulp watch",
     "start": "npm-run-all prod:*",
     "prod:prepare": "mkdirp builds/production",
     "prod:sass": "node-sass process/sass --output-style compressed process/sass/main.scss --output builds/production/css",

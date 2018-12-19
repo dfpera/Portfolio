@@ -1,0 +1,69 @@
+//- etextbook.pug
+include modules/_head
+include modules/_header
+include modules/_breadcrumbs
+include modules/_projects
+include modules/_style-guide.pug
+
+doctype html
+html
+  +head('Style Guide - Daniele Perazzolo')
+  body
+    +header_project(
+      'Style-Guide',
+      ['Colors', 'Text'],
+      ['Grids', 'Navigation']
+    )
+    +breadcrumbs(
+      ['#colors', 'colors'],
+      ['#grids', 'grids'],
+      ['#text', 'text'],
+      ['#navigation', 'navigation'],
+      ['#other', 'other']
+    )
+    article.col-md-8.col-offset-lg-1.col-lg-8(data-side='true')
+      h2 Style Guide
+      p.heading-sub portfolio
+      section#colors.anchor
+        h3 swatches
+        h4 color palette
+        +swatch(
+          'light-grey',
+          '#d9d1ce',
+          'hsla(16, 13%, 83%, 1)',
+          'rgba(217, 209, 206, 1)'
+        )
+        +swatch(
+          'grey',
+          '#b0a39d',
+          'hsla(19, 11%, 65%, 1)',
+          'rgba(176, 163, 157, 1)'
+        )
+        +swatch(
+          'turquois',
+          '#419a9e',
+          'hsla(183, 42%, 44%, 1)',
+          'rgba(65, 154, 158, 1)'
+        )
+        +swatch(
+          'dark-blue',
+          '#20233d',
+          'hsla(234, 31%, 18%, 1)',
+          'rgba(32, 35, 61, 1)'
+        )
+        +swatch(
+          'red',
+          '#c11b05',
+          'hsla(7, 95%, 39%, 1)',
+          'rgba(193, 27, 5, 1)'
+        )
+        +swatch(
+          'orange',
+          '#f68948',
+          'hsla(22, 91%, 62%, 1)',
+          'rgba(246, 137, 72, 1)'
+        )
+      section#text.anchor
+        h3 Text
+    include modules/_footer.pug
+    include modules/_scripts.pug

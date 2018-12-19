@@ -1,13 +1,14 @@
-// Main SASS file which will import all other .scss files
-
 /*! ===== FONTS ===== */
 @import url('https://fonts.googleapis.com/css?family=Overpass+Mono:400,600,700|Roboto:300,400,400i,700');
 @import "font_awesome";
 /*! ===== END FONTS ===== */
 
+/*! ===== BASE ===== */
 @import "variables";
 @import "mixins";
 @import "normalize";
+@import "global";
+/*! ===== END BASE ===== */
 
 /*! ===== GRIDS ===== */
 @import "grids";
@@ -39,5 +40,6 @@
 /*! ===== END SWATCHES ===== */
 
 /*! ===== HIGHLIGHTJS ===== */
-@import "highlightjs/atom-one-light.css";
+//@import "highlightjs/atom-one-light";
+@import "highlightjs/vs";
 /*! ===== END HIGHLIGHTJS ===== */

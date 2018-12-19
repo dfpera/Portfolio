@@ -1,0 +1,24 @@
+//- etextbook.pug
+include modules/_head
+include modules/_header
+
+doctype html
+html
+  +head('Citations - Daniele Perazzolo')
+  body
+    +header_project(
+      'Citations'
+    )
+    article.col-offset-md-4.col-md-8.col-lg-8
+      h2 Citations
+      section.anchor.col-md-9.col-lg-8
+        p Syntax Highlighting (https://highlightjs.org/)
+        p Heading Fonts (https://fonts.google.com/specimen/Overpass+Mono)
+        p Body Fonts (https://fonts.google.com/specimen/Roboto)
+        p Background Image (https://www.flickr.com/photos/keithusc/2784268444/in/photostream/)
+        p Breadcrumbs (http://stackoverflow.com/questions/17629286/css-vertical-line-between-bullets-in-an-unordered-list)
+        p Project Filtering (isotopejs)
+        p Parallax Banner (http://pixelcog.github.io/parallax.js/)
+        p Font Awesome (http://fontawesome.io/)
+    include modules/_footer.pug
+    include modules/_scripts.pug

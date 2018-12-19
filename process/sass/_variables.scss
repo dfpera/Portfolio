@@ -64,9 +64,3 @@ $dark-orange:
 
 // Borders
 $code-border: solid 1px map-get($grey, $hsla);
-
-// Breakpoints
-$xsmall-break: "only screen and (max-width: 31em)"; // Less than
-$small-break: "only screen and (max-width: 49em)"; // Less than
-$medium-break: "only screen and (min-width: 49em)"; // Greater than
-$large-break: "only screen and (min-width: 68em)"; // Greater than

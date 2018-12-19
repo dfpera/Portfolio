@@ -1,21 +1,21 @@
-/*! Add footer styles here */
-footer {
-  height: 5.0rem;
-  display: block;
-  clear: both;
-  width: 100vw;
+// /*! Add footer styles here */
+// footer {
+//   height: 5.0rem;
+//   display: block;
+//   clear: both;
+//   width: 100vw;
 
-  div.links,
-  p.copyright {
-    margin-left: 1.0rem;
-  }
+//   div.links,
+//   p.copyright {
+//     margin-left: 1.0rem;
+//   }
 
-  @media #{$medium-break} {
-    div.links,
-    p.copyright {
-      position: relative;
-      left: 33.33%;
-      margin-left: 1.0rem;
-    }
-  }
-}
+//   @include breakpoint(md) {
+//     div.links,
+//     p.copyright {
+//       position: relative;
+//       left: 33.33%;
+//       margin-left: 1.0rem;
+//     }
+//   }
+// }
