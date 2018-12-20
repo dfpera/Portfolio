@@ -32,11 +32,11 @@
 
 .btn--subtle { // subtle version, used for secondary actions or in combo with primary/accent button
     background-color: var(--color-bg);
-    color: var(--color-contrast-higher);
-    border: 1px solid var(--color-contrast-low);
+    color: var(--color-contrast-cold-higher);
+    border: 1px solid var(--color-contrast-cold-low);
 
     &:hover {
-        background-color: var(--color-contrast-lower);
+        background-color: var(--color-contrast-cold-lower);
     }
 }
 
