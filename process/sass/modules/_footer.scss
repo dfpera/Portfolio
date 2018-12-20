@@ -1,21 +1,19 @@
 // /*! Add footer styles here */
-// footer {
-//   height: 5.0rem;
-//   display: block;
-//   clear: both;
-//   width: 100vw;
+footer {
+  @include column(1);
+  grid-column: span 7;
+  height: 5.0rem;
+  width: 100%;
 
-//   div.links,
-//   p.copyright {
-//     margin-left: 1.0rem;
-//   }
+  .links {
+    @include column(5/7);
+    grid-column: 2 / span 5;
+  }
 
-//   @include breakpoint(md) {
-//     div.links,
-//     p.copyright {
-//       position: relative;
-//       left: 33.33%;
-//       margin-left: 1.0rem;
-//     }
-//   }
-// }
+  @include breakpoint(sm) {
+    .links {
+      @include column(5/7);
+      grid-column: 3 / span 5;
+    }
+  }
+}
