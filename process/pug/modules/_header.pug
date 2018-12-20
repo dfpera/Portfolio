@@ -1,5 +1,5 @@
 mixin header_home()
-  header
+  header(class!=attributes.class)
     .fixed-nav.parent
       .logo
         a(href='#') DPerazzolo
@@ -29,7 +29,7 @@ mixin header_home()
 //-    -project_name: h1 of the page
 //-    -project_headings: 2 item array with project subheadings that will be placed side by side in the header
 mixin header_project(project_name, ...project_headings)
-  header
+  header(class!=attributes.class)
     .fixed-nav.parent
       .logo
         a(href='index.html') DPerazzolo

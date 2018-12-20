@@ -15,17 +15,19 @@ html
       ['Grids', 'Navigation']
     )
     +breadcrumbs(
+      ['#typography', 'typography'],
       ['#colors', 'colors'],
-      ['#grids', 'grids'],
-      ['#text', 'text'],
-      ['#navigation', 'navigation'],
-      ['#other', 'other']
+      ['#layouts', 'grids/layout'],
+      ['#buttons', 'buttons'],
+      ['#header', 'header'],
+      ['#footer', 'footer'],
+      ['#components', 'components']
     )
     article.mainContent.text-component(data-side='true')
       h2 style guide
       p.heading-sub portfolio
       hr
-      section#text.anchor
+      section#typography.anchor
         h3 typography
         h1 heading 1
         h2 heading 2
@@ -253,7 +255,14 @@ html
       hr
       section#header.anchor
         h3 header
-
+        p Header used on the home page, has slightly different formatting than the header used on all subsequent pages.
+        +header_home()(class="sample-header")
+        p Header used on non-home pages, will indicate page title and subheadings.
+        +header_project(
+          'Page-Title',
+          ['Heading1', 'Heading2'],
+          ['Heading3', 'Heading4']
+        )(class="sample-header")
       hr
       section#footer.anchor
         h3 footer

@@ -1,0 +1,7 @@
+header.sample-header {
+  position: relative;
+  
+  > .fixed-nav {
+    position: absolute;
+  }
+}

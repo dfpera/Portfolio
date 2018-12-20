@@ -11,7 +11,7 @@ header > .fixed-nav {
   z-index: 1000;
   background: map-get($white, $hsla);
   box-shadow: 0 1px 1px transparentize(map-get($dark-blue, $hsla), 0.8);
-  width: 100vw;
+  width: 100%;
 
   nav.main {
     @include gridFallback(var(--space-md));
