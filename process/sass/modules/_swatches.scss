@@ -1,57 +1,276 @@
 // /*! Add all swatch styles here */
-// .swatch {
-//   margin-bottom: 1.0rem;
-// }
+.swatches {
+  @include gridFallback(var(--space-md));
 
-// .swatch > div:first-child {
-//   width: 100%;
-//   border-radius: 0.25rem;
-//   padding: 0.5rem 0.25rem;
-//   text-align: center;
-//   margin-bottom: 0.25rem;
-// }
+  @supports (grid-area: auto) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: var(--space-md);
+  }
+}
 
-// .swatch > div:last-child {
-//   width: 100%;
-//   border: map-get($grey, $hsla) solid 1px;
-//   border-radius: 0.25rem;
-//   text-align: center;
-//   color: map-get($grey, $hsla);
-//   padding: 0.5rem 0.25rem;
-// }
+.swatch {
+  @include column(1);
+  grid-column: span 4;
 
-// .swatch p {
-//   padding: 0;
-//   margin: 0;
-//   font-size: 0.8rem;
-//   letter-spacing: 1px;
-// }
+  @include breakpoint(sm) {
+    @include column(1/2);
+    grid-column: span 2;
+  }
+  @include breakpoint(md) {
+    @include column(1/2);
+    grid-column: span 2;
+  }
+  @include breakpoint(lg) {
+    @include column(1/4);
+    grid-column: span 1;
+  }
 
-// .swatch.light-grey > div:first-child {
-//   color: map-get($dark-blue, $hex);
-//   background-color: map-get($light-grey, $hex);
-// }
-// .swatch.grey > div:first-child {
-//   color: map-get($white, $hex);
-//   background-color: map-get($grey, $hex);
-// }
-// .swatch.turquois > div:first-child {
-//   color: map-get($white, $hex);
-//   background-color: map-get($turquois, $hex);
-// }
-// .swatch.dark-blue > div:first-child {
-//   color: map-get($white, $hex);
-//   background-color: map-get($dark-blue, $hex);
-// }
-// .swatch.red > div:first-child {
-//   color: map-get($white, $hex);
-//   background-color: map-get($red, $hex);
-// }
-// .swatch.orange > div:first-child {
-//   color: map-get($white, $hex);
-//   background-color: map-get($orange, $hex);
-// }
-// .swatch.dark-orange > div:first-child {
-//   color: map-get($white, $hex);
-//   background-color: map-get($dark-orange, $hex);
-// }
+  > .variable {
+    width: 100%;
+    border: map-get($grey, $hsla) solid 1px;
+    border-radius: var(--radius);
+    text-align: center;
+    color: var(--black);
+    padding: var(--space-xs) var(--space-xxxs);
+    margin-bottom: var(--space-xxxs);
+  }
+
+  .colors {
+    width: 100%;
+    border-radius: var(--radius);
+    background-image: url('/img/Transparent-BG.png');
+  }
+
+  .color {
+    width: 100%;
+    padding: var(--space-xs) var(--space-xxxs);
+    text-align: center;
+    min-height: 34px;
+    
+    &:first-child {
+      border-top-right-radius: var(--radius);
+      border-top-left-radius: var(--radius);
+    }
+    &:last-child {
+      border-bottom-right-radius: var(--radius);
+      border-bottom-left-radius: var(--radius);
+    }
+
+    // Primary
+    &.--color-primary-darker {
+      background-color: var(--color-primary-darker);
+    }
+    &.--color-primary-dark {
+      background-color: var(--color-primary-dark);
+    }
+    &.--color-primary {
+      background-color: var(--color-primary);
+    }
+    &.--color-primary-light {
+      background-color: var(--color-primary-light);
+    }
+    &.--color-primary-lighter {
+      background-color: var(--color-primary-lighter);
+    }
+    &.--color-primary-a20 {
+      background-color: var(--color-primary-a20);
+    }
+
+    // Accent
+    &.--color-accent-darker {
+      background-color: var(--color-accent-darker);
+    }
+    &.--color-accent-dark {
+      background-color: var(--color-accent-dark);
+    }
+    &.--color-accent {
+      background-color: var(--color-accent);
+    }
+    &.--color-accent-light {
+      background-color: var(--color-accent-light);
+    }
+    &.--color-accent-lighter {
+      background-color: var(--color-accent-lighter);
+    }
+
+    // Black
+    &.--black {
+      background-color: var(--black);
+    }
+    &.--black-a10 {
+      background-color: var(--black-a10);
+    }
+
+    // White
+    &.--white {
+      background-color: var(--white);
+      border: var(--color-border) solid 1px;
+    }
+
+    // Success
+    &.--color-success-darker {
+      background-color: var(--color-success-darker);
+    }
+    &.--color-success-dark {
+      background-color: var(--color-success-dark);
+    }
+    &.--color-success {
+      background-color: var(--color-success);
+    }
+    &.--color-success-light {
+      background-color: var(--color-success-light);
+    }
+    &.--color-success-lighter {
+      background-color: var(--color-success-lighter);
+    }
+    &.--color-success-a20 {
+      background-color: var(--color-success-a20);
+    }
+
+    // Error
+    &.--color-error-darker {
+      background-color: var(--color-error-darker);
+    }
+    &.--color-error-dark {
+      background-color: var(--color-error-dark);
+    }
+    &.--color-error {
+      background-color: var(--color-error);
+    }
+    &.--color-error-light {
+      background-color: var(--color-error-light);
+    }
+    &.--color-error-lighter {
+      background-color: var(--color-error-lighter);
+    }
+    &.--color-error-a20 {
+      background-color: var(--color-error-a20);
+    }
+
+    // Warning
+    &.--color-warning-darker {
+      background-color: var(--color-warning-darker);
+    }
+    &.--color-warning-dark {
+      background-color: var(--color-warning-dark);
+    }
+    &.--color-warning {
+      background-color: var(--color-warning);
+    }
+    &.--color-warning-light {
+      background-color: var(--color-warning-light);
+    }
+    &.--color-warning-lighter {
+      background-color: var(--color-warning-lighter);
+    }
+    &.--color-warning-a20 {
+      background-color: var(--color-warning-a20);
+    }
+
+    // Contrast Cold
+    &.--color-contrast-cold-lower {
+      background-color: var(--color-contrast-cold-lower);
+    }
+    &.--color-contrast-cold-low {
+      background-color: var(--color-contrast-cold-low);
+    }
+    &.--color-contrast-cold-medium {
+      background-color: var(--color-contrast-cold-medium);
+    }
+    &.--color-contrast-cold-high {
+      background-color: var(--color-contrast-cold-high);
+    }
+    &.--color-contrast-cold-higher {
+      background-color: var(--color-contrast-cold-higher);
+    }
+    &.--color-contrast-cold-a90 {
+      background-color: var(--color-contrast-cold-a90);
+    }
+
+    // Contrast Warm
+    &.--color-contrast-warm-lower {
+      background-color: var(--color-contrast-warm-lower);
+    }
+    &.--color-contrast-warm-low {
+      background-color: var(--color-contrast-warm-low);
+    }
+    &.--color-contrast-warm-medium {
+      background-color: var(--color-contrast-warm-medium);
+    }
+    &.--color-contrast-warm-high {
+      background-color: var(--color-contrast-warm-high);
+    }
+    &.--color-contrast-warm-higher {
+      background-color: var(--color-contrast-warm-higher);
+    }
+    &.--color-contrast-warm-a90 {
+      background-color: var(--color-contrast-warm-a90);
+    }
+
+    &.--color-bg {
+      background-color: var(--color-bg);
+      border: var(--color-border) solid 1px;
+    }
+    &.--color-bg-a20 {
+      background-color: var(--color-bg-a20);
+    }
+  }
+
+  p {
+    padding: 0;
+    margin: 0;
+    font-size: var(--text-sm);
+    letter-spacing: 1px;
+  }
+}
+
+.swatch.light-grey > .color {
+  background-color: map-get($light-grey, $hex);
+
+  p {
+    color: map-get($dark-blue, $hex);
+  }
+}
+.swatch.grey > .color {
+  background-color: map-get($grey, $hex);
+
+  p {
+    color: map-get($white, $hex);
+  }
+}
+.swatch.turquois > .color {
+  background-color: map-get($turquois, $hex);
+
+  p {
+    color: map-get($white, $hex);
+  }
+}
+.swatch.dark-blue > .color {
+  background-color: map-get($dark-blue, $hex);
+
+  p {
+    color: map-get($white, $hex);
+  }
+}
+.swatch.red > .color {
+  background-color: map-get($red, $hex);
+
+  p {
+    color: map-get($white, $hex);
+  }
+}
+.swatch.orange > .color {
+  background-color: map-get($orange, $hex);
+
+  p {
+    color: map-get($white, $hex);
+  }
+}
+.swatch.dark-orange > .color {
+  background-color: map-get($dark-orange, $hex);
+
+  p {
+    color: map-get($white, $hex);
+  }
+}

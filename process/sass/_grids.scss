@@ -13,6 +13,26 @@
   }
 }
 
+aside.breadcrumbs {
+  @include column(1);
+  grid-column: span 7;
+
+  @include breakpoint(sm) {
+    @include column(2/7);
+    grid-column: span 2;
+  }
+}
+
+article.mainContent {
+  @include column(1);
+  grid-column: span 7;
+
+  @include breakpoint(sm) {
+    @include column(4/7);
+    grid-column: span 4;
+  }
+}
+
 // [class*='col-'] {
 //   float: left;
 //   width: 100%;

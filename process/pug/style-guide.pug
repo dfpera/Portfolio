@@ -8,7 +8,7 @@ include modules/_style-guide.pug
 doctype html
 html
   +head('Style Guide - Daniele Perazzolo')
-  body
+  body.parent
     +header_project(
       'Style-Guide',
       ['Colors', 'Text'],
@@ -21,49 +21,174 @@ html
       ['#navigation', 'navigation'],
       ['#other', 'other']
     )
-    article.col-md-8.col-offset-lg-1.col-lg-8(data-side='true')
-      h2 Style Guide
+    article.mainContent.text-component(data-side='true')
+      h2 style guide
       p.heading-sub portfolio
-      section#colors.anchor
-        h3 swatches
-        h4 color palette
-        +swatch(
-          'light-grey',
-          '#d9d1ce',
-          'hsla(16, 13%, 83%, 1)',
-          'rgba(217, 209, 206, 1)'
-        )
-        +swatch(
-          'grey',
-          '#b0a39d',
-          'hsla(19, 11%, 65%, 1)',
-          'rgba(176, 163, 157, 1)'
-        )
-        +swatch(
-          'turquois',
-          '#419a9e',
-          'hsla(183, 42%, 44%, 1)',
-          'rgba(65, 154, 158, 1)'
-        )
-        +swatch(
-          'dark-blue',
-          '#20233d',
-          'hsla(234, 31%, 18%, 1)',
-          'rgba(32, 35, 61, 1)'
-        )
-        +swatch(
-          'red',
-          '#c11b05',
-          'hsla(7, 95%, 39%, 1)',
-          'rgba(193, 27, 5, 1)'
-        )
-        +swatch(
-          'orange',
-          '#f68948',
-          'hsla(22, 91%, 62%, 1)',
-          'rgba(246, 137, 72, 1)'
-        )
+      hr
       section#text.anchor
-        h3 Text
+        h3 typography
+        h1 heading 1
+        h2 heading 2
+        h3 heading 3
+        h4 heading 4
+        h5 heading 5
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam animi doloribus voluptates 
+          a(href='#') adipisci commodi 
+          | odit architecto consectetur laudantium veniam esse minima expedita aperiam nesciunt, quae dignissimos! Natus, itaque. Praesentium, voluptatibus.
+        p.text--suble.text--sm Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam, fuga animi! Vero reiciendis aliquid et natus quae mollitia optio vel iure, totam saepe dolorem deleniti doloribus animi modi maiores in.
+        h1 heading 1
+        p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim eveniet corporis omnis cumque impedit 
+          s ipsum temporibus tempore alias vero
+          |  molestiae asperiores architecto, rerum voluptates nam mollitia suscipit officia incidunt! Voluptas.
+        p
+          a.btn.btn--primary(href='#') Button
+        h2 heading 2
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. A accusamus totam voluptas animi, dolores rerum blanditiis molestias excepturi sequi! Ipsum quod neque repellat nihil, excepturi ab dolore maiores autem facere!
+        blockquote (blockquote) Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas qui alias numquam eum soluta temporibus tempora sequi fugit eaque? Tempora totam nostrum sed minus molestias corrupti optio iste perspiciatis nesciunt!
+        h3 heading 3
+        p.drop-cap Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          mark Sequi voluptate voluptas recusandae
+          |  perspiciatis delectus quidem quod facilis error quisquam maiores velit minus, itaque mollitia consequuntur a, numquam tenetur aliquam amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi explicabo molestias ad cumque, sint voluptatibus veniam asperiores amet saepe excepturi voluptate, iusto quia corrupti quasi consequuntur, suscipit fugiat nobis aperiam.
+        ul
+          li Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, eos illo velit sequi. 
+          li Et aspernatur nisi temporibus qui alias quasi dignissimos harum minus asperiores dolor.
+          li Ad debitis reprehenderit animi expedita.
+        h4 heading 4
+        ol
+          li Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, eos illo velit sequi. 
+          li Et aspernatur nisi temporibus qui alias quasi dignissimos harum minus asperiores dolor.
+          li Ad debitis reprehenderit animi expedita.
+      hr
+      section#colors.anchor
+        h3 colors
+        h4 main
+        .swatches
+          +swatch(
+            '--color-primary',
+            [
+              '-darker',
+              '-dark',
+              '',
+              '-light',
+              '-lighter',
+              '-a20'
+            ]
+          )
+          +swatch(
+            '--color-accent',
+            [
+              '-darker',
+              '-dark',
+              '',
+              '-light',
+              '-lighter'
+            ]
+          )
+        h4 black &amp; white
+        .swatches
+          +swatch(
+            '--black',
+            [
+              '',
+              '-a10'
+            ]
+          )
+          +swatch(
+            '--white',
+            [
+              ''
+            ]
+          )
+        h4 feedback
+        .swatches
+          +swatch(
+            '--color-success',
+            [
+              '-darker',
+              '-dark',
+              '',
+              '-light',
+              '-lighter',
+              '-a20'
+            ]
+          )
+          +swatch(
+            '--color-error',
+            [
+              '-darker',
+              '-dark',
+              '',
+              '-light',
+              '-lighter',
+              '-a20'
+            ]
+          )
+          +swatch(
+            '--color-warning',
+            [
+              '-darker',
+              '-dark',
+              '',
+              '-light',
+              '-lighter',
+              '-a20'
+            ]
+          )
+        h4 contrast
+        .swatches
+          +swatch(
+            '--color-contrast-cold',
+            [
+              '-lower',
+              '-low',
+              '-medium',
+              '-high',
+              '-higher',
+              '-a90'
+            ]
+          )
+          +swatch(
+            '--color-contrast-warm',
+            [
+              '-lower',
+              '-low',
+              '-medium',
+              '-high',
+              '-higher',
+              '-a90'
+            ]
+          )
+          +swatch(
+            '--color-bg',
+            [
+              '',
+              '-a20'
+            ]
+          )
+
+      hr
+      section#layouts.anchor
+        h3 grids / layouts
+
+      hr
+      section#buttons.anchor
+        h3 buttons
+
+      hr
+      section#components.anchor
+        h3 forms
+
+      hr
+      section#header.anchor
+        h3 header
+
+      hr
+      section#footer.anchor
+        h3 footer
+
+      hr
+      section#components.anchor
+        h3 components
+
     include modules/_footer.pug
     include modules/_scripts.pug

@@ -1,14 +1,14 @@
 mixin header_home()
   header
-    .fixed-nav
-      .hide-sm.logo.col-sm-12.col-md-4
+    .fixed-nav.parent
+      .logo
         a(href='#') DPerazzolo
         // img(src='img/logo.png', alt='Daniele Perazzolo Logo')
-      nav.main.col-sm-12.col-md-8
+      nav.main
         a(href='#') About
         a(href='#projects') Projects
         a(href='#contact') Contact
-    .banner(data-parallax='scroll', data-img-src='img/Background.jpg')
+    .banner.parent(data-parallax='scroll', data-img-src='img/Background.jpg')
       .intro
         p portfolio:~ daniele$ hostname -s
         h1 Daniele-Perazzolo

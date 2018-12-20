@@ -115,31 +115,60 @@ u {
         margin-bottom: calc(var(--space-xxxs) * var(--text-vspace-multiplier));
     }
 
+    p.heading-sub {
+        font-size: 1.2rem;
+        font-style: italic;
+        margin-top: calc(-1 * var(--space-xs));
+        margin-left: var(--space-xs);
+        color: map-get($grey, $hsla);
+        letter-spacing: 1px;
+    }
+
     h2, h3, h4 {
         margin-top: calc(var(--space-sm) * var(--text-vspace-multiplier));
+    }
+
+    // Overriding default heading styles
+    h1 {
+        font-weight: bold;
+    }
+
+    h2 {
+        font-weight: bold;
+    }
+
+    h3 {
+        font-weight: 600;
+        background-color: transparentize(map-get($orange, $hsla), 0.7);
+        display: inline-block;
+        line-height: 1.0;
+    }
+
+    h4, h5 {
+        font-weight: 600;
     }
 
     p, blockquote, ul li, ol li {
         line-height: var(--component-body-line-height);
         color: var(--color-contrast-high);
     }
-    
+
     ul, ol, p, blockquote {
         margin-bottom: calc(var(--space-sm) * var(--text-vspace-multiplier));
     }
 
     ul, ol {
         padding-left: 1em;
-	}
-
-	ul {
-        list-style-type: disc;
-	}
-
-	ol {
-		list-style-type: decimal;
     }
-    
+
+    ul {
+        list-style-type: disc;
+    }
+
+    ol {
+        list-style-type: decimal;
+    }
+
     em {
         font-style: italic;
     }

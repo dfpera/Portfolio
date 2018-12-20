@@ -1,8 +1,8 @@
-mixin swatch(variable, hex, hsla, rgba)
-  div(class='' + variable).col-sm-6.col-md-6.col-lg-4.swatch
-    div
-      p #{hex}
-      p #{hsla}
-      p #{rgba}
-    div
-      p $#{variable}
+mixin swatch(variable, labels)
+  .swatch
+    .variable
+      p #{variable}
+    .colors
+      for label in labels
+        .color(class='' + variable + label)
+          p #{label}
