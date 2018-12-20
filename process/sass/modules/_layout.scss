@@ -1,0 +1,111 @@
+.parent.sample-grid {
+  text-align: center;
+  @supports (grid-area: auto) {
+    grid-gap: var(--space-sm);
+  }
+
+  > [class*='sample-'] > p {
+    padding: var(--space-md);
+    font-family: var(--font-secondary);
+    font-weight: 600;
+  }
+
+  .sample-1of7,
+  .sample-2of7,
+  .sample-3of7,
+  .sample-4of7,
+  .sample-5of7,
+  .sample-6of7,
+  .sample-7of7 {
+    background-color: var(--color-accent);
+    color: var(--white);
+  }
+
+  .sample-1of7 {
+    @include column(1/7);
+    grid-column: span 1;
+    height: var(--space-xl);
+  }
+  .sample-2of7 {
+    @include column(2/7);
+    grid-column: span 2;
+    height: var(--space-xl);
+  }
+  .sample-3of7 {
+    @include column(3/7);
+    grid-column: span 3;
+    height: var(--space-xl);
+  }
+  .sample-4of7 {
+    @include column(4/7);
+    grid-column: span 4;
+    height: var(--space-xl);
+  }
+  .sample-5of7 {
+    @include column(5/7);
+    grid-column: span 5;
+    height: var(--space-xl);
+  }
+  .sample-6of7 {
+    @include column(6/7);
+    grid-column: span 6;
+    height: var(--space-xl);
+  }
+  .sample-7of7 {
+    @include column(1);
+    grid-column: span 7;
+    height: var(--space-xl);
+  }
+
+  .sample-header {
+    @include column(1);
+    grid-column: span 7;
+    height: var(--space-xxl);
+    background-color: var(--color-primary);
+  }
+
+  .sample-aside {
+    @include column(1);
+    grid-column: span 7;
+    height: var(--space-xxxxl);
+    color: var(--white);
+    background-color: var(--color-accent);
+
+    @include breakpoint(sm) {
+      @include column(2/7);
+      grid-column: span 2;
+    }
+  }
+
+  .sample-content {
+    @include column(1);
+    grid-column: span 7;
+    height: var(--space-xxxxl);
+    background-color: var(--white);
+    border: var(--color-border) solid 1px;
+
+    @include breakpoint(sm) {
+      @include column(4/7);
+      grid-column: 3 / span 4;
+    }
+  }
+
+  .sample-details {
+    @include column(1);
+    grid-column: span 7;
+    height: var(--space-xxxl);
+    background-color: var(--color-warning);
+
+    @include breakpoint(sm) {
+      @include column(1/7);
+      grid-column: span 1;
+    }
+  }
+
+  .sample-footer {
+    @include column(1);
+    grid-column: span 7;
+    height: var(--space-xl);
+    background-color: var(--color-primary);
+  }
+}

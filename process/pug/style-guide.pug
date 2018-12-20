@@ -169,6 +169,63 @@ html
       hr
       section#layouts.anchor
         h3 grids / layouts
+        h4 grids
+        p Example of the grid structure used, and all combinations of columns which can be used within the website.
+        .parent.sample-grid
+          //- Row one
+          .sample-1of7
+            p.truncate 1of7
+          .sample-1of7
+            p.truncate 1of7
+          .sample-1of7
+            p.truncate 1of7
+          .sample-1of7
+            p.truncate 1of7
+          .sample-1of7
+            p.truncate 1of7
+          .sample-1of7
+            p.truncate 1of7
+          .sample-1of7
+            p.truncate 1of7
+          //- Row two
+          .sample-2of7
+            p.truncate 2of7
+          .sample-4of7
+            p.truncate 4of7
+          .sample-1of7
+            p.truncate 1of7
+          //- Row three
+          .sample-2of7
+            p.truncate 2of7
+          .sample-5of7
+            p.truncate 5of7
+          //- Row four
+          .sample-7of7
+            p.truncate 7of7
+
+
+        h4 layouts
+        p Layout used for pages without a sidebar or details.
+        .parent.sample-grid
+          .sample-header
+            p.truncate header
+          .sample-content
+            p.truncate content
+          .sample-footer
+            p.truncate footer
+        hr
+        p Layout used for projects and any page that needs a sidebar.
+        .parent.sample-grid
+          .sample-header
+            p.truncate header
+          .sample-aside
+            p.truncate sidebar
+          .sample-content
+            p.truncate content
+          .sample-details
+            p.truncate details
+          .sample-footer
+            p.truncate footer
 
       hr
       section#buttons.anchor
