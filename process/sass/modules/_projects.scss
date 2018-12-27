@@ -20,65 +20,56 @@
 // }
 
 
-// .projects {
-//   width: 100%;
-//   margin-bottom: 2.0rem;
+.projects {
+  width: 100%;
 
-//   a {
-//     width: 100%;
-//     float: left;
-//     padding-bottom: 1.5rem;
-//     text-decoration: none;
-//     color: map-get($dark-blue, $hsla);
-//     padding-right: 1.0rem;
+  a {
+    text-decoration: none;
+    color: var(--black);
+    float: left;
+    padding-bottom: var(--space-lg);
+    padding-right: var(--space-md);
+    width: 100%;
+    @include breakpoint(sm) {
+      width: 50%;
+    }
+    @include breakpoint(md) {
+      width: 50%;
+    }
+    @include breakpoint(lg) {
+      width: 25%;
+    }
 
-//     > img {
-//       width: 100%;
-//       margin-bottom: 0.5rem;
-//       box-shadow: 0 0 3px transparentize(map-get($dark-blue, $hsla), 0.8);
-//       opacity: 0.7;
-//       transition: opacity 0.5s ease-out;
-//     }
-//     &:hover > img,
-//     &:focus > img {
-//       opacity: 1.0;
-//     }
+    > img {
+      width: 100%;
+      margin-bottom: var(--space-xs);
+      box-shadow: 0 0 3px var(--black-a80);
+      opacity: 0.7;
+      transition: opacity 0.5s ease-out;
+    }
+    &:hover > img,
+    &:focus > img {
+      opacity: 1.0;
+    }
 
-//     > p.title {
-//       padding: 0;
-//       margin: 0;
-//       font-size: 1.1rem;
-//       font-weight: bold;
-//       font-family: $heading-font;
-//       transition: color 0.5s ease-out;
-//     }
-//     &:hover > p.title,
-//     &:focus > p.title {
-//       color: map-get($orange, $hsla);
-//     }
+    > p.title {
+      padding: 0;
+      margin: 0;
+      font-size: var(--text-md);
+      font-weight: bold;
+      font-family: var(--font-secondary);
+      transition: color 0.5s ease-out;
+    }
+    &:hover > p.title,
+    &:focus > p.title {
+      color: var(--color-primary);
+    }
 
-//     > p.sub {
-//       font-family: $body-font;
-//       padding: 0;
-//       margin: 0;
-//       font-style: italic;
-//     }
-//   }
-
-//   @include breakpoint(sm) {
-//     a {
-//       width: 100% !important;
-//     }
-//   }
-//   @include breakpoint(sm) {
-//     a {
-//       width: 50%;
-//     }
-//   }
-
-//   @include breakpoint(lg) {
-//     a {
-//       width: 50%;
-//     }
-//   }
-// }
+    > p.sub {
+      font-family: var(--font-primary);
+      padding: 0;
+      margin: 0;
+      font-style: italic;
+    }
+  }
+}
