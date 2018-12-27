@@ -1,25 +1,25 @@
 mixin specifications(time, size, roles, skills, tools)
   aside.specifications.text-component
     .specifications--item
-      h4 timeline
+      h4.truncate timeline
       p #{time}
     .specifications--item
-      h4 team size
+      h4.truncate team size
       p #{size}
     .specifications--item
-      h4 role
+      h4.truncate role
       p
         for role in roles
           | #{role} 
           br
     .specifications--item
-      h4 skills
+      h4.truncate skills
       p
         for skill in skills
           | #{skill} 
           br
     .specifications--item
-      h4 tools
+      h4.truncate tools
       p.last
         for tool in tools
           | #{tool} 

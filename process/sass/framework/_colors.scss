@@ -1,45 +1,45 @@
 :root, [data-theme="default"] {
     // main
-    --color-primary-darker: hsl(22, 75%, 42%);
-    --color-primary-dark: hsl(22, 80%, 48%);
+    --color-primary-darker: hsl(22, 53%, 37%);
+    --color-primary-dark: hsl(22, 55%, 47%);
     --color-primary: hsl(22, 91%, 62%);
-    --color-primary-light: hsl(22, 90%, 63%);
-    --color-primary-lighter: hsl(22, 90%, 92%);
+    --color-primary-light: hsl(21, 99%, 72%);
+    --color-primary-lighter: hsl(22, 100%, 83%);
     --color-primary-a20: hsla(22, 90%, 56%, 0.2);
 
-    --color-accent-darker: hsl(183, 75%, 48%);
-    --color-accent-dark: hsl(183, 80%, 54%);
+    --color-accent-darker: hsl(182, 31%, 21%);
+    --color-accent-dark: hsl(184, 39%, 34%);
     --color-accent: hsl(183, 42%, 44%);
-    --color-accent-light: hsl(183, 90%, 68%);
-    --color-accent-lighter: hsl(183, 89%, 93%);
+    --color-accent-light: hsl(183, 31%, 58%);
+    --color-accent-lighter: hsl(182, 29%, 75%);
 
     // black + white
-    --black: hsl(234, 31%, 18%);
+    --black: hsl(234, 32%, 18%);
     --black-a80: hsla(234, 31%, 18%, 0.8);
     --black-a10: hsla(234, 31%, 18%, 0.1);
     
     --white: hsl(0, 0%, 100%);
 
     // feedback
-    --color-success-darker: hsl(94, 40%, 45%);
-    --color-success-dark: hsl(94, 45%, 50%);
+    --color-success-darker: hsl(93, 30%, 17%);
+    --color-success-dark: hsl(94, 35%, 34%);
     --color-success: hsl(94, 48%, 56%);
-    --color-success-light: hsl(94, 48%, 62%);
-    --color-success-lighter: hsl(94, 48%, 92%);
+    --color-success-light: hsl(93, 48%, 66%);
+    --color-success-lighter: hsl(91, 49%, 79%);
     --color-success-a20: hsla(94, 48%, 56%, 0.2);
 
-    --color-error-darker: hsl(7, 75%, 48%);
-    --color-error-dark: hsl(7, 80%, 54%);
-    --color-error: hsl(7, 95%, 39%);
-    --color-error-light: hsl(7, 90%, 68%);
-    --color-error-lighter: hsl(7, 89%, 93%);
+    --color-error-darker: hsl(12, 81%, 19%);
+    --color-error-dark: hsl(9, 88%, 31%);
+    --color-error: hsl(7, 96%, 39%);
+    --color-error-light: hsl(12, 67%, 55%);
+    --color-error-lighter: hsl(13, 73%, 64%);
     --color-error-a20: hsla(7, 90%, 61%, 0.2);
 
-    --color-warning-darker: hsl(50, 90%, 50%);
-    --color-warning-dark: hsl(50, 95%, 55%);
+    --color-warning-darker: hsl(48, 66%, 26%);
+    --color-warning-dark: hsl(49, 80%, 42%);
     --color-warning: hsl(50, 100%, 50%);
-    --color-warning-light: hsl(50, 100%, 68%);
-    --color-warning-lighter: hsl(50, 100%, 91%);
+    --color-warning-light: hsl(48, 100%, 70%);
+    --color-warning-lighter: hsl(47, 100%, 83%);
     --color-warning-a20: hsla(50, 100%, 61%, 0.2);
 
     // bg
