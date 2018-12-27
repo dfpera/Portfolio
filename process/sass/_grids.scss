@@ -26,6 +26,8 @@ aside.breadcrumbs {
 article.mainContent {
   @include column(1);
   grid-column: span 7;
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
 
   @include breakpoint(sm) {
     @include column(4/7);
@@ -33,6 +35,8 @@ article.mainContent {
     grid-column-start: 3;
     grid-column-end: 7;
     grid-row-start: 2;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 

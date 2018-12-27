@@ -1,17 +1,39 @@
 // /*! Add project specific stles in here */
-// .vertical-line {
-//   border-left: $code-border;
-// }
 .specifications {
-  padding-right: var(--space-sm);
-  p {
-    margin-bottom: var(--space-sm);
-    font-size: var(--text-sm);
-    font-style: italic;
+  @include gridFallback(var(--space-md));
+
+  @supports (grid-area: auto) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: var(--space-md);
+    align-content: start;
+  }
+  padding-right: var(--space-md);
+  padding-left: var(--space-md);
+  text-align: center;
+  @include breakpoint(sm) {
+    padding-right: var(--space-sm);
+    padding-left: 0;
+    text-align: left;
   }
 
-  p:last-child {
-    margin-bottom: var(--space-xs);
+  .specifications--item {
+    @include column(1/2);
+    grid-column: span 1;
+
+    @include breakpoint(sm) {
+      @include column(1);
+      grid-column: span 2;
+    }
+
+    p {
+      margin-bottom: var(--space-sm);
+      font-size: var(--text-sm);
+      font-style: italic;
+    }
+    p:last-child {
+      margin-bottom: var(--space-xs);
+    }
   }
 }
 
