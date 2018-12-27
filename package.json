@@ -24,9 +24,7 @@
     "imagemin-jpeg-recompress": "^5.1.0",
     "imagemin-optipng": "^6.0.0",
     "imagemin-svgo": "^7.0.0",
-    "live-server": "^1.2.1",
     "mkdirp": "^0.5.1",
-    "node-sass": "^4.10.0",
     "npm-run-all": "^4.1.5",
     "pug-cli": "git+https://github.com/pugjs/pug-cli.git#0eb8d37",
     "uglify-js": "^3.4.9",
@@ -39,20 +37,21 @@
     "postcss-css-variables": "git+https://github.com/CodyHouse/postcss-css-variables"
   },
   "scripts": {
-    "test": "npm-run-all --parallel dev:*",
-    "dev:prepare": "mkdirp builds/development/js",
+    "test": "mkdirp builds/development/{js,css,img,lib,fonts} && npm-run-all --parallel dev:*",
+    "copy": "npm-run-all --parallel dev:copy-*",
+    "dev:copy-img": "cp -rv process/img/* builds/development/img/",
+    "dev:copy-lib": "cp -rv process/lib/* builds/development/lib/",
+    "dev:copy-fonts": "cp -rv process/fonts/* builds/development/fonts/",
     "dev:js": "babel process/js/**/*.js --watch --out-file builds/development/js/main.js --source-maps --presets=env",
-    "dev:img": "imagemin process/img/*.* --out-dir=builds/development/img --plugin=jpeg-recompress --plugin=svgo --plugin=optipng",
     "dev:render": "pug --watch --pretty process/pug --out builds/development",
     "dev:serve": "gulp watch",
-    "start": "npm-run-all prod:*",
-    "prod:prepare": "mkdirp builds/production",
-    "prod:sass": "node-sass process/sass --output-style compressed process/sass/main.scss --output builds/production/css",
+    "start": "mkdirp builds/production/{js,css,img,lib,fonts} && npm-run-all prod:*",
+    "prod:copy-img": "cp -rv builds/development/img/* builds/production/img/",
+    "prod:copy-lib": "cp -rv builds/development/lib/* builds/production/lib/",
+    "prod:copy-fonts": "cp -rv builds/development/fonts/* builds/production/fonts/",
     "prod:js": "uglify builds/development/js/main.js --compress --mangle --output builds/production/js/main.js",
-    "prod:img": "imagemin process/img/*.* --out-dir=builds/development/img --plugin=jpeg-recompress --plugin=svgo --plugin=optipng",
+    "prod:img": "imagemin builds/development/img/*.* --out-dir=builds/production/img --plugin=jpeg-recompress --plugin=svgo --plugin=optipng",
     "prod:html": "html-minifier --collapse-whitespace --file-ext html --input-dir builds/development/ --output-dir builds/production/",
-    "prod:help": "html-minifier --help",
-    "prod:other": "mkdirp builds/production/img && cp -rv builds/development/img/*.* builds/production/img",
-    "prod:serve": "live-server builds/production"
+    "prod:serve": "gulp watch"
   }
 }
