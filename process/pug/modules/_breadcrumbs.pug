@@ -1,7 +1,14 @@
 //- Parameters:
 //-    -project_headings: 2 item array with the link path as first item and subheading as second item
 mixin breadcrumbs(...project_headings)
-  aside.breadcrumbs
+  aside.breadcrumbs.text-component
+    input(type='checkbox')
+    .breadcrumbs--burger
+      span
+      span
+      span
+    span.breadcrumbs--text  Table of Contents
+    hr
     ul
       each heading in project_headings
         li

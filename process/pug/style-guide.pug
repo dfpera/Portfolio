@@ -271,6 +271,13 @@ html
       hr
       section#components.anchor
         h3 components
+        h4 breadcrumbs
+        +breadcrumbs(
+          ['#', 'subheading1'],
+          ['#', 'subheading2'],
+          ['#', 'subheading3'],
+          ['#', 'subheading4']
+        )
 
       hr
     include modules/_footer.pug
