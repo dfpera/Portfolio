@@ -1,12 +1,21 @@
 mixin specifications(time, size, roles, skills, tools)
-  section.col-offset-md-1.col-md-4.col-lg-3.specifications
+  aside.specifications.text-component
     h4 timeline
     p #{time}
     h4 team size
     p #{size}
     h4 role
-    p #{roles}
+    p
+      for role in roles
+        | #{role} 
+        br
     h4 skills
-    p #{skills}
+    p
+      for skill in skills
+        | #{skill} 
+        br
     h4 tools
-    p.last #{tools}
+    p.last
+      for tool in tools
+        | #{tool} 
+        br

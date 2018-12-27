@@ -30,6 +30,21 @@ article.mainContent {
   @include breakpoint(sm) {
     @include column(4/7);
     grid-column: span 4;
+    grid-column-start: 3;
+    grid-column-end: 7;
+    grid-row-start: 2;
+  }
+}
+
+aside.specifications {
+  @include column(1);
+  grid-column: span 7;
+
+  @include breakpoint(sm) {
+    @include column(1/7);
+    grid-column: span 1;
+    grid-column-start: 7;
+    grid-column-end: 8;
   }
 }
 

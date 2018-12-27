@@ -113,6 +113,7 @@ aside.breadcrumbs {
       display: block;
       color: var(--color-primary);
       margin: var(--space-xs) auto;
+      text-indent: calc(-1 * var(--space-md));
 
       &:before {
         content: "#";

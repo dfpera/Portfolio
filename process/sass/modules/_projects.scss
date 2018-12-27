@@ -2,22 +2,25 @@
 // .vertical-line {
 //   border-left: $code-border;
 // }
-// .specifications {
-//   padding-right: 2.5rem;
-//   p {
-//     margin-bottom: 1.5rem;
-//   }
+.specifications {
+  padding-right: var(--space-sm);
+  p {
+    margin-bottom: var(--space-sm);
+    font-size: var(--text-sm);
+    font-style: italic;
+  }
 
-//   p:last-child {
-//     margin-bottom: 0.5rem;
-//   }
-// }
+  p:last-child {
+    margin-bottom: var(--space-xs);
+  }
+}
 
-// .video {
-//   min-height: 20rem;
-//   padding-bottom: 1.0rem;
-//   padding-left: 0 !important;
-// }
+.video {
+  min-height: 20em;
+  padding-bottom: 1.0rem;
+  padding-left: 0 !important;
+  width: 100%;
+}
 
 
 .projects {

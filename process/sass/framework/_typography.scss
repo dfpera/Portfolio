@@ -17,7 +17,7 @@
     --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio));
 
     // line-height
-    --body-line-height: 1.4;
+    --body-line-height: 1.8;
     --heading-line-height: 1.2;
 
     // capital letters - used in combo with the lhCrop mixin
@@ -125,7 +125,7 @@ u {
     }
 
     h2, h3, h4 {
-        margin-top: calc(var(--space-sm) * var(--text-vspace-multiplier));
+        margin-top: calc(var(--space-md) * var(--text-vspace-multiplier));
     }
 
     // Overriding default heading styles
