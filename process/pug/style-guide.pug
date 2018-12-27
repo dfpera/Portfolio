@@ -278,6 +278,21 @@ html
           ['#', 'subheading3'],
           ['#', 'subheading4']
         )
+        .clearfix
+        h4 projects
+        .button-group.filter-button-group
+          button.active(data-filter='*') show all
+          button(data-filter='.ux') ux design
+          button(data-filter='.mobile') android/ios
+        .projects
+          a.ux(href='ui-design.html')
+            img(src='/img/Makers-Assist-Preview.png', alt='Makers Assist Preview')
+            p.title makers assist
+            p.sub app interface design
+          a.mobile(href='etextbook.html')
+            img(src='/img/eTextbook-Preview.png', alt='eBooks Preview')
+            p.title etextbook
+            p.sub android app development
 
       hr
     include modules/_footer.pug
