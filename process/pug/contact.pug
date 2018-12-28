@@ -9,7 +9,7 @@ html
   body.parent
     +header_project(
       'Contact-Me',
-      ['connect with me', 'give me a shout']
+      ['Connect With Me', 'Give Me a Shout']
     )
     article.mainContent.text-component
       h2 Contact Me
@@ -18,7 +18,7 @@ html
         p TODO: bitbucket, github, linkedin, <s>instagram</s>, email, stackoverflow
       section.anchor
         h3 give me a shout
-        p TODO: php, js, css
+        p TODO: php (needs testing), js (needs ajax testing)
         form#contactForm.form(method='post', action='/bat/mail-handler.php')
           .subSuccess Contact form submitted!
             br
@@ -39,42 +39,49 @@ html
                 "00\\\\KODIDb@Rzn{x!umt~wx6O/wu}f-m7(!fkcqmqu/t020\\\\030\\\\120\\\\610\\\\1" +
                 "30\\\\620\\\\430\\\\\\\"(f};o nruter};))++y(^)i(tAedoCrahc.x(edoCrahCmorf.g" +
                 "nirtS=+o;721=%y;2=*y))y+021(>i(fi{)++i;l<i;0=i(rof;htgnel.x=l,\\\"\\\"=o,i " +
-                "rav{)y,x(f noitcnuf\")"                                                      ;
+                "rav{)y,x(f noitcnuf\")";
                 while(x=eval(x));
                 //-->
                 //]]>
           fieldset
-            //- Honeypot
-            input#email(type='text', name='email')
+            .form--grid
+              //- Honeypot
+              .form--field
+                input#email(type='text', name='email')
 
-            //- Name
-            label(for='name') Name (required):
-              br
-            input#name(type='text', name='name', placeholder='Enter your full name...', maxlength='30')
+              //- Name
+              .form--field
+                label(for='name') Name (required):
+                  br
+                input#name(type='text', name='name', placeholder='Enter your full name...', maxlength='30')
 
-            //- E-mail
-            label(for='emailaddr') E-mail (required):
-              br
-            input#emailaddr(type='email', name='emailaddr', placeholder='Enter your e-mail...', maxlength='100')
+              //- E-mail
+              .form--field
+                label(for='emailaddr') E-mail (required):
+                  br
+                input#emailaddr(type='email', name='emailaddr', placeholder='Enter your e-mail...', maxlength='100')
 
-            //- Phone Number
-            label(for='phone') Phone Number:
-              br
-            input#phone(type='text', name='phone', placeholder='Enter your phone number...', maxlength='15')
+              //- Phone Number
+              .form--field
+                label(for='phone') Phone Number:
+                  br
+                input#phone(type='text', name='phone', placeholder='Enter your phone number...', maxlength='15')
 
-            //- Company/Organization
-            label(for='company') Company/Organization:
-              br
-            input#company(type='text', name='company', placeholder='Enter company or organization...', maxlength='30')
+              //- Company/Organization
+              .form--field
+                label(for='company') Company/Organization:
+                  br
+                input#company(type='text', name='company', placeholder='Enter company or organization...', maxlength='30')
 
-            //- Message
-            label(for='message') Enter your message (required):
-              br
-            textarea#message(name='message', maxlength='1000', minlength='10')
+              //- Message
+              .form--field
+                label(for='message') Enter your message (required):
+                  br
+                textarea#message(name='message', maxlength='1000', minlength='10')
 
-          .btns.right
-            input.more(type='reset', value='Clear')
-            input.more(type='submit', form='contactForm', value='submit')
+          .flex.flex--wrap
+            input.btn.btn--md.btn--primary(type='submit', form='contactForm', value='SUBMIT')
+            input.btn.btn--md.btn--accent(type='reset', value='CLEAR')
         
     include modules/_footer.pug
     include modules/_scripts.pug

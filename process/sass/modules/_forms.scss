@@ -1,13 +1,44 @@
 /* ============================= forms ============================= */
 form.form {
+  margin-bottom: var(--space-lg);
+
+  .form--grid {
+    @include gridFallback(var(--space-md));
+
+    @supports (grid-area: auto) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: var(--space-md);
+    }
+
+    .form--field {
+      @include column(1);
+      grid-column: span 2;
+
+      @include breakpoint(sm) {
+        @include column(1/2);
+        grid-column: span 1;
+      }
+
+      &:first-child {
+        display: none;
+      }
+      &:last-child {
+        @include breakpoint(sm) {
+          @include column(1);
+          grid-column: span 2;
+        }
+      }
+    }
+  }
+
   /* Form defaults */
   input::placeholder {
     color: var(--color-contrast-medium);
   }
 
-  input, textarea {
+  input:not(.btn), textarea {
     color: var(--color-black);
-    margin-bottom: var(--space-unit);
   }
 
   label {
@@ -16,13 +47,12 @@ form.form {
 
     &.error {
       color: var(--color-error);
-      margin-top: calc(-1 * var(--space-xs));
-      margin-bottom: var(--space-unit);
+      margin-top: var(--space-xxxs);
+      margin-bottom: 0;
     }
   }
 
-  input:not([type="radio"]) {
-    margin: 0 0 var(--space-unit) 0;
+  input:not(.btn) {
     border: 1px solid var(--color-contrast-low);
     border-radius: var(--radius);
     padding:var(--space-sm) var(--space-md);
@@ -43,7 +73,7 @@ form.form {
   }
 
   .subSuccess, .subError {
-    // display: none;
+    display: none;
     width: 100%;
     padding: var(--space-sm) var(--space-md);
     border-radius: var(--radius);
@@ -62,14 +92,12 @@ form.form {
     color: var(--color-error-darker);
   }
 
-  // TODO: Update buttons styles
-  .btns {
-    margin-right: 18px;
-    input {
-      margin: 0 0 0 18px;
-      display: inline-block;
-      width: auto;
-      padding: 0.5rem 2.0rem 1.5rem 2.0rem;
+  .flex {
+    flex-direction: row-reverse;
+
+    .btn {
+      margin-right: 0;
+      margin-left: var(--space-sm);
     }
   }
 }
