@@ -1,0 +1,80 @@
+//- contact.pug
+include modules/_head
+include modules/_header
+include modules/_breadcrumbs
+
+doctype html
+html
+  +head('Contact - Daniele Perazzolo')
+  body.parent
+    +header_project(
+      'Contact-Me',
+      ['connect with me', 'give me a shout']
+    )
+    article.mainContent.text-component
+      h2 Contact Me
+      section.anchor
+        h3 connect with me
+        p TODO: bitbucket, github, linkedin, <s>instagram</s>, email, stackoverflow
+      section.anchor
+        h3 give me a shout
+        p TODO: php, js, css
+        form#contactForm.form(method='post', action='/bat/MailHandler.php')
+          .subSuccess Contact form submitted!
+            br
+            strong I will be in touch soon.
+          .subError Unable to submit form!
+            br
+            strong Please try again, or 
+              script.
+                //<![CDATA[
+                <!--
+                var x="function f(x){var i,o=\"\",ol=x.length,l=ol;while(x.charCodeAt(l/13)!" +
+                "=53){try{x+=x;l+=l;}catch(e){}}for(i=l-1;i>=0;i--){o+=x.charAt(i);}return o" +
+                ".substr(0,ol);}f(\")021,\\\"n\\\\000\\\\420\\\\700\\\\710\\\\220\\\\J500\\\\"+
+                "520\\\\600\\\\^JQGFPHD?{c&ni730\\\\020\\\\Q630\\\\D[$Y710\\\\130\\\\000\\\\" +
+                "020\\\\720\\\\300\\\\130\\\\310\\\\N010\\\\100\\\\K600\\\\000\\\\t\\\\n\\\\" +
+                "300\\\\E310\\\\720\\\\Bn\\\\300\\\\62630\\\\~700\\\\g<4#?!tq610\\\\qj#',!61" +
+                "0\\\\j=+\\\"\\\\4,000\\\\c730\\\\,2Px530\\\\HX[MVXunt\\\\GQTZM[^320\\\\FEJ6" +
+                "00\\\\KODIDb@Rzn{x!umt~wx6O/wu}f-m7(!fkcqmqu/t020\\\\030\\\\120\\\\610\\\\1" +
+                "30\\\\620\\\\430\\\\\\\"(f};o nruter};))++y(^)i(tAedoCrahc.x(edoCrahCmorf.g" +
+                "nirtS=+o;721=%y;2=*y))y+021(>i(fi{)++i;l<i;0=i(rof;htgnel.x=l,\\\"\\\"=o,i " +
+                "rav{)y,x(f noitcnuf\")"                                                      ;
+                while(x=eval(x));
+                //-->
+                //]]>
+          fieldset
+            //- Honeypot
+            input#email(type='text', name='email')
+
+            //- Name
+            label(for='name') Name (required):
+              br
+            input#name(type='text', name='name', placeholder='Enter your full name...', maxlength='30')
+
+            //- E-mail
+            label(for='emailaddr') E-mail (required):
+              br
+            input#emailaddr(type='email', name='emailaddr', placeholder='Enter your e-mail...', maxlength='100')
+
+            //- Phone Number
+            label(for='phone') Phone Number:
+              br
+            input#phone(type='text', name='phone', placeholder='Enter your phone number...', maxlength='15')
+
+            //- Company/Organization
+            label(for='company') Company/Organization:
+              br
+            input#company(type='text', name='company', placeholder='Enter company or organization...', maxlength='30')
+
+            //- Message
+            label(for='message') Enter your message (required):
+              br
+            textarea#message(name='message', maxlength='1000', minlength='10')
+
+          .btns.right
+            input.more(type='reset', value='Clear')
+            input.more(type='submit', form='contactForm', value='submit')
+        
+    include modules/_footer.pug
+    include modules/_scripts.pug
