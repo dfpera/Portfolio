@@ -27,7 +27,7 @@ header > .fixed-nav {
       @include column(1/3);
       grid-column: span 1;
       text-align: center;
-      padding: 0 var(--space-md) var(--space-sm) var(--space-md);
+      padding: 0 var(--space-md) var(--space-xs) var(--space-md);
       font-size: var(--text-md);
     }
   }
@@ -47,28 +47,8 @@ header > .fixed-nav {
         @include column(1/5);
         grid-column: span 1;
         text-align: left;
-        padding: var(--space-md) 0 var(--space-md);
+        padding: var(--space-md) 0 var(--space-xs);
       }
     }
   }
 }
-
-// header > .fixed-nav-sample {
-//   height: 4.0rem;
-//   background: map-get($white, $hsla);
-//   box-shadow: 0 2px 2px transparentize(map-get($dark-blue, $hsla), 0.8);
-
-//   nav.main > a {
-//     float: left;
-//     text-decoration: none;
-//     padding: 1.2rem 1.25rem 0.5rem 0;
-//     font-size: 1.4rem;
-//     font-family: $heading-font;
-//     color: map-get($orange, $hsla);
-//     transition: color 0.5s ease-out;
-//   }
-//   nav.main > a:hover,
-//   nav.main > a:focus {
-//     color: map-get($dark-blue, $hsla);
-//   }
-// }

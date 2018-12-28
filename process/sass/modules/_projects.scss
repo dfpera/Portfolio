@@ -53,10 +53,11 @@
     color: var(--black);
     float: left;
     padding-bottom: var(--space-lg);
-    padding-right: var(--space-md);
+    padding-right: 0;
     width: 100%;
     @include breakpoint(sm) {
       width: 50%;
+      padding-right: var(--space-md);
     }
     @include breakpoint(md) {
       width: 50%;
@@ -84,6 +85,8 @@
       font-weight: bold;
       font-family: var(--font-secondary);
       transition: color 0.5s ease-out;
+      line-height: 1.2;
+      margin-bottom: var(--space-xxxs);
     }
     &:hover > p.title,
     &:focus > p.title {
@@ -95,6 +98,7 @@
       padding: 0;
       margin: 0;
       font-style: italic;
+      line-height: 1.2;
     }
   }
 }

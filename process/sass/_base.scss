@@ -1,56 +1,14 @@
 // /*! Add all base element styles into this style sheet */
-// html {
-//   overflow-x: hidden;
-// }
-// html, body {
-//   height: 100%;
-//   width: 100%;
-// }
-// body {
-//   font-family: $body-font;
-//   color: map-get($dark-blue, $hex);
-//   color: map-get($dark-blue, $hsla);
-// }
-
-// article {
-//   padding-top: 3rem;
-//   padding-bottom: 2rem;
-// }
-
-
-// h2 {
-//   font-size: 2.4rem;
-// }
-
-// h3 {
-//   font-size: 1.3rem;
-// }
-
-// h4 {
-//   font-size: 1.1rem;
-// }
-
-// p {
-//   margin-top: 0;
-//   padding-top: 0;
-//   line-height: 1.7rem;
-//   font-size: 0.9rem;
-// }
-
-// p.last {
-//   margin-bottom: 2.0rem !important;
-// }
-
 a {
   font-family: $heading-font;
-  color: map-get($orange, $hsla);
+  color: var(--color-primary);
   text-decoration: none;
   transition: color 0.5s ease-out;
-}
 
-a:hover,
-a:focus {
-  color: map-get($dark-blue, $hsla);
+  &:hover,
+  &:focus {
+    color: var(--black);
+  }
 }
 
 // img.img-responsive {
@@ -68,11 +26,4 @@ a:focus {
 //   background-color: map-get($white, $hsla);
 //   padding: 0.5rem 10%;
 //   width: 100%;
-// }
-
-// @include breakpoint(md) {
-//   article {
-//     padding-top: 5.8rem;
-//     padding-bottom: 4rem;
-//   }
 // }

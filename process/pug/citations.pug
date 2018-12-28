@@ -1,24 +1,53 @@
 //- etextbook.pug
 include modules/_head
 include modules/_header
+include modules/_breadcrumbs
 
 doctype html
 html
   +head('Citations - Daniele Perazzolo')
-  body
+  body.parent
     +header_project(
       'Citations'
     )
-    article.col-offset-md-4.col-md-8.col-lg-8
+    +breadcrumbs(
+      ['#css', 'css'],
+      ['#js', 'js'],
+      ['#images', 'images'],
+      ['#fonts', 'fonts'],
+      ['#snippets', 'snippets']
+    )
+    article.mainContent.text-component
       h2 Citations
-      section.anchor.col-md-9.col-lg-8
-        p Syntax Highlighting (https://highlightjs.org/)
-        p Heading Fonts (https://fonts.google.com/specimen/Overpass+Mono)
-        p Body Fonts (https://fonts.google.com/specimen/Roboto)
-        p Background Image (https://www.flickr.com/photos/keithusc/2784268444/in/photostream/)
-        p Breadcrumbs (http://stackoverflow.com/questions/17629286/css-vertical-line-between-bullets-in-an-unordered-list)
-        p Project Filtering (isotopejs)
-        p Parallax Banner (http://pixelcog.github.io/parallax.js/)
-        p Font Awesome (http://fontawesome.io/)
+      section#css.anchor
+        h3 css
+        p
+          a(href='https://codyhouse.co/', target='_blank') Design Framework (codyhouse)
+      section#js.anchor
+        h3 js
+        p
+          a(href='https://highlightjs.org/', target='_blank') Syntax Highlighting (highlightjs)
+        p
+          a(href='http://pixelcog.github.io/parallax.js/', target='_blank') Parallax Banner (parallaxjs)
+        p
+          a(href='https://isotope.metafizzy.co/', target='_blank') Project Filtering (isotopejs)
+        p
+          a(href='https://gka.github.io/palettes/#colors=lightyellow,orange,deeppink,darkred|steps=7|bez=1|coL=1', target='_blank') Color Interpolation (chromajs)
+      section#images.anchor
+        h3 images
+        p
+          a(href='https://www.flickr.com/photos/keithusc/2784268444/in/photostream/', target='_blank') Parallax Image
+      section#fonts.anchor
+        h3 fonts
+        p
+          a(href='https://fonts.google.com/specimen/Overpass+Mono', target='_blank') Heading Font (Overpass Mono)
+        p
+          a(href='https://fonts.google.com/specimen/Roboto', target='_blank') Body Font (Roboto)
+        p
+          a(href='http://fontawesome.io/', target='_blank') Icons (FontAwesome)
+      section#snippets.anchor
+        h3 code snippets
+        p
+          a(href='https://codepen.io/erikterwan/pen/EVzeRP', target='_blank') CSS Hamburger
     include modules/_footer.pug
     include modules/_scripts.pug

@@ -17,14 +17,18 @@ header {
       text-align: center;
       display: block;
       margin-top: var(--space-sm);
-      font-size: var(--text-lg);
+      font-size: var(--text-md);
       letter-spacing: 1px;
+
+      &:first-letter {
+        color: var(--black);
+      }
     }
 
     @include breakpoint(sm) {
       a {
         text-align: left;
-        margin: var(--space-unit) var(--space-md) var(--space-md) var(--space-unit);
+        margin: var(--space-md) var(--space-md) var(--space-xs) var(--space-unit);
       }
     }
   }

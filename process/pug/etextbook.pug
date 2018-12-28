@@ -7,7 +7,7 @@ include modules/_projects
 doctype html
 html
   +head('eTextbook Project - Daniele Perazzolo')
-  body
+  body.parent
     +header_project(
       'eTextbook',
       ['Overview', 'Testing/Struggles'],
@@ -19,27 +19,42 @@ html
       ['#testing', 'testing / struggles'],
       ['#final', 'final product']
     )
-    article.col-md-8.col-offset-lg-1.col-lg-8(data-side='true')
+    +specifications(
+      '2016 jun - aug',
+      'three people',
+      [
+        'team\u00A0lead',
+        'project\u00A0manager',
+        'programmer'
+      ],
+      [
+        'java\u00A0(android)',
+        'sqlite',
+        'html5/css3',
+        'python',
+        'presenting',
+        'git'
+      ],
+      [
+        'android\u00A0studio',
+        'pycharm',
+        'photoshop'
+      ]
+    )
+    article.mainContent.text-component(data-side='true')
       h2 eTextbook
       p.heading-sub android app development
-      section#overview.anchor.col-md-7.col-lg-8
+      section#overview.anchor
         img.img-responsive(src='img/eTextbook-Preview.png', alt='eTextbook Preview')
-        p.last Distributing, printing, carrying and creating a textbook is an expensive process. Bringing textbooks into an electronic format saves authors money and allows them to deliver books to students at decreased cost, while adding interactivity that heightens the learning experience. eTexbook brings together all of the students' textbooks into a single lightweight device, so that they can study anywhere they want without lugging around a heavy bound book.
-      +specifications(
-        '2016 jun - aug',
-        'three people',
-        'team\u00A0lead, project\u00A0manager, programmer',
-        'java\u00A0(android), sqlite, html5/css3, python, presenting, git',
-        'android\u00A0studio, pycharm, photoshop'
-      )
-      section.col-md-7.col-lg-8#proposal
+        p Distributing, printing, carrying and creating a textbook is an expensive process. Bringing textbooks into an electronic format saves authors money and allows them to deliver books to students at decreased cost, while adding interactivity that heightens the learning experience. eTexbook brings together all of the students' textbooks into a single lightweight device, so that they can study anywhere they want without lugging around a heavy bound book.
+      section#proposal.anchor
         h3 proposal
-        p.last eTextbook is different from other conventional eBook applications because it supports multi-device diagrams. In most eBook applications, diagrams are confined to one page; if they are too large, they are cut in half. eTexbook brings together the benefits of fixed layout PDFs and responsive eBooks. On top of an improved reading experience, eTextbook allows users to regularly test themselves on the material they have read. This not only teaches the user, but also reinforces the recently read material.
-      section.col-md-7.col-lg-8#testing
+        p eTextbook is different from other conventional eBook applications because it supports multi-device diagrams. In most eBook applications, diagrams are confined to one page; if they are too large, they are cut in half. eTexbook brings together the benefits of fixed layout PDFs and responsive eBooks. On top of an improved reading experience, eTextbook allows users to regularly test themselves on the material they have read. This not only teaches the user, but also reinforces the recently read material.
+      section#testing.anchor
         h3 testing / struggles
-        p.last Our timeline for this application was very limited, as it was a part of a course project. Trying to implement every feature we wanted into the app was outside of our parameters. As a result, we needed to be selective. Additionally, the group had inexperienced programmers; it was necessary for me to delegate tasks very carefully. I tasked myself with the XML Parser and other modular components to compensate for their weaker coding skills.
-      section.col-md-7.col-lg-8#final
+        p Our timeline for this application was very limited, as it was a part of a course project. Trying to implement every feature we wanted into the app was outside of our parameters. As a result, we needed to be selective. Additionally, the group had inexperienced programmers; it was necessary for me to delegate tasks very carefully. I tasked myself with the XML Parser and other modular components to compensate for their weaker coding skills.
+      section#final.anchor
         h3 final product
-        p.last eTextbook was an insightful process about working with unique individuals. I am a programmer at heart, and find it easiest to communicate with other programmers. However, learning to work with designers helped me understand how collaborating with people that have different specialities can push the project further. Being able to utilize everyone's abilities meant we can put together an application that not only functions properly, but is aesthetically pleasing and easy to use.
+        p eTextbook was an insightful process about working with unique individuals. I am a programmer at heart, and find it easiest to communicate with other programmers. However, learning to work with designers helped me understand how collaborating with people that have different specialities can push the project further. Being able to utilize everyone's abilities meant we can put together an application that not only functions properly, but is aesthetically pleasing and easy to use.
     include modules/_footer.pug
     include modules/_scripts.pug
