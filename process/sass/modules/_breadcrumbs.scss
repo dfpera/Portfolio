@@ -1,6 +1,6 @@
 /*! Add all breadcrumbs styles here */
 aside.breadcrumbs {
-  font-family: $heading-font;
+  font-family: var(--font-secondary);
   text-align: center;
   @include breakpoint(sm) {
     text-align: left;
@@ -49,7 +49,7 @@ aside.breadcrumbs {
       height: 4px;
       margin-bottom: 5px;
       position: relative;
-      background: var(--black);
+      background: var(--color-black);
       border-radius: 3px;
       z-index: var(--zindex-breadcrumbs-span);
       transform-origin: 4px 0px;
@@ -118,7 +118,7 @@ aside.breadcrumbs {
       &:before {
         content: "#";
         padding-right: var(--space-sm);
-        color: var(--color-contrast-warm-low);
+        color: var(--color-contrast-low);
       }
     }
   }

@@ -22,7 +22,7 @@
 // themes
 .btn--primary { // main button
     background-color: var(--color-primary);
-    color: var(--white);
+    color: var(--color-white);
     @include fontSmooth;
 
     &:hover {
@@ -32,17 +32,17 @@
 
 .btn--subtle { // subtle version, used for secondary actions or in combo with primary/accent button
     background-color: var(--color-bg);
-    color: var(--color-contrast-cold-higher);
-    border: 1px solid var(--color-contrast-cold-low);
+    color: var(--color-contrast-higher);
+    border: 1px solid var(--color-contrast-low);
 
     &:hover {
-        background-color: var(--color-contrast-cold-lower);
+        background-color: var(--color-contrast-lower);
     }
 }
 
 .btn--accent { // used to draw particular attention to the button (e.g. destructive actions)
     background-color: var(--color-accent);
-    color: var(--white);
+    color: var(--color-white);
     @include fontSmooth;
 
     &:hover {

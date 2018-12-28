@@ -18,7 +18,7 @@
   .sample-6of7,
   .sample-7of7 {
     background-color: var(--color-accent);
-    color: var(--white);
+    color: var(--color-white);
   }
 
   .sample-1of7 {
@@ -68,7 +68,7 @@
     @include column(1);
     grid-column: span 7;
     height: var(--space-xxxxl);
-    color: var(--white);
+    color: var(--color-white);
     background-color: var(--color-accent);
 
     @include breakpoint(sm) {
@@ -81,7 +81,7 @@
     @include column(1);
     grid-column: span 7;
     height: var(--space-xxxxl);
-    background-color: var(--white);
+    background-color: var(--color-white);
     border: var(--color-border) solid 1px;
 
     @include breakpoint(sm) {

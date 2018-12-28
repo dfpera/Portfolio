@@ -1,11 +1,11 @@
 :root, [data-theme="default"] {
     // main
-    --color-primary-darker: hsl(22, 53%, 37%);
+    --color-primary-darker: hsl(24, 100%, 3%);
     --color-primary-dark: hsl(22, 55%, 47%);
     --color-primary: hsl(22, 91%, 62%);
     --color-primary-light: hsl(21, 99%, 72%);
     --color-primary-lighter: hsl(22, 100%, 83%);
-    --color-primary-a20: hsla(22, 90%, 56%, 0.2);
+    --color-primary-a30: hsla(22, 90%, 56%, 0.3);
 
     --color-accent-darker: hsl(182, 31%, 21%);
     --color-accent-dark: hsl(184, 39%, 34%);
@@ -14,11 +14,11 @@
     --color-accent-lighter: hsl(182, 29%, 75%);
 
     // black + white
-    --black: hsl(234, 32%, 18%);
-    --black-a80: hsla(234, 31%, 18%, 0.8);
-    --black-a10: hsla(234, 31%, 18%, 0.1);
+    --color-black: hsl(234, 32%, 18%);
+    --color-black-a80: hsla(234, 31%, 18%, 0.8);
+    --color-black-a10: hsla(234, 31%, 18%, 0.1);
     
-    --white: hsl(0, 0%, 100%);
+    --color-white: hsl(0, 0%, 100%);
 
     // feedback
     --color-success-darker: hsl(93, 30%, 17%);
@@ -46,26 +46,18 @@
     --color-bg: hsl(0, 0%, 100%);
     --color-bg-a20: hsla(0, 0%, 100%, 0.2);
 
-    // TODO: color contrast
-    --color-contrast-cold-lower: hsl(0, 0%, 95%);
-    --color-contrast-cold-low: hsl(0, 0%, 83%);
-    --color-contrast-cold-medium: hsl(240, 1%, 47%);
-    --color-contrast-cold-high: hsl(255, 4%, 20%);
-    --color-contrast-cold-higher: hsl(240, 7%, 12%);
-    --color-contrast-cold-a90: hsla(240, 7%, 12%, 0.9);
-
-    --color-contrast-warm-lower: hsl(0, 0%, 95%);
-    --color-contrast-warm-low: hsl(0, 0%, 83%);
-    --color-contrast-warm-medium: hsl(240, 1%, 47%);
-    --color-contrast-warm-high: hsl(255, 4%, 20%);
-    --color-contrast-warm-higher: hsl(240, 7%, 12%);
-    --color-contrast-warm-a90: hsla(240, 7%, 12%, 0.9);
+    --color-contrast-lower: hsl(24, 12%, 92%);
+    --color-contrast-low: hsl(16, 13%, 83%);
+    --color-contrast-medium: hsl(18, 11%, 65%);
+    --color-contrast-high: hsl(20, 5%, 36%);
+    --color-contrast-higher: hsl(20, 4%, 15%);
+    --color-contrast-a45: hsla(18, 11%, 65%, 0.45);
 
     // semantic
-    --color-border: var(--color-contrast-cold-low);
+    --color-border: var(--color-contrast-low);
 }
 
 [data-theme] {
     background-color: var(--color-bg);
-    color: var(--color-contrast-cold-high);
+    color: var(--color-contrast-high);
 }

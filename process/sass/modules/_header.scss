@@ -21,7 +21,7 @@ header {
       letter-spacing: 1px;
 
       &:first-letter {
-        color: var(--black);
+        color: var(--color-black);
       }
     }
 
@@ -59,16 +59,16 @@ header {
         font-size: var(--text-sm);
         font-family: var(--primary-font);
         display: block;
-        background-color: map-get($light-grey, $hsla);
-        color: map-get($dark-blue, $hsla);
+        background-color: var(--color-contrast-low);
+        color: var(--color-black);
       }
 
       margin: 0;
       border-radius: var(--radius);
-      background-color: map-get($dark-orange, $hsla);
+      background-color: var(--color-primary-darker);
       display: inline-block;
       min-width: 40%;
-      color: transparentize(map-get($grey, $hsla), 0.55);
+      color: var(--color-contrast-a45);
       font-family: var(--font-secondary);
       margin-top: 4.5em;
       font-size: var(--text-md);
@@ -85,7 +85,7 @@ header {
       > p > span,
       > h1 {
         font-weight: bold;
-        color: map-get($white, $hsla);
+        color: var(--color-white);
       }
 
       > p:first-child {
@@ -106,7 +106,7 @@ header {
 
       > p.cursor:after {
         content: "\25AE";
-        color: map-get($white, $hsla);
+        color: var(--color-white);
         position: absolute;
         bottom: 0.45em;
         display: inline-block;

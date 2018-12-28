@@ -28,10 +28,10 @@
 
   > .variable {
     width: 100%;
-    border: map-get($grey, $hsla) solid 1px;
+    border: var(--color-contrast-medium) solid 1px;
     border-radius: var(--radius);
     text-align: center;
-    color: var(--black);
+    color: var(--color-black);
     padding: var(--space-xs) var(--space-xxxs);
     margin-bottom: var(--space-xxxs);
   }
@@ -60,9 +60,15 @@
     // Primary
     &.--color-primary-darker {
       background-color: var(--color-primary-darker);
+      p {
+        color: var(--color-white);
+      }
     }
     &.--color-primary-dark {
       background-color: var(--color-primary-dark);
+      p {
+        color: var(--color-white);
+      }
     }
     &.--color-primary {
       background-color: var(--color-primary);
@@ -73,16 +79,22 @@
     &.--color-primary-lighter {
       background-color: var(--color-primary-lighter);
     }
-    &.--color-primary-a20 {
-      background-color: var(--color-primary-a20);
+    &.--color-primary-a30 {
+      background-color: var(--color-primary-a30);
     }
 
     // Accent
     &.--color-accent-darker {
       background-color: var(--color-accent-darker);
+      p {
+        color: var(--color-white);
+      }
     }
     &.--color-accent-dark {
       background-color: var(--color-accent-dark);
+      p {
+        color: var(--color-white);
+      }
     }
     &.--color-accent {
       background-color: var(--color-accent);
@@ -95,28 +107,40 @@
     }
 
     // Black
-    &.--black {
-      background-color: var(--black);
+    &.--color-black {
+      background-color: var(--color-black);
+      p {
+        color: var(--color-white);
+      }
     }
-    &.--black-a80 {
-      background-color: var(--black-a80);
+    &.--color-black-a80 {
+      background-color: var(--color-black-a80);
+      p {
+        color: var(--color-white);
+      }
     }
-    &.--black-a10 {
-      background-color: var(--black-a10);
+    &.--color-black-a10 {
+      background-color: var(--color-black-a10);
     }
 
     // White
-    &.--white {
-      background-color: var(--white);
+    &.--color-white {
+      background-color: var(--color-white);
       border: var(--color-border) solid 1px;
     }
 
     // Success
     &.--color-success-darker {
       background-color: var(--color-success-darker);
+      p {
+        color: var(--color-white);
+      }
     }
     &.--color-success-dark {
       background-color: var(--color-success-dark);
+      p {
+        color: var(--color-white);
+      }
     }
     &.--color-success {
       background-color: var(--color-success);
@@ -134,9 +158,15 @@
     // Error
     &.--color-error-darker {
       background-color: var(--color-error-darker);
+      p {
+        color: var(--color-white);
+      }
     }
     &.--color-error-dark {
       background-color: var(--color-error-dark);
+      p {
+        color: var(--color-white);
+      }
     }
     &.--color-error {
       background-color: var(--color-error);
@@ -154,9 +184,15 @@
     // Warning
     &.--color-warning-darker {
       background-color: var(--color-warning-darker);
+      p {
+        color: var(--color-white);
+      }
     }
     &.--color-warning-dark {
       background-color: var(--color-warning-dark);
+      p {
+        color: var(--color-white);
+      }
     }
     &.--color-warning {
       background-color: var(--color-warning);
@@ -171,44 +207,30 @@
       background-color: var(--color-warning-a20);
     }
 
-    // Contrast Cold
-    &.--color-contrast-cold-lower {
-      background-color: var(--color-contrast-cold-lower);
+    // Contrast
+    &.--color-contrast-lower {
+      background-color: var(--color-contrast-lower);
     }
-    &.--color-contrast-cold-low {
-      background-color: var(--color-contrast-cold-low);
+    &.--color-contrast-low {
+      background-color: var(--color-contrast-low);
     }
-    &.--color-contrast-cold-medium {
-      background-color: var(--color-contrast-cold-medium);
+    &.--color-contrast-medium {
+      background-color: var(--color-contrast-medium);
     }
-    &.--color-contrast-cold-high {
-      background-color: var(--color-contrast-cold-high);
+    &.--color-contrast-high {
+      background-color: var(--color-contrast-high);
+      p {
+        color: var(--color-white);
+      }
     }
-    &.--color-contrast-cold-higher {
-      background-color: var(--color-contrast-cold-higher);
+    &.--color-contrast-higher {
+      background-color: var(--color-contrast-higher);
+      p {
+        color: var(--color-white);
+      }
     }
-    &.--color-contrast-cold-a90 {
-      background-color: var(--color-contrast-cold-a90);
-    }
-
-    // Contrast Warm
-    &.--color-contrast-warm-lower {
-      background-color: var(--color-contrast-warm-lower);
-    }
-    &.--color-contrast-warm-low {
-      background-color: var(--color-contrast-warm-low);
-    }
-    &.--color-contrast-warm-medium {
-      background-color: var(--color-contrast-warm-medium);
-    }
-    &.--color-contrast-warm-high {
-      background-color: var(--color-contrast-warm-high);
-    }
-    &.--color-contrast-warm-higher {
-      background-color: var(--color-contrast-warm-higher);
-    }
-    &.--color-contrast-warm-a90 {
-      background-color: var(--color-contrast-warm-a90);
+    &.--color-contrast-a45 {
+      background-color: var(--color-contrast-a45);
     }
 
     &.--color-bg {
@@ -225,55 +247,5 @@
     margin: 0;
     font-size: var(--text-sm);
     letter-spacing: 1px;
-  }
-}
-
-.swatch.light-grey > .color {
-  background-color: map-get($light-grey, $hex);
-
-  p {
-    color: map-get($dark-blue, $hex);
-  }
-}
-.swatch.grey > .color {
-  background-color: map-get($grey, $hex);
-
-  p {
-    color: map-get($white, $hex);
-  }
-}
-.swatch.turquois > .color {
-  background-color: map-get($turquois, $hex);
-
-  p {
-    color: map-get($white, $hex);
-  }
-}
-.swatch.dark-blue > .color {
-  background-color: map-get($dark-blue, $hex);
-
-  p {
-    color: map-get($white, $hex);
-  }
-}
-.swatch.red > .color {
-  background-color: map-get($red, $hex);
-
-  p {
-    color: map-get($white, $hex);
-  }
-}
-.swatch.orange > .color {
-  background-color: map-get($orange, $hex);
-
-  p {
-    color: map-get($white, $hex);
-  }
-}
-.swatch.dark-orange > .color {
-  background-color: map-get($dark-orange, $hex);
-
-  p {
-    color: map-get($white, $hex);
   }
 }

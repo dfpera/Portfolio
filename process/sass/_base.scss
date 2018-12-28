@@ -1,13 +1,13 @@
 // /*! Add all base element styles into this style sheet */
 a {
-  font-family: $heading-font;
+  font-family: var(--font-secondary);
   color: var(--color-primary);
   text-decoration: none;
   transition: color 0.5s ease-out;
 
   &:hover,
   &:focus {
-    color: var(--black);
+    color: var(--color-black);
   }
 }
 

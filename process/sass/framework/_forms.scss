@@ -2,7 +2,7 @@
     // basic form element style
     padding: var(--space-xs) var(--space-sm);
     background: var(--color-bg);
-    border: 2px solid var(--color-contrast-cold-low);
+    border: 2px solid var(--color-contrast-low);
     width: 100%;
 
     &:focus {
@@ -12,20 +12,20 @@
     }
 
     &::-webkit-input-placeholder {
-        color: var(--color-contrast-cold-medium);
+        color: var(--color-contrast-medium);
     }
 
     &::-moz-placeholder {
         opacity: 1;
-        color: var(--color-contrast-cold-medium);
+        color: var(--color-contrast-medium);
     }
 
     &:-ms-input-placeholder {
-        color: var(--color-contrast-cold-medium);
+        color: var(--color-contrast-medium);
     }
 
     &:-moz-placeholder {
-        color: var(--color-contrast-cold-medium);
+        color: var(--color-contrast-medium);
     }
 }
 
@@ -42,7 +42,7 @@
 }
 
 .form-legend {
-    color: var(--color-contrast-cold-higher);
+    color: var(--color-contrast-higher);
     line-height: 1.2;
     font-size: var(--text-md);
     margin-bottom: var(--space-xxs);
@@ -58,7 +58,7 @@
 // error message
 .form__msg-error {
     background-color: var(--color-error);
-    color: var(--white);
+    color: var(--color-white);
     font-size: var(--text-sm);
     @include fontSmooth;
     padding: var(--space-xs);

@@ -40,12 +40,12 @@
 body {
     font-size: var(--text-base-size);
     font-family: var(--font-primary);
-    color: var(--color-contrast-cold-high);
+    color: var(--color-contrast-high);
 }
 
 h1, h2, h3, h4 {
     font-family: var(--font-secondary);
-    color: var(--color-contrast-cold-higher);
+    color: var(--color-contrast-higher);
     line-height: var(--heading-line-height);
 }
 
@@ -101,7 +101,7 @@ u {
 }
 
 .text--subtle {
-    color: var(--color-contrast-cold-medium);
+    color: var(--color-contrast-medium);
 }
 
 .text-component {
@@ -120,7 +120,7 @@ u {
         font-style: italic;
         margin-top: calc(-1 * var(--space-xs));
         margin-left: var(--space-xs);
-        color: map-get($grey, $hsla);
+        color: var(--color-contrast-medium);
         letter-spacing: 1px;
     }
 
@@ -139,7 +139,7 @@ u {
 
     h3 {
         font-weight: 600;
-        background-color: transparentize(map-get($orange, $hsla), 0.7);
+        background-color: var(--color-primary-a30);
         display: inline-block;
         line-height: 1.0;
     }
@@ -151,7 +151,7 @@ u {
 
     p, blockquote, ul li, ol li {
         line-height: var(--component-body-line-height);
-        color: var(--color-contrast-cold-high);
+        color: var(--color-contrast-high);
     }
 
     ul, ol, p, blockquote {
@@ -176,11 +176,11 @@ u {
 
     blockquote {
         padding-left: 1em;
-        border-left: 4px solid var(--color-contrast-cold-low);
+        border-left: 4px solid var(--color-contrast-low);
     }
 
     hr {
-        background: var(--color-contrast-cold-low);
+        background: var(--color-contrast-low);
         height: 1px;
         margin: calc(var(--space-lg) * var(--text-vspace-multiplier)) auto;
     }
@@ -215,7 +215,7 @@ u {
     figcaption {
         text-align: center;
         font-size: var(--text-sm);
-        color: var(--color-contrast-cold-medium);
+        color: var(--color-contrast-medium);
     }
 }
 
