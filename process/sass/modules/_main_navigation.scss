@@ -8,7 +8,7 @@
 header > .fixed-nav {
   position: fixed;
   top: 0;
-  z-index: 1000;
+  z-index: var(--zindex-main-navigation);
   background: map-get($white, $hsla);
   box-shadow: 0 1px 1px transparentize(map-get($dark-blue, $hsla), 0.8);
   width: 100%;

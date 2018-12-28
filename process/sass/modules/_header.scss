@@ -2,7 +2,7 @@
 header {
   @include column(1);
   grid-column: span 7;
-  z-index: 100;
+  z-index: var(--zindex-header);
 
   .logo {
     @include column(1);

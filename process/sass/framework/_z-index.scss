@@ -1,7 +1,7 @@
 :root {
-    --zindex-header: 2;
-    --zindex-fixed-element: 5;
-    --zindex-overlay: 10; // modals and dialogs
+    --zindex-header: 50;
+    --zindex-main-navigation: 60;
+    --zindex-overlay: 100; // modals and dialogs
 
     // Breadcrumbs
     --zindex-breadcrumbs-checkbox: 30;
