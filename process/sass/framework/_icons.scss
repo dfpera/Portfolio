@@ -41,6 +41,7 @@
 .icon-text { // add this class to parent element that contains icon + text elements
 	display: inline-flex;
     align-items: center;
+    margin-right: var(--space-xs);
 
     > *:nth-child(2) {
         margin-left: var(--space-xxs);
