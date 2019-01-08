@@ -1,0 +1,80 @@
+//- groundschool-anywhere.pug
+include modules/_head
+include modules/_header
+include modules/_breadcrumbs
+include modules/_projects
+
+doctype html
+html
+  +head('Groundschool Anywhere - Daniele Perazzolo')
+  body.parent
+    +header_project(
+      'Groundschool Anywhere',
+      ['Overview', 'Initial Design']
+    )
+    +breadcrumbs(
+      ['#overview', 'overview']
+    )
+    +specifications(
+      '2013 sep - 2019 jan',
+      'four people',
+      [
+        'project\u00A0manager',
+        'ux\u00A0designer',
+        'programmer'
+      ],
+      [
+        'swift\u00A0(ios)',
+        'python',
+        'html5/css3\u00A0(sass)',
+        'js',
+        'php',
+        'npm'
+      ],
+      [
+        'bottle.py',
+        'gulpjs',
+        'codyhouse.co',
+        'visual\u00A0studio\u00A0code',
+        'xcode',
+        'mathjax',
+        'pycharm',
+        'bootstrap',
+        'ibooks\u00A0author',
+        'indesign',
+        'photoshop'
+      ]
+    )
+    article.mainContent.text-component(data-side='true')
+      h2 groundschool anywhere
+      p.heading-sub app interface design
+      section#overview.anchor
+        h3 overview
+        iframe.video(
+          src='https://player.vimeo.com/video/211353188',
+          frameborder='0',
+          allowfullscreen
+        )
+        //- <iframe src="https://player.vimeo.com/video/211353188" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+        p For the Makers Assist App, we partnered with the Neil Squire Society to help them design a UI/UX for their newly created LipSync device. The LipSync device helps quadriplegics navigate their mobile devices with the control of their mouth only.
+        p What the LipSync could not do was press hardware buttons and perform complex finger gestures (ie. swiping). Together with the Neil Squire Society, we determined that the best solution is a UI overlay that would convert these issues into simple click buttons.
+        p The goal was to create an effective user experience that could make mobile devices easy to use for quadriplegics as they are for any able-bodied person. Through the process of user research, idea proposal and user testing, we created the final UI overlay design that is most intuitive for quadriplegics.
+      section#research.anchor
+        img(src='img/Makers-Assist-Research.jpg', alt='SFU Students Interviewing Users').img-responsive
+        h3 research
+        p The first step after meeting with Neil Squire Society was to conduct user research. This meant looking at solutions made by competing companies and meeting with users to learn about their habits and routines. Only after understanding our users could we move onto ideating possible solutions.
+      section#proposal.anchor
+        h3 proposal
+        p Our research showed that users wanted to modify the environment to their own needs. After a process of ideation, we decided on a 2-level menu system with user customization.
+      section#initial.anchor
+        h3 initial design
+        p During the initial design of the UI overlay, we created a fully interactive axure mockup to simulate the mobile devices we were using. This mockup was embedded into an android application so that users could test the LipSync with the mockup.
+      section#testing.anchor
+        h3 testing / struggles
+        p Using our initial design, quadriplegics tested our mockup with their own LipSync device. It was here where we discovered the inherent problems with the LipSync, and the challenges in designing for a device that is still in development. While we didn't receive the feedback we expected, we did find that users struggled to understand how the LipSync worked. This gave us an opportunity to embed this information into the UI, and hopefully have users understand the LipSync before they incorporate it to their mobile device.
+      section#final.anchor
+        img(src='img/Makers-Assist-Preview.png', alt='Makers Assist Preview').img-responsive
+        h3 final design
+        p Ultimately, our concentration was not on building features into the application. Rather, we worked to streamline the onboarding and customization of the UI and the LipSync device. With the focus on user experience, we were able to learn a lot about understanding the users while working with clients. This made the implementation of the system easy for the developer at NSS, so that he could concentrate on the code rather than the process of the project.
+    include modules/_footer.pug
+    include modules/_scripts.pug
