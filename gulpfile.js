@@ -1,31 +1,166 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var browserSync = require('browser-sync').create();
-var postcss      = require('gulp-postcss');
-var autoprefixer = require('autoprefixer');
-var cssvariables = require('postcss-css-variables'); 
-var calc = require('postcss-calc');  
+// Include plugins (https://gulpjs.com/plugins/)
+var gulp = require('gulp'),
+    autoprefixer = require('autoprefixer'),
+    browserSync = require('browser-sync').create(),
+    calc = require('postcss-calc'),
+    concat = require('gulp-concat'),
+    cssvariables = require('postcss-css-variables'),
+    gulpif = require('gulp-if'),
+    imagemin = require('gulp-imagemin'),
+    plumber = require('gulp-plumber'),
+    pngcrush = require('imagemin-pngcrush'),
+    postcss      = require('gulp-postcss'),
+    pug = require('gulp-pug'),
+    sass = require('gulp-sass'),
+    uglify = require('gulp-uglify');
+
+// Define directories
+var env,
+    outputDir,
+    // Src
+    assetsSrc,
+    batSrc,
+    fontsSrc,
+    imgSrc,
+    jsSrc,
+    libSrc,
+    pugSrc,
+    sassSrc,
+    // Dest
+    assetsDest,
+    batDest,
+    fontsDest,
+    imgDest,
+    jsDest,
+    libDest,
+    pugDest,
+    sassDest,
+    // Styles
+    pugStyle,
+    sassStyle;
+
+// Initialize environment
+env = process.env.NODE_ENV || 'development';
+
+if (env==='development') {
+  outputDir = 'builds/development/';
+  pugStyle = {
+    doctype: 'html',
+    pretty: true
+  }
+  sassStyle = 'expanded';
+} else {
+  outputDir = 'builds/production/';
+  pugStyle = {
+    doctype: 'html',
+    pretty: false
+  }
+  sassStyle = 'compressed';
+}
+
+// Initialize sources
+assetsSrc = ['process/assets/**/*.*'];
+batSrc = ['process/bat/*.php'];
+fontsSrc = ['process/fonts/*.*'];
+imgSrc = ['process/img/**/*.*'];
+jsSrc = [
+  'process/js/util-framework.js',
+  'process/js/forms.js',
+  'process/js/main.js'
+];
+libSrc = ['process/lib/**/*.*'];
+pugSrc = [
+  'process/pug/**/*.pug',
+  '!process/pug/**/_*.pug'
+];
+sassSrc = ['process/sass/main.scss'];
+
+// Initialize destinations
+assetsDest = outputDir + 'assets';
+batDest = outputDir + 'bat';
+fontsDest = outputDir + 'fonts';
+imgDest = outputDir + 'img';
+jsDest = outputDir + 'js';
+libDest = outputDir + 'lib';
+pugDest = outputDir;
+sassDest = outputDir + 'css';
+
+gulp.task('assets', function() {
+  return gulp.src(assetsSrc)
+    .pipe(gulp.dest(assetsDest));
+});
+
+gulp.task('bat', function() {
+  return gulp.src(batSrc)
+    .pipe(gulp.dest(batDest));
+});
+
+gulp.task('fonts', function() {
+  return gulp.src(fontsSrc)
+    .pipe(gulp.dest(fontsDest));
+});
+
+gulp.task('img', function() {
+  return gulp.src(imgSrc)
+    .pipe(gulpif(env === 'production', imagemin({
+      progressive: true,
+      svgoPlugins: [{ removeViewBox: false }],
+      use: [pngcrush()]
+    })))
+    .pipe(gulp.dest(imgDest));
+});
+
+gulp.task('js', function() {
+  return gulp.src(jsSrc)
+    .pipe(concat('main.js'))
+    .pipe(gulpif(env === 'production', uglify()))
+    .pipe(gulp.dest(jsDest))
+});
+
+gulp.task('lib', function() {
+  return gulp.src(libSrc)
+    .pipe(gulp.dest(libDest));
+});
+
+gulp.task('pug', function() {
+  return gulp.src(pugSrc)
+    .pipe(plumber())
+    .pipe(pug(pugStyle))
+    .pipe(gulp.dest(pugDest));
+});
 
 gulp.task('sass', function() {
-  return gulp.src('process/sass/**/*.scss')
-    .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+  return gulp.src(sassSrc)
+    .pipe(plumber())
+    .pipe(sass({outputStyle: sassStyle}))
     .pipe(postcss([autoprefixer(), cssvariables({preserve: true}), calc()]))
-    .pipe(gulp.dest('builds/development/css'))
-    .pipe(browserSync.reload({
-      stream: true
-  }));
+    .pipe(gulp.dest(sassDest))
+    .pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('browserSync', function() {
   browserSync.init({
     server: {
-      baseDir: 'builds/development'
+      baseDir: outputDir
     },
   })
 });
 
-gulp.task('watch', ['browserSync', 'sass'], function (){
-  gulp.watch('process/sass/**/*.scss', ['sass']);
-  gulp.watch('builds/development/*.html', browserSync.reload);
-  gulp.watch('builds/development/js/**/*.js', browserSync.reload);
+// reloading browsers
+gulp.task('reload', ['assets', 'bat', 'fonts', 'img', 'js', 'lib', 'pug'], function (done) {
+  browserSync.reload();
+  done();
 });
+
+gulp.task('watch', ['browserSync', 'assets', 'bat', 'fonts', 'img', 'js', 'lib', 'pug', 'sass'], function () {
+  gulp.watch(assetsSrc, ['sass']);
+  gulp.watch(batSrc, ['bat']);
+  gulp.watch(fontsSrc, ['fonts']);
+  gulp.watch(imgSrc, ['img']);
+  gulp.watch(jsSrc, ['js']);
+  gulp.watch(libSrc, ['lib']);
+  gulp.watch('process/pug/**/*.pug', ['pug']);
+  gulp.watch('process/sass/**/*.scss', ['sass']);
+});
+
+gulp.task('default', ['watch']);
