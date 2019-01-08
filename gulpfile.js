@@ -1,18 +1,19 @@
 // Include plugins (https://gulpjs.com/plugins/)
-var gulp = require('gulp'),
-    autoprefixer = require('autoprefixer'),
-    browserSync = require('browser-sync').create(),
-    calc = require('postcss-calc'),
-    concat = require('gulp-concat'),
-    cssvariables = require('postcss-css-variables'),
-    gulpif = require('gulp-if'),
-    imagemin = require('gulp-imagemin'),
-    plumber = require('gulp-plumber'),
-    pngcrush = require('imagemin-pngcrush'),
-    postcss      = require('gulp-postcss'),
-    pug = require('gulp-pug'),
-    sass = require('gulp-sass'),
-    uglify = require('gulp-uglify');
+var 
+  gulp = require('gulp'),
+  autoprefixer  = require('autoprefixer'),
+  browserSync   = require('browser-sync').create(),
+  calc          = require('postcss-calc'),
+  concat        = require('gulp-concat'),
+  cssvariables  = require('postcss-css-variables'),
+  gulpif        = require('gulp-if'),
+  imagemin      = require('gulp-imagemin'),
+  plumber       = require('gulp-plumber'),
+  pngcrush      = require('imagemin-pngcrush'),
+  postcss       = require('gulp-postcss'),
+  pug           = require('gulp-pug'),
+  sass          = require('gulp-sass'),
+  uglify        = require('gulp-uglify');
 
 // Define directories
 var env,
@@ -60,30 +61,30 @@ if (env==='development') {
 
 // Initialize sources
 assetsSrc = ['process/assets/**/*.*'];
-batSrc = ['process/bat/*.php'];
-fontsSrc = ['process/fonts/*.*'];
-imgSrc = ['process/img/**/*.*'];
-jsSrc = [
-  'process/js/util-framework.js',
-  'process/js/forms.js',
-  'process/js/main.js'
-];
-libSrc = ['process/lib/**/*.*'];
-pugSrc = [
-  'process/pug/**/*.pug',
-  '!process/pug/**/_*.pug'
-];
-sassSrc = ['process/sass/main.scss'];
+batSrc    = ['process/bat/*.php'];
+fontsSrc  = ['process/fonts/*.*'];
+imgSrc    = ['process/img/**/*.*'];
+jsSrc     = [
+              'process/js/util-framework.js',
+              'process/js/forms.js',
+              'process/js/main.js'
+            ];
+libSrc    = ['process/lib/**/*.*'];
+pugSrc    = [
+              'process/pug/**/*.pug',
+              '!process/pug/**/_*.pug'
+            ];
+sassSrc   = ['process/sass/main.scss'];
 
 // Initialize destinations
-assetsDest = outputDir + 'assets';
-batDest = outputDir + 'bat';
-fontsDest = outputDir + 'fonts';
-imgDest = outputDir + 'img';
-jsDest = outputDir + 'js';
-libDest = outputDir + 'lib';
-pugDest = outputDir;
-sassDest = outputDir + 'css';
+assetsDest  = outputDir + 'assets';
+batDest     = outputDir + 'bat';
+fontsDest   = outputDir + 'fonts';
+imgDest     = outputDir + 'img';
+jsDest      = outputDir + 'js';
+libDest     = outputDir + 'lib';
+pugDest     = outputDir;
+sassDest    = outputDir + 'css';
 
 gulp.task('assets', function() {
   return gulp.src(assetsSrc)
@@ -102,6 +103,7 @@ gulp.task('fonts', function() {
 
 gulp.task('img', function() {
   return gulp.src(imgSrc)
+    .pipe(plumber())
     .pipe(gulpif(env === 'production', imagemin({
       progressive: true,
       svgoPlugins: [{ removeViewBox: false }],
@@ -147,19 +149,26 @@ gulp.task('browserSync', function() {
 });
 
 // reloading browsers
-gulp.task('reload', ['assets', 'bat', 'fonts', 'img', 'js', 'lib', 'pug'], function (done) {
+function reloadPage(done) {
   browserSync.reload();
   done();
-});
+}
+gulp.task('assets-rl', ['assets'], reloadPage);
+gulp.task('bat-rl', ['bat'], reloadPage);
+gulp.task('fonts-rl', ['fonts'], reloadPage);
+gulp.task('img-rl', ['img'], reloadPage);
+gulp.task('js-rl', ['js'], reloadPage);
+gulp.task('lib-rl', ['lib'], reloadPage);
+gulp.task('pug-rl', ['pug'], reloadPage);
 
 gulp.task('watch', ['browserSync', 'assets', 'bat', 'fonts', 'img', 'js', 'lib', 'pug', 'sass'], function () {
-  gulp.watch(assetsSrc, ['sass']);
-  gulp.watch(batSrc, ['bat']);
-  gulp.watch(fontsSrc, ['fonts']);
-  gulp.watch(imgSrc, ['img']);
-  gulp.watch(jsSrc, ['js']);
-  gulp.watch(libSrc, ['lib']);
-  gulp.watch('process/pug/**/*.pug', ['pug']);
+  gulp.watch(assetsSrc, ['assets-rl']);
+  gulp.watch(batSrc, ['bat-rl']);
+  gulp.watch(fontsSrc, ['fonts-rl']);
+  gulp.watch(imgSrc, ['img-rl']);
+  gulp.watch(jsSrc, ['js-rl']);
+  gulp.watch(libSrc, ['lib-rl']);
+  gulp.watch('process/pug/**/*.pug', ['pug-rl']);
   gulp.watch('process/sass/**/*.scss', ['sass']);
 });
 
