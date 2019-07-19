@@ -1,6 +1,6 @@
 // Include plugins (https://gulpjs.com/plugins/)
 var 
-  gulp = require('gulp'),
+  gulp          = require('gulp'),
   autoprefixer  = require('autoprefixer'),
   browserSync   = require('browser-sync').create(),
   calc          = require('postcss-calc'),
@@ -13,6 +13,7 @@ var
   postcss       = require('gulp-postcss'),
   pug           = require('gulp-pug'),
   sass          = require('gulp-sass'),
+  sourcemaps    = require('gulp-sourcemaps'),
   uglify        = require('gulp-uglify');
 
 // Define directories
@@ -134,8 +135,10 @@ gulp.task('pug', function() {
 gulp.task('sass', function() {
   return gulp.src(sassSrc)
     .pipe(plumber())
+    .pipe(gulpif(env === 'development', sourcemaps.init()))
     .pipe(sass({outputStyle: sassStyle}))
     .pipe(postcss([autoprefixer(), cssvariables({preserve: true}), calc()]))
+    .pipe(gulpif(env === 'development', sourcemaps.write()))
     .pipe(gulp.dest(sassDest))
     .pipe(browserSync.reload({stream: true}));
 });
