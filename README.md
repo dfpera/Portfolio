@@ -1,74 +1,100 @@
-# P03: Portfolio
+# Portfolio - Daniele Perazzolo
 
-## Description
-Individually, you will be developing a portfolio website. Unlike the prior projects which allowed for sites to link to false pages, **this website must be fully functional** (all links and content are real). The following content is required in the project:
+This repository hosts Daniele Perazzolo's Portfolio source website files. From here we can compile it's contents and get a production ready version of the website that can be uploaded to the dpera web server.
 
-* A biography or personal description
-* Clear indication of your interests in employment or as a professional
-* Two projects presenting your skills using a process analysis
-* Contact method(s)
+## Getting Started
 
-**Any code that is not yours must be cited accordingly.**
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project onto our web server.
 
-## Notes on self-plagiarism
-If you have a pre-existing portfolio that you are revising or redesigning for this project we request that you **provide a URL to the original** as part of your final submission. This just helps us ensure that there is no self-plagiarism occurring in the project.
+### Prerequisites
 
-You are allowed to use frameworks (ie. Bootstraps) and libraries to make working on the site easier, but the final design must be your own work. When in doubt, ask the TA or instructor as plagiarism can warrant more serious repercussions.
+In order to get started working with this repository you must first install the following:
 
-**Remember that this project is an opportunity to showcase you.** Working with someone else's design or creating a website similar to others doesn't show off your 'unique' nature and students who predominantly use an existing website design or framework do not do well on this project.
+```
+nodejs v10.14.1 or newer
+npm v6.8.0 or newer
+```
 
-## Due
-Before your lab time on **Apr 7**.
+This can be done by downloading and installing `nodejs` from [their website](https://nodejs.org/en/download/). `npm` is included within the `nodejs` install so no need to install it separately.
 
-## Worth
-30% of your final grade.
+### Installing
 
-## Instructions
-There are a number of weeks in which to complete this project, please pay attention to what is required from you.
+First off clone the repository to your local system using SourceTree or git client of your choice:
 
-### Starting Mar 10
-1. Working with the in-lab activity as a starting point, **create a style guide** that defines the visual portion of your **ethos** — the understanding, characteristics and definition of yourself in your portfolio. This style guide should help **visually** define you in the role your portfolio presents: a programmer, game developer, illustrator, designer, content strategist... etc, without being clichéd or a stereotype.
-2. Based on the visual ethos you are developing, complete a **process analysis of two projects** which help form a text to support your ethos and show how you created a project from start to finish. The text and accompanying artifacts — images, video, audio, applications, etc — must demonstrate your ability to think through a problem and iterate a project over time. Make sure to also consider how these projects speak to the abilities you are presenting as part of your ethos. Use 250-300 words for each analysis.
-3. Write a draft of a bio using no more than 100 words to introduce yourself. Ensure there is a meaningful connection between what you describe here and what your visual and textual ethos express.
-Generate an initial set of HTML/CSS templates showing how the visual and textual components of your ethos would be used in your site.
+```
+git clone https://github.com/dfpera/Portfolio.git
+```
 
-#### Due in your Mar 17 lab:
-* 1 ethos style guide
-* 2 project process analyses
-* 1 bio draft
-* 1 set of initial templates
+Next `cd` into the project directory:
 
-### Starting Mar 17
-1. Based on the feedback in the labs, integrate the style guide, process analyses, and bio into your set of templates to build out your initial draft of the complete portfolio. Note:
-  * Can we clearly identify your ethos through the visual and textual language being presented?
-  * Focus on layout and branding first, flashy effects second
-  * Ensure that if working with a framework, it **does not** dictate your design
+```
+cd <path_to_repository>/portfolio
+```
 
-#### Due in your Mar 24 lab:
-* 1 portfolio website mockup with all content active and integrated.
+Finally run the following to install all dependencies:
 
-### Starting Mar 24
-1. **Test and debug your website.** This should include testing it on:
-  * multiple browsers (IE, Chrome, Safari, Firefox)
-  * multiple devices (mobile phone, tablets, desktop, TVs)
-2. **Update and publish your style guide** along with your website. Make sure it includes the addition of any changes made to the original guide, as well as any layouts or structures created since the beginning of P04.
+```
+npm install
+```
 
-#### Due in your Mar 31 lab:
-* 1 updated portfolio website with style guide linked.
+You are now ready to get started updating the website.
 
-### Starting Mar 31
-Work with feedback you receive in the lab to revise your portfolio website. Ensure you continue testing it on multiple browsers and devices.
+## Testing
 
-## Final Delivery
-Final deliverables are due to Canvas **before your Apr 7 lab** and double-check all your submitted files and URLs to ensure they can be opened. Delivered should be **one URL for a fully completed website**, which includes footer links to:
-* complete style guide
-* citation web-page
-* your git repository (if used, not required)
-Please note that **we will test your portfolio website in Chrome and two other random browsers and/or devices.** Ensure there are no concerns with your website by testing early and often.
+The website can be run in either development mode `npm start` or production mode `npm run build`. Product mode is solely used to test the website before we deploy it to the web server.
 
-## Grading Rubric
-Your project will be graded and weighed according to the following criteria. A more detailed rubric is [available in the course pages](http://iat339.andrewh.ca/Rubrics/P03-Portfolio_Rubric?pk_campaign=p03&pk_kwd=rubric).
-1. Process/Teamwork (6pts)
-2. Code/Development (8pts)
-3. Ethos (8pts)
-4. Design/UX (8pts)
+### Development
+
+Setting up the test server is very easy. Simply run npm test and the server will launch itself and compile all the code to a development folder where the server will run from.
+
+```
+npm start
+```
+
+### Production Ready
+
+TODO: Implement production gulpfile.js.
+
+```
+npm run build
+```
+
+## Deployment
+
+TODO: Implement deployment
+
+1. Deploy the entire website _(very slow)_
+	```
+	npm run deploy:all
+	```
+
+2. Deploy the img folder _(slow)_
+	```
+	npm run deploy:img
+	```
+
+3. Deploy the assets website _(very slow)_
+	```
+	npm run deploy:assets
+	```
+
+4. Deploy just the code _(relatively fast)_
+	```
+	npm run deploy
+	```
+
+
+## Built With
+
+Check the `package.json` file for a list of dependencies and packages that the website is built with. 
+Packages not listed in the `package.json` are the following:
+
+* Javascript Framework - [jQuery 1.7.1](https://jquery.com/)
+* Form Validation - [jQuery.validation 1.17.0](https://jqueryvalidation.org/)
+* Support Page Filtering - [isotope](https://isotope.metafizzy.co/)
+* Filtering addon - [imagesloaded](https://imagesloaded.desandro.com/)
+* IE Support - [html5 shiv](https://github.com/aFarkas/html5shiv)
+
+## Authors
+
+* **Daniele Perazzolo** - [dfpera](https://github.com/dfpera)

@@ -2,10 +2,13 @@
 var 
   gulp          = require('gulp'),
   autoprefixer  = require('autoprefixer'),
+  babel         = require('gulp-babel'),
   browserSync   = require('browser-sync').create(),
   calc          = require('postcss-calc'),
   concat        = require('gulp-concat'),
   cssvariables  = require('postcss-css-variables'),
+  del           = require('del'),
+  eslint        = require('gulp-eslint'),
   gulpif        = require('gulp-if'),
   imagemin      = require('gulp-imagemin'),
   plumber       = require('gulp-plumber'),
@@ -60,6 +63,20 @@ if (env==='development') {
   sassStyle = 'compressed';
 }
 
+// Plumber onError
+var onError = (err) => {
+  notify.onError({
+    title:    "Gulp error in " + err.plugin,
+    message:  "<%= error %>",
+    sound:    "Pop"
+  })(err);
+  this.emit('end');
+}
+
+var plumberOptions = {
+  errorHandler: onError
+}
+
 // Initialize sources
 assetsSrc = ['process/assets/**/*.*'];
 batSrc    = ['process/bat/*.php'];
@@ -87,92 +104,100 @@ libDest     = outputDir + 'lib';
 pugDest     = outputDir;
 sassDest    = outputDir + 'css';
 
-gulp.task('assets', function() {
+const cleanTask = (done) => {
+  del(['builds/' + outputDir]);
+  done();
+}
+
+const assetsTask = () => {
   return gulp.src(assetsSrc)
     .pipe(gulp.dest(assetsDest));
-});
+};
 
-gulp.task('bat', function() {
+const batTask = () => {
   return gulp.src(batSrc)
     .pipe(gulp.dest(batDest));
-});
+};
 
-gulp.task('fonts', function() {
+const fontsTask = () => {
   return gulp.src(fontsSrc)
     .pipe(gulp.dest(fontsDest));
-});
+};
 
-gulp.task('img', function() {
+const imgTask = () => {
   return gulp.src(imgSrc)
-    .pipe(plumber())
+    .pipe(plumber(plumberOptions))
     .pipe(gulpif(env === 'production', imagemin({
       progressive: true,
       svgoPlugins: [{ removeViewBox: false }],
       use: [pngcrush()]
     })))
     .pipe(gulp.dest(imgDest));
-});
+};
 
-gulp.task('js', function() {
+const jsTask = () => {
   return gulp.src(jsSrc)
     .pipe(concat('main.js'))
     .pipe(gulpif(env === 'production', uglify()))
     .pipe(gulp.dest(jsDest))
-});
+};
 
-gulp.task('lib', function() {
+const libTask = () => {
   return gulp.src(libSrc)
     .pipe(gulp.dest(libDest));
-});
+};
 
-gulp.task('pug', function() {
+const pugTask = () => {
   return gulp.src(pugSrc)
-    .pipe(plumber())
+    .pipe(plumber(plumberOptions))
     .pipe(pug(pugStyle))
     .pipe(gulp.dest(pugDest));
-});
+};
 
-gulp.task('sass', function() {
+const sassTask = () => {
   return gulp.src(sassSrc)
-    .pipe(plumber())
+    .pipe(plumber(plumberOptions))
     .pipe(gulpif(env === 'development', sourcemaps.init()))
     .pipe(sass({outputStyle: sassStyle}))
     .pipe(postcss([autoprefixer(), cssvariables({preserve: true}), calc()]))
     .pipe(gulpif(env === 'development', sourcemaps.write()))
     .pipe(gulp.dest(sassDest))
     .pipe(browserSync.reload({stream: true}));
-});
+};
 
-gulp.task('browserSync', function() {
+const browserSyncTask = (done) => {
   browserSync.init({
     server: {
       baseDir: outputDir
     },
   })
-});
+  done();
+};
 
 // reloading browsers
-function reloadPage(done) {
+const reloadPage = (done) => {
   browserSync.reload();
   done();
-}
-gulp.task('assets-rl', ['assets'], reloadPage);
-gulp.task('bat-rl', ['bat'], reloadPage);
-gulp.task('fonts-rl', ['fonts'], reloadPage);
-gulp.task('img-rl', ['img'], reloadPage);
-gulp.task('js-rl', ['js'], reloadPage);
-gulp.task('lib-rl', ['lib'], reloadPage);
-gulp.task('pug-rl', ['pug'], reloadPage);
+};
+const assetsRL = gulp.series(assetsTask, reloadPage);
+const batRL = gulp.series(batTask, reloadPage);
+const fontsRL = gulp.series(fontsTask, reloadPage);
+const imgRL = gulp.series(imgTask, reloadPage);
+const jsRL = gulp.series(jsTask, reloadPage);
+const libRL = gulp.series(libTask, reloadPage);
+const pugRL = gulp.series(pugTask, reloadPage);
 
-gulp.task('watch', ['browserSync', 'assets', 'bat', 'fonts', 'img', 'js', 'lib', 'pug', 'sass'], function () {
-  gulp.watch(assetsSrc, ['assets-rl']);
-  gulp.watch(batSrc, ['bat-rl']);
-  gulp.watch(fontsSrc, ['fonts-rl']);
-  gulp.watch(imgSrc, ['img-rl']);
-  gulp.watch(jsSrc, ['js-rl']);
-  gulp.watch(libSrc, ['lib-rl']);
-  gulp.watch('process/pug/**/*.pug', ['pug-rl']);
-  gulp.watch('process/sass/**/*.scss', ['sass']);
+const buildTask = gulp.parallel(browserSyncTask, assetsTask, batTask, fontsTask, imgTask, jsTask, libTask, pugTask, sassTask);
+
+const watchTask = gulp.series(cleanTask, buildTask, (done) => {
+  gulp.watch(assetsSrc, assetsRL);
+  gulp.watch(batSrc, batRL);
+  gulp.watch(fontsSrc, fontsRL);
+  gulp.watch(imgSrc, imgRL);
+  gulp.watch(jsSrc, jsRL);
+  gulp.watch(libSrc, libRL);
+  gulp.watch('process/pug/**/*.pug', pugRL);
+  gulp.watch('process/sass/**/*.scss', sassTask);
 });
 
-gulp.task('default', ['watch']);
+exports.default = watchTask;
