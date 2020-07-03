@@ -11,6 +11,7 @@ var
   eslint        = require('gulp-eslint'),
   gulpif        = require('gulp-if'),
   imagemin      = require('gulp-imagemin'),
+  notify        = require('gulp-notify'),
   plumber       = require('gulp-plumber'),
   pngcrush      = require('imagemin-pngcrush'),
   postcss       = require('gulp-postcss'),
@@ -70,7 +71,6 @@ var onError = (err) => {
     message:  "<%= error %>",
     sound:    "Pop"
   })(err);
-  this.emit('end');
 }
 
 var plumberOptions = {

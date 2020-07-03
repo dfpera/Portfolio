@@ -1,0 +1,104 @@
+//- projects/weight-balance.pug
+include modules/_head
+include modules/_header
+include modules/_breadcrumbs
+include modules/_projects
+include modules/_slideshow
+
+doctype html
+html
+  +head('Weight & Balance - Daniele Perazzolo')
+  body.parent
+    +header_project(
+      'Weight & Balance',
+      ['Overview', 'Design/Implementation'],
+      ['Research', 'Testing/Struggles'],
+      ['Proposal', 'Final Design'],
+      ['What would I do differently next time?']
+    )
+    +breadcrumbs(
+      ['#overview', 'overview'],
+      ['#research', 'research'],
+      ['#proposal', 'proposal'],
+      ['#design', 'design / implementation'],
+      ['#testing', 'testing / struggles'],
+      ['#differently', 'differently']
+    )
+    +specifications(
+      '2019 jul - aug',
+      'two people',
+      [
+        'front-end developer'
+      ],
+      [
+        'reactjs',
+        'html',
+        'sass',
+        'npm'
+      ],
+      [
+        'vscode',
+        'chartjs',
+        'excel'
+      ]
+    )
+    article.mainContent.text-component(data-side='true')
+      h2 weight &amp; balance
+      p.heading-sub front-end development (reactjs)
+      section#overview.anchor
+        img(src='img/weight-balance/OverviewMockup.png', alt='Weight and Balance Overview Mockup').img-responsive
+        h3 overview
+        p The weight and balance graphic is a supplemental learning tool to help teach student pilots how to balance the weight on their airplane before the flight. Compared to other airplanes, the Tecnam P2006T follows a different charting method. This meant that the model could not be included with the current implementation used by Sharper Edge Train Solutions Ltd. As a result, I was responsible for creating a new weight and balance graph.
+        h4 what is a weight and balance graph?
+        //- p IMAGE HERE
+        p The table multiplies the weight added to the plane by the length of the arm (distance from datum) to calculate the moment of the applied weight. This moment is then graphed to give the pilot a visual indicator of whether or not their plane is within the balance requirements.
+      section#research.anchor
+        h3 research
+        img(src='img/weight-balance/ResearchMockup.png', alt='Old Weight and Balance Mockup').img-responsive
+        p The original weight and balance was built 2 years prior to this project. It used jQuery with a clunky table implementation that made it difficult to propagate into another plane. To address this flaw, along with the fact that the graph implementation was completely different, I decided to utilize ReactJS for the new weight and balance.
+      section#proposal.anchor
+        h3 proposal
+        img(src='img/weight-balance/PrototypeMockup1.png', alt='Excel Prototype Mockup, Input').img-responsive.img-center
+        p.text-center
+          //- i.fas.fa-arrow-circle-down
+        img(src='img/weight-balance/PrototypeMockup2.png', alt='Excel Prototype Mockup, Graphs').img-responsive
+        p Before starting implementation, I built a sample of the weight and balance in Excel to confirm that I understood what the problem was and how it needed to be solved. This excel document originally served as the basis for the ReactJS implementation. Now, the authors find the document useful to write weight and balance questions for the preparation guide.
+      section#design.anchor
+        h3 design / implementation
+        p After getting approval on the function of the Excel prototype, I began building the weight and balance with ReactJS. In order to build the project, I first needed to break down the application into its base components:
+        ul
+          li Table
+            ul
+              li Row
+                ul
+                  li HeaderCell
+                  li ReadOnlyCell
+                  li InputCell
+          li Graph
+          li TotalGraph
+        //- p IMAGES HERE
+        h4 resolving dependencies
+        Because the table behaves like a Excel sheet with formulas, the dependencies between cells needed to be resolved. Therefore, I utilized DFS (depth first search) to resolve the order in which the cells should be processed and confirm that there are no circular dependencies.
+      section#testing.anchor
+        h3 testing / struggles
+        p While building the weight and balance, I came across the following issues:
+        ul
+          li The original graphs were calculated in metric. For better plotting accuracy, I decided to implement the graphics in metric as well. Then, the front facing HTML translated the metric measurements to imperial (since Canadian pilots use the imperial system).
+          li Because this is learning material for students, it was important that the error messages didn't just "fix" potential problems. The messages needed to explain why certain calculations were incorrect to serve as a basis for learning.
+          li The lack of a back-end meant that the data is stored with the ReactJS app (instead of pulled down with an AJAX call).
+      section#final.anchor
+        h3 final design
+        iframe.video(
+          src='https://player.vimeo.com/video/368443298',
+          frameborder='0',
+          allowfullscreen
+        )
+        p In the final design, a student can insert their airplane's basic empty weight and any other weights that they will fly with. If any errors occur in their input, the app will highlight the cell red and give an appropriate error message. As the student inputs their data, the graphs automatically update and give them instant feedback.
+      section#differently.anchor
+        h3 what would i improve / change next time?
+        ul
+          li Instead of using DFS on paper to generate the dependency graph, I would implement DFS into ReactJS. This would make the app easily useable with other airplanes.
+          li Implement AJAX call to pull the data from a back-end. This will make updating the tables smoother.
+          li Allow users to switch between metric and imperial units. This enables the use of these learning materials outside of Canada.
+    include modules/_footer.pug
+    include modules/_scripts.pug
