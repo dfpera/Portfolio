@@ -162,7 +162,7 @@ const sassTask = () => {
     .pipe(postcss([autoprefixer(), cssvariables({preserve: true}), calc()]))
     .pipe(gulpif(env === 'development', sourcemaps.write()))
     .pipe(gulp.dest(sassDest))
-    .pipe(browserSync.reload({stream: true}));
+    .pipe(gulpif(env === 'development', browserSync.reload({stream: true})));
 };
 
 const browserSyncTask = (done) => {
@@ -187,7 +187,8 @@ const jsRL = gulp.series(jsTask, reloadPage);
 const libRL = gulp.series(libTask, reloadPage);
 const pugRL = gulp.series(pugTask, reloadPage);
 
-const buildTask = gulp.parallel(browserSyncTask, assetsTask, batTask, fontsTask, imgTask, jsTask, libTask, pugTask, sassTask);
+const startTask = gulp.parallel(browserSyncTask, assetsTask, batTask, fontsTask, imgTask, jsTask, libTask, pugTask, sassTask);
+const buildTask = gulp.parallel(assetsTask, batTask, fontsTask, imgTask, jsTask, libTask, pugTask, sassTask);
 
 const watchTask = gulp.series(cleanTask, buildTask, (done) => {
   gulp.watch(assetsSrc, assetsRL);
@@ -201,3 +202,4 @@ const watchTask = gulp.series(cleanTask, buildTask, (done) => {
 });
 
 exports.default = watchTask;
+exports.build = buildTask;

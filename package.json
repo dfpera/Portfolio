@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "The portfolio of Daniele Perazzolo. Use this npm package to create a test or deployment version of www.dpera.com.",
   "main": "index.js",
   "repository": {
@@ -42,6 +42,6 @@
   },
   "scripts": {
     "start": "cross-env NODE_ENV=development gulp",
-    "build": "cross-env NODE_ENV=production gulp"
+    "build": "cross-env NODE_ENV=production gulp build"
   }
 }
