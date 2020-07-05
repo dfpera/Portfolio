@@ -1,100 +1,86 @@
-# Portfolio - Daniele Perazzolo
+# Portfolio - Daniele Perazzolo <!-- omit in toc -->
 
-This repository hosts Daniele Perazzolo's Portfolio source website files. From here we can compile it's contents and get a production ready version of the website that can be uploaded to the dpera web server.
+This repository hosts the source code of Daniele Perazzolo's Portfolio. From here we can clone the site, run a local version and push to staging or production.
 
-## Getting Started
+- [1. Getting Started](#1-getting-started)
+  - [1.1. Prerequisites](#11-prerequisites)
+  - [1.2. Installing](#12-installing)
+- [2. Development](#2-development)
+  - [2.1. Local](#21-local)
+  - [2.2. Staging](#22-staging)
+  - [2.3 Production](#23-production)
+- [3. Built With](#3-built-with)
+- [4. Authors](#4-authors)
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project onto our web server.
+## 1. Getting Started
 
-### Prerequisites
+These instructions will get you a copy of the project up and running on your local machine for development. See [deployment](#deployment) for how to deploy the portfolio onto the web server.
 
-In order to get started working with this repository you must first install the following:
+### 1.1. Prerequisites
+
+To get this project running you must install the following:
 
 ```
-nodejs v10.14.1 or newer
-npm v6.8.0 or newer
+nodejs v12.14.1 or newer
+npm v6.14.5 or newer
 ```
 
-This can be done by downloading and installing `nodejs` from [their website](https://nodejs.org/en/download/). `npm` is included within the `nodejs` install so no need to install it separately.
+`nodejs` can be downloaded and installed from [nodejs.org](https://nodejs.org/en/download/). `npm` is included within the `nodejs` install so no need to install it separately.
 
-### Installing
+### 1.2. Installing
 
-First off clone the repository to your local system using SourceTree or git client of your choice:
-
+1. Clone the repository:
 ```
 git clone https://github.com/dfpera/Portfolio.git
 ```
 
-Next `cd` into the project directory:
-
+2. `cd` into the project directory:
 ```
 cd <path_to_repository>/portfolio
 ```
 
-Finally run the following to install all dependencies:
-
+3. Install the dependencies:
 ```
 npm install
 ```
 
-You are now ready to get started updating the website.
+You are now ready to work on the project.
 
-## Testing
+## 2. Development
 
-The website can be run in either development mode `npm start` or production mode `npm run build`. Product mode is solely used to test the website before we deploy it to the web server.
+The project can be run locally by using the `npm start`, deployed to the `staging` branch or deployed to `master` branch. More details below.
 
-### Development
+### 2.1. Local
 
-Setting up the test server is very easy. Simply run npm test and the server will launch itself and compile all the code to a development folder where the server will run from.
+Run the command below. The npm script will launch a local webserver and compile all the code to `builds/development/` where the webserver will run from.
 
 ```
 npm start
 ```
 
-### Production Ready
+### 2.2. Staging
 
-TODO: Implement production gulpfile.js.
+To test your code on staging, merge your branch into `staging` branch and wait for Netlify to finish the build. Check the build status at [netlify.com/sites/dpera/deploys](https://app.netlify.com/sites/dpera/deploys?filter=staging).
 
-```
-npm run build
-```
+After the build has succeeded, check out the changes at [https://staging.dpera.dev](https://staging.dpera.dev).
 
-## Deployment
+### 2.3 Production
 
-TODO: Implement deployment
+Once you are happy with the build in staging you can submit a pull request to `master`. Accept the pull request and check the build status at [netlify.com/sites/dpera/deploys](https://app.netlify.com/sites/dpera/deploys?filter=master).
 
-1. Deploy the entire website _(very slow)_
-	```
-	npm run deploy:all
-	```
+After the build has succeeded, check out the changes at [https://dpera.dev](https://dpera.dev).
 
-2. Deploy the img folder _(slow)_
-	```
-	npm run deploy:img
-	```
+## 3. Built With
 
-3. Deploy the assets website _(very slow)_
-	```
-	npm run deploy:assets
-	```
-
-4. Deploy just the code _(relatively fast)_
-	```
-	npm run deploy
-	```
-
-
-## Built With
-
-Check the `package.json` file for a list of dependencies and packages that the website is built with. 
+Check the `package.json` file for a list of dependencies and packages that the website is built with.
 Packages not listed in the `package.json` are the following:
 
 * Javascript Framework - [jQuery 1.7.1](https://jquery.com/)
 * Form Validation - [jQuery.validation 1.17.0](https://jqueryvalidation.org/)
-* Support Page Filtering - [isotope](https://isotope.metafizzy.co/)
+* Project Filtering - [isotope](https://isotope.metafizzy.co/)
 * Filtering addon - [imagesloaded](https://imagesloaded.desandro.com/)
 * IE Support - [html5 shiv](https://github.com/aFarkas/html5shiv)
 
-## Authors
+## 4. Authors
 
 * **Daniele Perazzolo** - [dfpera](https://github.com/dfpera)

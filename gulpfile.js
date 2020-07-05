@@ -190,7 +190,7 @@ const pugRL = gulp.series(pugTask, reloadPage);
 const startTask = gulp.parallel(browserSyncTask, assetsTask, batTask, fontsTask, imgTask, jsTask, libTask, pugTask, sassTask);
 const buildTask = gulp.parallel(assetsTask, batTask, fontsTask, imgTask, jsTask, libTask, pugTask, sassTask);
 
-const watchTask = gulp.series(cleanTask, buildTask, (done) => {
+const watchTask = gulp.series(cleanTask, startTask, (done) => {
   gulp.watch(assetsSrc, assetsRL);
   gulp.watch(batSrc, batRL);
   gulp.watch(fontsSrc, fontsRL);
